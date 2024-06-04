@@ -16,7 +16,9 @@ ul{
 a{
 text-decoration: none;
 }
- 
+ .text-green{
+    color: #85c34c;
+ }
 /* start top bar style */
 .topbar{
     background-color: #5d7635c5;
