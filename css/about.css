@@ -1,0 +1,33 @@
+/* start about us section styles */
+
+.about-us{
+    background-color: #fff;
+}
+.about-info .about-title{
+    color: rgb(94 146 66);
+    font-size: 1.875rem;
+}
+.about-info .desc{
+    font-size: 18px;
+    color: #555;
+}
+
+/* end about us section styles */
+/* start our history section styles */
+.our-history{
+    background: url(../images/about/uni-background.png) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 9999999;
+    background-color: #fff;
+margin-bottom: 22rem;
+  
+}
+@media (max-width:1200px) {
+    .our-history{
+        margin-bottom: 0;
+    }
+    
+}
+/* end our history section styles */
