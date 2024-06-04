@@ -15,7 +15,7 @@
 /* end about us section styles */
 /* start our history section styles */
 .our-history{
-    background:  no-repeat;
+    background: url(../images/about/uni-background.png) no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
