@@ -1,0 +1,56 @@
+/* start banner style */
+body{
+    height: 3000px;
+}
+footer{
+    display: none;
+}
+.contact-banner{
+    background:  no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* end banner style */
+/* start location style */
+.location .map{
+    background: #85c34c;
+    border-end-end-radius: 30px;
+    border-start-end-radius: 30px;
+}
+.location .map img{
+    max-width: 100%;
+}
+.location-info .title{
+    color: rgb(133 195 76 );
+    font-size: 1.4rem;
+}
+.location-info li:first-child{
+    list-style-image: url(../images/contact-us/location.png);
+    vertical-align: middle;
+  }
+.location-info img{
+    width: 2rem;
+    height: 2rem;
+}
+.map-overlay {
+    width: 100px;
+    height: 100px;
+    background:#f8da04;
+    top: 96%;
+  border-radius: 30px;
+    right: -69px;
+}
+
+@media  (max-width:1200px) {
+    .map-overlay {
+   display: none;
+    }
+}
+:dir(rtl){
+    .map-overlay {
+        right:97%
+
+    }
+}
+/* end location style */
