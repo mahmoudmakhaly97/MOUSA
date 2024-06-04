@@ -92,6 +92,9 @@ body.fixed-nav-padding {
 
    
 }
+.nav-link:focus{
+    color: #fff;
+}
 .nav-link.active{
     background-color: rgb(94, 146, 66);
     border-radius: 8px;
@@ -111,16 +114,7 @@ body.fixed-nav-padding {
     color: #fff;
 
 }
-@media (max-width:1200px) {
-    .navbar-nav {
-        align-items: center;
-    }
-    .nav-link{
- 
-display: inline-block;
-padding: .5rem 1.5rem;
-    }
-}
+
 
 .nav-dropdown {
     z-index: 999;
@@ -150,11 +144,7 @@ overflow: hidden;
     background-color:rgb(252, 218, 6) ;
     left: 0;
 }
-:dir(rtl){
-    .nav-dropdown li a::before{
-      right: 0;  
-    }
-}
+
 .nav-item:hover > .nav-dropdown {
     opacity: 1;
     visibility: visible;
@@ -167,8 +157,47 @@ overflow: hidden;
 }
 .bg-nav .nav-dropdown {
     top: 110%;
+    backdrop-filter: blur(10px);
+
 }
 
+button:focus:not(:focus-visible){
+    box-shadow: none;
+}
+
+@media (max-width:1200px){
+    .nav-dropdown{
+        left: 50%;
+        transform: translate(30%,2%);
+    }
+    .nav-item:nth-child(3) .nav-dropdown {
+        transform: translate(22%, 2%);
+    }
+}
+@media (max-width:1200px) {
+    .navbar-nav {
+        align-items: center;
+    }
+    .nav-link{
+ 
+display: inline-block;
+padding: .5rem 1.5rem;
+    }
+}
+@media (max-width:1200px){
+    .bg-nav{
+        background-color:rgb(79 ,79 ,79,1) ;
+    min-height: 100px;
+    }   
+}
+:dir(rtl){
+    .nav-dropdown li a::before{
+      right: 0;  
+    }
+  
+
+
+}
 /* end navbar  */
 /* start banner */
 .main-banner{
@@ -178,6 +207,7 @@ overflow: hidden;
     background-size: cover;
 
 }
+
 .main-banner .title{
     font-size:4em;
     text-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;;
@@ -188,6 +218,11 @@ overflow: hidden;
     z-index: 99;
    
 
+}
+@media (max-width:1200px){
+    .main-banner{
+      height: 60vh;
+    }   
 }
 /* end banner */
 /* start career description */
@@ -208,12 +243,7 @@ overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
-@media (max-width:1200px) {
-    .career-form{
-        margin-bottom: 0;
-    }
-    
-}
+
 .career-form .form-control{
     border: 2px solid rgb(211, 225, 200);
     padding: 10px;
@@ -235,16 +265,23 @@ padding: 10px;
 .career-form .chat-img{
     left: 2em;
     }
-:dir(rtl){
-.career-form .chat-img{
-            right: 2em;
-            }
- }
+
 @media(max-width:768px){
     .career-form .chat-img{
         width: 10em;
         }
 }
+@media (max-width:1200px) {
+    .career-form{
+        margin-bottom: 0;
+    }
+    
+}
+:dir(rtl){
+    .career-form .chat-img{
+                right: 2em;
+                }
+     }
 /* end career form */
 /* start footer */
 footer{
@@ -258,12 +295,7 @@ footer{
     left: 0;
     bottom: 0;
 }
-@media (max-width:1200px) {
-    .fixed-bottom-footer{
-        position: static;;
-    }
-    
-}
+
 footer .footer-card .title{
     color: #a6a6a6;
 }
@@ -318,6 +350,12 @@ footer .touch ul li:last-of-type{
     list-style-image: url(../images/career/mail.png);
     vertical-align: middle;
     list-style-position: inside;
+}
+@media (max-width:1200px) {
+    .fixed-bottom-footer{
+        position: static;;
+    }
+    
 }
 /* end footer */
 /* start copyright */
