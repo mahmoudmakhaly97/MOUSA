@@ -20,8 +20,8 @@ text-decoration: none;
  
 /* start top bar style */
 .topbar{
-    background-color: rgb(129, 149, 98,.6);
-    padding: 1em 0 ;
+    background-color: #5d7635c5;
+    padding: .5em 0 ;
  
 }
 .topbar-list li{
