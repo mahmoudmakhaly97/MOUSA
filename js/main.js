@@ -1,7 +1,8 @@
 // home logic 
-$('.owl-carousel').owlCarousel({
+$('.banner-carousel').owlCarousel({
     loop:true,
     margin:10,
+    rtl:true,
     navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
 
     nav:true,
@@ -15,6 +16,28 @@ $('.owl-carousel').owlCarousel({
         1000:{
             items:1
         }
+    }
+})
+$('.programs-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    rtl:true,
+    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        991:{
+            items:1
+        } ,
+        1200:{
+            items:2
+        } 
     }
 })
 // career pag logic 
