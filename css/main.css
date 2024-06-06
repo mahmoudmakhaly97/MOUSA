@@ -2,9 +2,7 @@
     --secondary:#efcf04;
     --main-color:#5e9242
 }
-body{
-    height: 20000px;
-}
+
 /* start banner */
 .home-banner{
     background-size: cover;
@@ -78,11 +76,18 @@ left: .3em;
 }
 
 /* end banner */
+/* start shared background  */
+ 
 /* start about mousa  */
+.shared-backround{
+
+
+}
+
 .about_mousa {
     background-repeat:no-repeat ;
     background-position: 18%;
- 
+     
 }
 
 .about_mousa .title{
@@ -98,7 +103,7 @@ left: .3em;
     font-size: 1.5rem;
 }
  
- .about-mousa-imgs .img-wrapper img{
+ .about-mousa-imgs .img-wrap img{
     width: 100%;
  }
 .about_mousa .btn{
@@ -240,10 +245,11 @@ bottom: -24%;}
 .programs-carousel .item{
     border-radius: 30px!important;
 }
-.progran-name{
+.program-name{
     color: var(--main-color);
     text-align: center;
     font-weight: bold;
+    text-align: center;
 }
 .programs-carousel .item.borderLeft{
     border-left: 2px solid var(--secondary);
@@ -306,3 +312,338 @@ left: -1em;
 }
 
 /* end our program  */
+/* start admission */
+.admission-title{
+    font-size: 3rem;
+    color: #555;
+    line-height: 1em;
+
+}
+.admission-title span{
+    color: var(--main-color);
+}
+.admission .number{
+    font-weight: bold;
+  
+    width: 120px;
+    height: 120px;
+    background-color: var(--main-color);
+    margin: auto;
+    position: relative;
+
+
+ 
+}
+.admission .number > h2{
+    font-size: 6em;
+    font-weight: bold;
+    position: absolute;
+    bottom: -.3em;
+}
+.admission-carousel  .owl-theme .owl-dots{
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.admission img{
+    max-width: 100%;
+}
+.admission-carousel .owl-next svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+right: -1em;
+    color: #414042;
+    font-size: 2em;
+    transition: .3s all ease;
+
+}
+
+.admission-carousel .owl-prev svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+left: -1em;
+    color: #414042;
+    font-size: 2em;
+    transition: .3s all ease;
+
+}
+.admission-carousel .owl-dots{
+    display: none;
+}
+@media (max-width:768px) {
+    .admission-carousel .owl-prev svg{
+        left: -1em
+    }
+    .admission-carousel .owl-dots{
+        display: block;
+    }
+    .admission-carousel .owl-prev svg , .admission-carousel .owl-next svg{
+        display: none;
+    }
+    .admission-carousel  .owl-nav{
+        display: none;
+    }
+}
+.admission-carousel .owl-next svg:hover , 
+.admission-carousel .owl-prev svg:hover{
+    color: var(--secondary);
+}
+.admission-carousel .owl-theme .owl-nav{
+    background:#fff;
+    margin: 0;
+}
+.register{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(239, 207 ,4);
+
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    border: 0;
+}
+.register:hover{
+    background-color: rgb(94, 146, 66);
+}
+.register img{
+    opacity: .3;
+  
+}
+:dir(rtl){
+    .register{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 17px;
+        border-bottom-right-radius: 17px;
+    }
+}
+@media (min-width:1500px){
+  
+    .admission .overlay{
+        position: absolute!important;
+        transform: translateY(-50%);
+    
+    }
+    .admission .overlay img{
+        max-width: 100%;
+    }
+}
+
+/* end admission */
+/* start recent  */
+.recent{
+    background-color: #f5f5f5;
+}
+.recent .title{
+    color: #555;
+    font-size: 3rem ;
+}
+.recent .title> span {
+    color: var(--main-color);
+}
+.recent  .lead{
+    color: #555;
+}
+.recent img{
+    max-width: 100%;
+}
+.recent .date > h2{
+    color:rgb(239, 207 ,4);
+    font-size: 3.75rem;
+}
+.recent .date > .time{
+    color: var(--main-color);
+}
+.recent .desc{
+color: #555;
+font-weight: bold;
+}
+.recent .item{
+    border-bottom: 6px solid var(--secondary);
+}
+.recent-carousel .owl-next svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+right: -2em;
+    color: #fff;
+    font-size: 2em;
+    transition: .3s all ease;
+    padding: 100px 12px;
+    background-color: var(--secondary);
+
+
+}
+
+.recent-carousel .owl-prev svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+left: -2em;
+    color: #fff;
+    font-size: 2em;
+    transition: .3s all ease;
+ padding: 100px 12px;
+ background-color: var(--secondary);
+
+
+}
+.recent-carousel .owl-prev svg:hover , .recent-carousel .owl-next svg:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.recent-carousel .owl-dots{
+    display: none;
+}
+@media (max-width:768px) {
+    .recent-carousel .owl-prev svg{
+        left: -1em
+    }
+    .recent-carousel .owl-dots{
+        display: block;
+    }
+    .recent-carousel .owl-prev svg , .recent-carousel .owl-next svg{
+        display: none;
+    }
+    .recent-carousel  .owl-nav{
+        display: none;
+    }
+}
+
+.recent-carousel .owl-theme .owl-nav{
+    background:#fff;
+    margin: 0;
+}
+.recent.bg-primary{
+    background-color: var(--main-color);
+}
+.recent .view{
+   font-size: 1.5rem ;
+   background-color: var(--main-color); 
+   padding: .3rem 5rem;
+   border-radius: 8px;
+   color: #fff;
+   transition: .3s all ease
+   ;
+}
+.recent .view:hover{
+    background-color: var(--secondary);
+}
+
+/* start recent  */
+/* start meet our people */
+.meet-our-people .title{
+    font-size: 3rem ;
+}
+.meet-our-people .title > span {
+    color: var(--main-color);
+}
+.meet-our-people  img{
+    max-width: 100%;
+}
+.meet-our-people .img-wrapper{
+    background-color: var(--main-color);
+    border-radius: 60px;
+}
+.meet-our-people  .name {
+    font-size: 1.875rem;
+    color: #555;
+    font-weight: bold;
+}
+.meet-our-people  .name ~ p {
+    color: #fff;
+}
+
+
+
+.meet-our-people-carousel .owl-next svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+right: -1.5em;
+    color: #414042;
+    font-size: 2.2em;
+    transition: .3s all ease;
+
+}
+
+.meet-our-people-carousel .owl-prev svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+left: -1.5em;
+    color: #414042;
+    font-size: 2.2em;
+    transition: .3s all ease;
+
+}
+ .owl-carousel .owl-nav.disabled{
+    display: block;
+}
+
+
+
+/* end meet our people */
+/* start stories  */
+.college   .title{
+    font-size: 3rem ;
+}
+.college   .title > span{
+    color: var(--main-color);
+}
+.college-item-info .title{
+    font-size: 3.75rem;
+    color: var(--secondary);
+}
+.college-item-info .desc{
+    color: var(--main-color);
+    font-size: 2.3rem;
+}
+/* end college  */
+/* start stories */
+.stories{
+    background-color: #f5f5f5;
+margin-bottom: 22rem;
+}
+.stories   .title{
+    font-size: 3rem ;
+    color: #555;
+}
+.stories   .title > span{
+    color: var(--main-color);
+}
+.stories .img-wrap img {
+    width:200px;
+height:200px;
+}
+.stories .desc{
+    color: #555;
+    width: 80%;
+}
+.stories .name {
+    color: var(--main-color);
+}
+.stories .job{
+    color: #555;
+}
+.stories .owl-theme .owl-nav{
+    display: none;
+}
+.stories .owl-theme .owl-dots .owl-dot span {
+
+width: 40px;
+height: 5px;
+border-radius: 0;
+background-color: #dae0d0;
+}
+.stories .owl-theme .owl-dots .owl-dot.active span {
+    background-color: var(--main-color);
+
+}
+@media (max-width:1200px){
+   .stories{
+    margin-bottom: 0;
+   }
+}
