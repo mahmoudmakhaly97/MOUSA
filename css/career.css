@@ -195,8 +195,15 @@ padding: .5rem 1.5rem;
     .nav-dropdown li a::before{
       right: 0;  
     }
+
+
+  @media (min-width:1200px) {
   
 
+.navbar-expand-xl .navbar-collapse {
+        justify-content: flex-end;
+    }
+}
 
 }
 /* end navbar  */

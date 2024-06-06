@@ -4,6 +4,7 @@
 }
 
 /* start banner */
+
 .home-banner{
     background-size: cover;
     background-position: center;
@@ -74,7 +75,15 @@ left: .3em;
   
     }
 }
+:dir(rtl) {
+    .shared-background .background-left {
+        top: -3em;
+    }
 
+                .shared-background .background-right {
+                    bottom: -30em;
+                }
+                }
 /* end banner */
 /* start shared background  */
  
@@ -82,8 +91,14 @@ left: .3em;
 
 .about_mousa {
     background-repeat:no-repeat ;
-    background-position: 18%;
-     
+    background-position: 18%
+    }
+    
+    :dir(rtl) {
+        .about_mousa {
+            background-position: 19em 1.6em !important
+        }
+        ;
 }
 
 .about_mousa .title{
@@ -97,10 +112,15 @@ left: .3em;
 }
 .about_mousa  .desc{
     font-size: 1.5rem;
+    color: rgb(85, 85, 85);
 }
- 
+  .about-mousa-imgs .img-wrap {
+      max-height: 250px;
+      overflow: hidden;
+  }
  .about-mousa-imgs .img-wrap img{
     width: 100%;
+       
  }
 .about_mousa .btn{
     background-color: var(--secondary);transition: .5s all ease;
