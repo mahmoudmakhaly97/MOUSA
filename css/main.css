@@ -12,7 +12,7 @@
 
 }
 .homer-banner-overlay{
-    background-color: #65911d3b;
+background: linear-gradient(to bottom, #333, #33333363, transparent);
 }
 .home-banner .icon{
     color: var(--secondary);
