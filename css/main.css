@@ -22,7 +22,7 @@ background: linear-gradient(to bottom, #333, #33333363, transparent);
   
 }
 .home-banner .banner-info .title{
-    font-size: 3.5em;
+    font-size: 3em;
     line-height: 1.2em;
 }
 .banner-info .btn{
@@ -90,29 +90,31 @@ left: .3em;
 /* start about mousa  */
 
 .about_mousa {
-    background-repeat:no-repeat ;
-    background-position: 18%
+    background-repeat:no-repeat !important;
+    background-position: 18% ;
+   
     }
-    
-    :dir(rtl) {
+   
+    /* :dir(rtl) {
         .about_mousa {
-            background-position: 19em 1.6em !important
+            background-position:70% 0.6em  !important
         }
         ;
-}
+} */
 
 .about_mousa .title{
-    font-size: 3.25rem;
+    font-size: 2.25rem;
     color: var(--main-color);
     font-weight: bold;
-    line-height: 1em;
+    line-height: 1.24em;
 }
 .about_mousa .title:first-child{
     color: #414042;
 }
 .about_mousa  .desc{
-    font-size: 1.5rem;
-    color: rgb(85, 85, 85);
+    font-size: 1.125rem;
+    color: #555;
+    font-weight: 500;
 }
   .about-mousa-imgs .img-wrap {
       max-height: 250px;
@@ -134,16 +136,16 @@ left: .3em;
     background-color: var(--main-color);
     color: #fff;
 }
- @media (max-width:1800px) {
-    
- .about_mousa {
-    background:none!important
- 
-}}
+
 @media (max-width:991px) {
     .about_mousa .title{
         font-size: 1.8rem;
     } 
+   :dir(rtl){
+    .about_mousa .container{
+        background-image: none!important;
+    }
+   }
 }
 :dir(rtl){
     .about_mousa {
@@ -254,18 +256,31 @@ bottom: -24%;}
     font-weight: 600;
     font-size: 18px;
 }
+ 
 .program-info img{
     width: 100px;
     height:100px;
 }
+.program-info {
+    height:650px
+}
 .programs-carousel .item{
     border-radius: 30px!important;
+    min-height: 650px;
+}
+@media (max-width:1200px) {
+:dir(rtl){
+    .program-info ,.programs-carousel    .item{
+        min-height: 490px!important;
+     }
+}
 }
 .program-name{
     color: var(--main-color);
     text-align: center;
     font-weight: bold;
     text-align: center;
+    font-size: 1.5em;
 }
 .programs-carousel .item.borderLeft{
     border-left: 2px solid var(--secondary);
@@ -415,13 +430,17 @@ left: -1em;
     width: 100%;
     height: 70px;
     background-color: rgb(239, 207 ,4);
-
+z-index:999;
     border-top-left-radius: 17px;
     border-bottom-left-radius: 17px;
     border: 0;
+    color:  rgb(94, 146, 66);
+    font-size: 2rem;
+    font-weight: bold;
 }
 .register:hover{
     background-color: rgb(94, 146, 66);
+    color:#fff
 }
 .register img{
     opacity: .3;
@@ -437,16 +456,21 @@ left: -1em;
 }
 @media (min-width:1500px){
   
-    .admission .overlay{
-        position: absolute!important;
-        transform: translateY(-50%);
-    
-    }
+  
     .admission .overlay img{
         max-width: 100%;
     }
 }
-
+@media (max-width:991px) {
+:dir(rtl){
+    .admission .overlay{
+        position: static!important;
+    }
+    .register{
+        border-radius: 0;
+    }
+}
+}
 /* end admission */
 /* start recent  */
 .recent{
@@ -513,20 +537,7 @@ left: -2em;
 .recent-carousel .owl-dots{
     display: none;
 }
-@media (max-width:768px) {
-    .recent-carousel .owl-prev svg{
-        left: -1em
-    }
-    .recent-carousel .owl-dots{
-        display: block;
-    }
-    .recent-carousel .owl-prev svg , .recent-carousel .owl-next svg{
-        display: none;
-    }
-    .recent-carousel  .owl-nav{
-        display: none;
-    }
-}
+
 
 .recent-carousel .owl-theme .owl-nav{
     background:#fff;
@@ -547,7 +558,25 @@ left: -2em;
 .recent .view:hover{
     background-color: var(--secondary);
 }
-
+@media (max-width:768px) {
+    .recent-carousel .owl-prev svg{
+        left: -1em
+    }
+    .recent-carousel .owl-dots{
+        display: block;
+    }
+    .recent-carousel .owl-prev svg , .recent-carousel .owl-next svg{
+        display: none;
+    }
+    .recent-carousel  .owl-nav{
+        display: none;
+    }
+}
+@media (max-width:1200px) {
+    .owl-theme .owl-nav{
+        display:none;
+    }
+}
 /* start recent  */
 /* start meet our people */
 .meet-our-people .title{
@@ -599,7 +628,14 @@ left: -1.5em;
     display: block;
 }
 
-
+@media (max-width:991px) {
+    .meet-our-people-carousel .owl-prev svg {
+        left: 0!important;
+    }
+   .meet-our-people-carousel .owl-next svg{
+    right: 0!important;
+   }
+}
 
 /* end meet our people */
 /* start stories  */
@@ -610,12 +646,12 @@ left: -1.5em;
     color: var(--main-color);
 }
 .college-item-info .title{
-    font-size: 3.75rem;
+    font-size: 1.75rem;
     color: var(--secondary);
 }
 .college-item-info .desc{
     color: var(--main-color);
-    font-size: 2.3rem;
+    font-size:  1.75rem;
 }
 /* end college  */
 /* start stories */

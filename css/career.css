@@ -150,12 +150,12 @@ overflow: hidden;
     opacity: 1;
     visibility: visible;
 }
-.bg-nav{
+/* .bg-nav{
     background-color: transparent;
     position: fixed;
     z-index: 9999;
     width: 100%;
-}
+} */
 .bg-nav .nav-dropdown {
     top: 110%;
     backdrop-filter: blur(10px);
