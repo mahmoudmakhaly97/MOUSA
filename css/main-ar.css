@@ -323,11 +323,7 @@ left: .3em;
     padding-right: 6rem;
 }
 
-@media (max-width:991px) {
-    .about-college .container {
-        padding: 3rem 0;
-    }
-}
+
 .about-college .title{
     font-size: 3.25rem;
         font-weight: 600;
