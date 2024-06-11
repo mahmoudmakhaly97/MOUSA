@@ -20,138 +20,154 @@ $('.banner-carousel').owlCarousel({
         }
     }
 })
-$('.programs-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    rtl:true,
-    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+$(".programs-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true,
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ], // Replace navigation text with Font Awesome icons
 
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:2
-        },
-        991:{
-            items:1
-        } ,
-        1200:{
-            items:2
-        } 
-    }
-})
-$('.admission-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    rtl:true,
-    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
-
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:2
-        },
-        991:{
-            items:1
-        } ,
-        1200:{
-            items:2
-        } 
-    }
-})
-$('.recent-carousel').owlCarousel({
-    loop:true,
-    margin:30,
-    rtl:true,
-    autoplay:true,
-    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
-
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:2
-        },
-        991:{
-            items:3
-        } ,
-        1200:{
-            items:3
-        } 
-    }
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    991: {
+      items: 1,
+    },
+    1200: {
+      items: 2,
+    },
+  },
 });
-$('.meet-our-people-carousel').owlCarousel({
-    loop:true,
-    margin:30,
-    rtl:true,
-    autoplay:true,
-    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+$(".admission-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true,
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ], // Replace navigation text with Font Awesome icons
 
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:2
-        },
-        991:{
-            items:3
-        } ,
-        1200:{
-            items:3
-        } 
-    }
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    991: {
+      items: 1,
+    },
+    1200: {
+      items: 2,
+    },
+  },
 });
-$('.stories-carousel').owlCarousel({
-    loop:true,
-    margin:30,
-    rtl:true,
-    autoplay:true,
-    navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+$(".recent-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true,
+  autoplay: true,
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ], // Replace navigation text with Font Awesome icons
 
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        768:{
-            items:1
-        },
-        991:{
-            items:1
-        } ,
-        1200:{
-            items:1
-        } 
-    }
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    991: {
+      items: 3,
+    },
+    1200: {
+      items: 3,
+    },
+  },
 });
-$(document).ready(function(){
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
+$(".meet-our-people-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true,
+  autoplay: true,
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ], // Replace navigation text with Font Awesome icons
+
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    991: {
+      items: 3,
+    },
+    1200: {
+      items: 3,
+    },
+  },
 });
-// career pag logic 
-window.addEventListener("scroll", function() {
-    var navbar = document.querySelector(".navbar");
-    if (window.scrollY >= 100) {
-        navbar.classList.add("sticky-top" );
-        navbar.classList.remove("bg-nav");
-        
+$(".stories-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true,
+  autoplay: true,
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ], // Replace navigation text with Font Awesome icons
 
-    } else {
-        navbar.classList.remove("sticky-top");
-        navbar.classList.add("bg-nav");
-
-    }
+  nav: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 1,
+    },
+    991: {
+      items: 1,
+    },
+    1200: {
+      items: 1,
+    },
+  },
+});
+$(document).ready(function () {
+  $(".counter").counterUp({
+    delay: 10,
+    time: 1000,
+  });
+});
+// career pag logic
+window.addEventListener("scroll", function () {
+  var navbar = document.querySelector(".navbar");
+  if (window.scrollY >= 100) {
+    navbar.classList.add("sticky-top");
+    navbar.style.top = 0;
+    navbar.style.background = " rgb(79 ,79 ,79,1)";
+    navbar.classList.remove("bg-nav");
+  } else {
+    navbar.classList.remove("sticky-top");
+    navbar.classList.add("bg-nav");
+    navbar.style.top = "3rem";
+      navbar.style.background = "transparent";
+  }
 });
 
 

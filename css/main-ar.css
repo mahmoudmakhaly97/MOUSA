@@ -33,17 +33,19 @@ text-decoration: none;
  .font-20{
     font-size: 20px;
  }
+
  .text-green{
 color: var(--main-color);
  }
- body{
-  }
+
  /* start topbar */
 .topbar{
-    background-color: #5d7635c5;
-    padding: 0  3rem;
+    background-color: rgba(86, 109, 53, .7);
     height: 3rem;
     line-height: 3rem;
+        position: absolute;
+            z-index: 9999;
+            width: 100%;
 }
 .topbar *{
 font-weight: 500;
@@ -60,7 +62,11 @@ font-weight: 500;
 .topbar .socail a:hover{
     opacity:  1;
 }
- 
+ @media (min-width:991px) {
+     .topbar-wrapper {
+         padding: 0 5rem;
+     }
+ }
   /* end topbar */
   /* start navbar  */
 
@@ -69,9 +75,12 @@ font-weight: 500;
 
     color: #fff;
     background-color: rgb(79 ,79 ,79,1);
-    transition: .3s all ease;
-    padding-left: 3%;
-    padding-right: 3%;
+    transition: .3s all ease-in-out;
+        background-color: transparent;
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        top: 3rem;
 
 }
  
@@ -81,8 +90,8 @@ font-weight: 500;
 body.fixed-nav-padding {
     padding-top: 70px; 
 }
-.navbar-brand img:first-child{
-    width: 7rem;
+.navbar-brand img {
+    width: 8rem;
 }
 
 .nav-link{
@@ -109,8 +118,8 @@ body.fixed-nav-padding {
  .nav-item:last-child .nav-link{
     background-color: rgb(252, 218, 6);
     border-radius: 40px;
-    color: #000;
-    font-size: 15px;
+    color: #333;
+        padding: 8px 24px;
 }
 .nav-item:last-child .nav-link:hover{
     background-color: rgb(94, 146, 66);
@@ -157,6 +166,7 @@ overflow: hidden;
     position: fixed;
     z-index: 9999;
     width: 100%;
+    top: 3rem;
 }
 .bg-nav .nav-dropdown {
     top: 110%;
@@ -213,7 +223,7 @@ padding: .5rem 1.5rem;
 }
 
 }
- 
+
 /* end navbar  */
 /* start banner */
 
@@ -227,6 +237,7 @@ padding: .5rem 1.5rem;
  
     overflow: hidden;
     background-repeat: no-repeat!important;
+    height: 98vh;
 }
 .homer-banner-overlay{
 background: linear-gradient(to bottom, #333, #33333363, transparent);
@@ -304,15 +315,30 @@ left: .3em;
                 }
 /* end banner */
 /* start about-college */
-.about-college .title{
-    font-size: 36px;
-    font-weight: 500;
+.about-college .container {
+    padding: 5rem 0;
+    background-repeat: no-repeat !important;
+    background-position: 90% 4em;
+    padding-left: 4rem;
+    padding-right: 6rem;
 }
+
+@media (max-width:991px) {
+    .about-college .container {
+        padding: 3rem 0;
+    }
+}
+.about-college .title{
+    font-size: 3.25rem;
+        font-weight: 600;
+    }
+    
 .about-college .desc{
-    font-size: 18px;
+    font-size: 24px;
     color: rgb(85, 85 ,85);
     font-weight: 500;
 }
+            
 .about-college-imgs{
     padding-top: 2.5rem;
 }
@@ -320,6 +346,12 @@ left: .3em;
 width: 100%;
  height: 15rem
  
+}
+@media (max-width:991px) {
+    .about-college-imgs{
+    padding-top: 2.5rem;
+    }
+
 }
  
 /* end about-college */
@@ -372,22 +404,35 @@ width: 100%;
 /* start welcome  */
 .welcome-info{
     background-color: #edeeee;
- 
+    padding: 2.5rem;
+    }
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .welcome-info-wrapper {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    width: 77%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @media (max-width:1200px) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    .welcome-info-wrapper {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width: 100%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 }
 .welcome-info .title{
    
     font-weight: 700;
     color: #414042;
     line-height: 2.5rem;
+    font-size: 36px;
 }
 .welcome-info .title span{
     color: var(--main-color);
     font-size:2.25rem;
 }
 .welcome-info .desc{
-   line-height: 1.5rem;
+line-height: 1.5em;
    color:#555;
    font-weight: 500;
+font-size: 20px;
+    padding-top: 32px;
 }
 .welcome-info .overlay{
     width: 100px;
@@ -400,8 +445,9 @@ bottom: -24%;}
     height: 60px;
     background-color: rgb(237 ,238 ,238);
     border-radius: 20px;
-    bottom: -43%;
-    left: 64%;
+    left: 0;
+        right: 4% !important;
+        bottom: -6em;
 }
 .welcome .enviroment-img{
     border:10px solid   rgb(230, 230, 230);
@@ -433,11 +479,14 @@ bottom: -24%;}
     font-size: 3rem ;
     color: #555;
     font-weight: bold;
+    line-height: 3rem;
+        font-weight: 600;
 }
 .our-program  .desc{
     font-size: 1.125rem;
     color: #555;
     font-weight: 500;
+        line-height: 2rem;
 }
 .our-program .title:last-of-type {
     font-size: 3rem ;
@@ -464,10 +513,10 @@ bottom: -24%;}
     text-align: center;
     font-weight: bold;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 30px;
 }
 .program-desc{
-    font-size: 14px;
+    font-size: 16px;
 }
 .programs-carousel .item.borderLeft{
     border-left: 2px solid var(--secondary);
@@ -486,9 +535,9 @@ bottom: -24%;}
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-right: -1em;
+right: -1.6em;
     color: #414042;
-    font-size: 1.5em;
+    font-size: 2em;
     transition: .3s all ease;
 
 }
@@ -497,9 +546,9 @@ right: -1em;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-left: -1em;
+left: -1.6em;
     color: #414042;
-    font-size: 1.5em;
+    font-size: 2em;
     transition: .3s all ease;
 
 }
@@ -538,13 +587,13 @@ left: -1em;
 /* end our program  */
 /* start admission */
 .admission-title{
-    font-size: 42px;
+    font-size: 48px;
     color: #555;
     line-height: 1em;
 
 }
 .admission-desc{
-    font-size: 18px;
+    font-size: 24px;
     color:#555
 
 }
@@ -554,8 +603,8 @@ left: -1em;
 .admission .number{
     font-weight: bold;
   
-    width: 4rem;
-    height:  4rem;
+    width: 95px;
+        height: 95px;
     background-color: var(--main-color);
     margin: auto;
     position: relative;
@@ -564,15 +613,15 @@ left: -1em;
  
 }
 .admission .number > h2{
-    font-size: 58px;
-    font-weight: bold;
+    font-size: 90px;
+        font-weight: bold;
     position: absolute;
     bottom: -.3em;
 }
 .admission-carousel  .owl-theme .owl-dots{
     position: absolute;
     bottom: 1em;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
 }
 .admission img{
@@ -580,22 +629,23 @@ left: -1em;
 }
 .admission-carousel .owl-next svg {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
-right: -1em;
+right: 0em;
     color: #414042;
-    font-size: 1.3em;
+    font-size: 1.8em;
     transition: .3s all ease;
+
 
 }
 
 .admission-carousel .owl-prev svg {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
-left: -1em;
+left: 0em;
     color: #414042;
-    font-size: 1.3em;
+    font-size: 1.8em;
     transition: .3s all ease;
 
 }
@@ -626,14 +676,14 @@ left: -1em;
 }
 .register{
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-color: rgb(239, 207 ,4);
 z-index:999;
     border-top-left-radius: 17px;
     border-bottom-left-radius: 17px;
     border: 0;
     color:  rgb(94, 146, 66);
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: bold;
 }
 .register:hover{
@@ -838,24 +888,24 @@ left: -1.5em;
 /* end meet our people */
 /* start college  */
 .college   .title{
-    font-size: 3rem ;
+    font-size: 48px;
 }
 .college   .title > span{
     color: var(--main-color);
 }
 .college-item-info .title{
-    font-size: 1.75rem;
+    font-size: 60px;
     color: var(--secondary);
 }
 .college-item-info .desc{
     color: var(--main-color);
-    font-size:  1.75rem;
+    font-size: 30px;
 }
 /* end college  */
 /* start stories */
 .stories{
     background-color: #f5f5f5;
-margin-bottom: 22rem;
+margin-bottom: 23rem;
 }
 .stories   .title{
     font-size: 3rem ;
@@ -977,4 +1027,58 @@ footer .touch ul li:last-of-type{
     background-color: #434242;
     font-size: 14px;
 }
+
 /* end copyright */
+/* media query */
+@media (max-width:1500px) {
+    .about-college .title {
+        font-size: 36px;
+
+    }
+
+    .about-college .desc {
+        font-size: 18px;
+    }
+
+    .welcome-info .title span {
+        font-size: 36px;
+    }
+
+    .welcome-info .desc {
+        font-size: 16px;
+    }
+
+    .program-desc {
+        font-size: 14px;
+    }
+
+    .admission-title {
+        font-size: 42px;
+    }
+
+    .admission-desc {
+        font-size: 18px;
+    }
+
+    .admission .number {
+        width: 64px;
+        height: 64px;
+
+    }
+
+    .admission .number h2 {
+        font-size: 58px;
+    }
+
+    .admission .number+p {
+        font-size: 14px;
+    }
+
+    .college-item-info .title {
+        font-size: 30px;
+    }
+
+    .college-item-info .desc {
+        font-size: 24px;
+    }
+}

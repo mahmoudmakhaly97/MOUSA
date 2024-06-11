@@ -17,9 +17,17 @@
       <title>Home</title>
    </head>
    <body>
+   <!-- start banner -->
+   
+ 
+
+ <div class="home-banner  position-relative ">
+
 <!-- start topbar -->
-      <div class="topbar d-flex justify-content-end gap-5">
-        <div class="d-flex gap-3  topbar-links d-none d-lg-flex">
+      <div class="topbar ">
+      <div class="container">
+        <div class="d-flex justify-content-end gap-5 topbar-wrapper">
+ <div class="d-flex gap-3  topbar-links d-none d-lg-flex">
             <a href="#" class="text-white">   الاخبار والفعاليات</a>
              <a href="#" class="text-white">اتصل بنا</a>
             <a href="#" class="text-white">   الوظائف</a>
@@ -36,12 +44,18 @@
         <div>
             <a href="" class="text-white font-20 language-link"> English</a>
         </div>
+        </div>
+            
+       
+      </div>
+        
       </div>
 <!-- end topbar -->
  <!-- start navbar -->
- <nav class="navbar navbar-expand-xl  ">
+ <nav class="navbar navbar-expand-xl   ">
  
-       <a class="navbar-brand" href="#">
+     <div class="container">
+          <a class="navbar-brand" href="#">
           <div class="d-flex align-items-center gap-2  ">
              <img  src="images/career/logo.png" alt="logo1"  >
              <img  src="images/career/logo2.png" class="d-none d-xl-flex" alt="logo2">
@@ -132,22 +146,17 @@
                 </a>
              </li>
              <li class="nav-item">
-                <a class="nav-link py-2 px-4" href="#">البوابة الالكترونية
+                <a class="nav-link e-gate " href="#">البوابة الالكترونية
                 </a>
              </li>
           </ul>
        </div>
  
+     </div>
  </nav>
  <!-- end navbar -->
-   <!-- start banner -->
-   
- 
-
- <div class="home-banner  position-relative ">
-
     <div class="owl-carousel banner-carousel owl-theme ">
-       <div class="item  min-vh-100   position-relative" style="background: url('./images/home/banner.png') no-repeat center center; background-size: cover;">
+       <div class="item   position-relative" style="background: url('./images/home/banner.png') no-repeat center center; background-size: cover;">
            <div class="homer-banner-overlay position-absolute w-100 h-100 start-0 top-0 bottom-0 end-0"></div>
    <div class="container">
    
@@ -161,7 +170,7 @@
        </div>
    </div>
        </div>
-       <div class="item min-vh-100    position-relative" style="background: url('./images/home/banner.png') no-repeat center center; background-size: cover;">
+       <div class="item     position-relative" style="background: url('./images/home/banner.png') no-repeat center center; background-size: cover;">
         <div class="homer-banner-overlay position-absolute w-100 h-100 start-0 top-0 bottom-0 end-0">
            <div class="homer-banner-overlay position-absolute w-100 h-100 start-0 top-0 bottom-0 end-0"></div>
    <div class="container">
@@ -181,12 +190,12 @@
 </div>
  <!-- end banner -->
 <div class="shared-background  position-relative bg-white">
-    <img src="images/about/about-right.png" class="position-absolute end-0  background-left" alt="right">
-        <img src="images/about/about-left.png" class="position-absolute start-0  background-right" alt="left">
+    <img src="images/about/about-right.png" class="position-absolute end-0  d-none d-md-block background-left" alt="right">
+        <img src="images/about/about-left.png" class="position-absolute start-0 d-none d-md-block  background-right" alt="left">
       <!-- start about college -->
-<div class="about-college pt-4">
-    <div class="container  py-lg-5"  style="background-image: url(./images/home/background.png)!important;background-repeat: no-repeat;background-position: 97% 5%;">
-      <div class="row align-items-center">
+<div class="about-college ">
+    <div class="container  "  style="background-image: url(./images/home/background.png)!important;background-repeat: no-repeat;">
+      <div class="row align-items-center pb-3">
 <div class="col-md-3"><h3 class="title">عن  <span class="text-green d-lg-block  ">الكلية</span></h3></div>
 <div class="col-md-9">
     <p class="desc">تأسست كلية الموسى للعلوم الصحية (ACHS) في عام 2020، وتُعتبر أول كلية خاصة في منطقة الأحساء. تساهم الكلية في تطوير الرعاية الصحية في المجتمع المحلي من خلال تخريج أخصائيين مؤهلين يلبون الطلب المتزايد في سوق العمل.
@@ -218,7 +227,7 @@
  
     <!-- end about college -->
        <!-- start explore now -->
-       <div class="explore-now  bg-white py-5">
+       <div class="explore-now  bg-white py-0 py-md-5">
         <div class="container">
     <div class="explore-wrapper position-relative  p-5">
         <div class="row align-items-center gap-3  gap-lg-0  align-items-center text-center text-lg-end">
@@ -241,23 +250,25 @@
            <!-- end explore now --> 
 </div>
                    <!-- start welcome  -->
-<div class="welcome bg-white py-4">
-    <div class="row m-0   align-items-center align-items-lg-start">
-<div class=" col-md-6  pe-md-0">
+<div class="welcome bg-white py-5 pb-5">
+    <div class="row py-3 m-0   align-items-center align-items-lg-start">
+<div class=" col-md-5  pe-md-0">
     <img src="images/home/welcome.png" class="w-100 d-none d-md-block" alt="welcome">
     <img src="images/home/environment1.png" class="w-100 m-auto mb-3 enviroment-img  d-block d-md-none" alt="welcome" >
 
 </div>
-<div class="col-md-6 ps-md-0  ">
-    <div class="welcome-info position-relative py-3 py-md-5 px-4">
-       <h3 class="title" > <span> تاريخنا
+<div class="col-md-7 ps-md-0  ">
+    <div class="welcome-info position-relative  ">
+       <div class="welcome-info-wrapper">
+        <h3 class="title" > <span> تاريخنا
     </span></h3>
        
-       <p class="desc pt-4">في منطقة الأحساء، كان الوصول إلى المؤسسات التعليمية الحكومية محدودًا. ونتيجة لذلك، اضطر العديد من الطلاب إلى الالتحاق بالجامعات في مدن مثل الرياض ومناطق أخرى لتلبية متطلباتهم التعليمية. إدراكًا لحاجة معالجة هذا الفجوة التعليمية وانسجامًا مع رؤية المملكة 2030 الاستراتيجية الوطنية، تأسست كلية الموسى للعلوم الصحية عام 2020 كمؤسسة خاصة رائدة غير هادفة للربح، لتكون الأولى من نوعها في المنطقة الشرقية.
+       <p class="desc ">في منطقة الأحساء، كان الوصول إلى المؤسسات التعليمية الحكومية محدودًا. ونتيجة لذلك، اضطر العديد من الطلاب إلى الالتحاق بالجامعات في مدن مثل الرياض ومناطق أخرى لتلبية متطلباتهم التعليمية. إدراكًا لحاجة معالجة هذا الفجوة التعليمية وانسجامًا مع رؤية المملكة 2030 الاستراتيجية الوطنية، تأسست كلية الموسى للعلوم الصحية عام 2020 كمؤسسة خاصة رائدة غير هادفة للربح، لتكون الأولى من نوعها في المنطقة الشرقية.
 
        </p>
        <div class="overlay position-absolute start-50 d-none d-lg-block"></div>
        <div class="gray-overlay position-absolute d-none d-lg-block"></div>
+       </div>
     </div>
 </div>
     </div>
@@ -270,10 +281,12 @@
     <div class="col-lg-2"></div>
     <div class="col-lg-10">
         <div class="row px-md-5">
-            <div class="col-lg-5 pe-3">
+            <div class="col-lg-5 pe-3 mb-2"><div>
+                
                 <h2 class="title d-inline d-lg-block">عن</h2>
                 <h2 class="title d-inline d-lg-block">برامجنا</h2>
-                <p class="py-4 lh-lg desc">تلتزم كلية الموسى للعلوم الصحية برعاية الجيل القادم من المهنيين ذوي المهارات العالية. نقدم منهجًا دراسيًا شاملاً مصممًا لإعداد الطلاب بالمعرفة النظرية والمهارات العملية اللازمة للنجاح في مساراتهم المهنية المختارة.</p>
+            </div>
+                <p class="py-4  desc">تلتزم كلية الموسى للعلوم الصحية برعاية الجيل القادم من المهنيين ذوي المهارات العالية. نقدم منهجًا دراسيًا شاملاً مصممًا لإعداد الطلاب بالمعرفة النظرية والمهارات العملية اللازمة للنجاح في مساراتهم المهنية المختارة.</p>
                 <button class="btn view align-self-start ">View All Programs </button>
                             </div>
                             <div class="col-lg-7">
@@ -285,7 +298,7 @@
                 <div>
                     <div class="d-flex justify-content-center">             
                         <img src="images/home/hmi.png"  style="width: 100px;;"    alt="hmi">
-                </div><h2 class="program-name my-2">برنامج بكالوريوس العلوم في التمريض </h2>
+                </div><h2 class="program-name pb-3">برنامج بكالوريوس العلوم في التمريض </h2>
                 <p class="text-start program-desc"> تقدم كلية الموسى للعلوم الصحية برنامج بكالوريوس في التمريض لمدة أربع سنوات، تليها سنة تدريب. يجمع البرنامج بين مجموعة متنوعة من استراتيجيات التعلم والمعرفة المتقدمة في بيئة تعليمية مشتركة تجمع بين التخصصات. تم تصميم البرنامج خصيصًا لطالبات التمريض بهدف توفير بيئة تعليمية تكنولوجياً متقدمة ومثيرة للإبداع، وتشجيع روح التحري لتأهيل الممرضين لتعزيز رفاهية المرضى السعوديين والأسر والمجتمع على الصعيدين الوطني والعالمي. </p><br>
                 </div>
                 <button class="btn view align-self-start">Read More </button>
@@ -299,7 +312,7 @@
                 <div class="flex-grow-1  ">
                     <div class="d-flex justify-content-center">             
                         <img src="images/home/hmi.png"  style="width: 100px;;"    alt="hmi">
-                </div><h2 class="program-name my-2">برنامج بكالوريوس العلوم في التمريض </h2>
+                </div><h2 class="program-name pb-3">برنامج بكالوريوس العلوم في التمريض </h2>
                 <p class="text-start program-desc"> تقدم كلية الموسى للعلوم الصحية برنامج بكالوريوس في التمريض لمدة أربع سنوات، تليها سنة تدريب. يجمع البرنامج بين مجموعة متنوعة من استراتيجيات التعلم والمعرفة المتقدمة في بيئة تعليمية مشتركة تجمع بين التخصصات. تم تصميم البرنامج خصيصًا لطالبات التمريض بهدف توفير بيئة تعليمية تكنولوجياً متقدمة ومثيرة للإبداع، وتشجيع روح التحري لتأهيل الممرضين لتعزيز رفاهية المرضى السعوديين والأسر والمجتمع على الصعيدين الوطني والعالمي. </p><br>
                 </div>
                 <button class="btn view align-self-start">Read More </button>
@@ -315,7 +328,7 @@
                 <div class="flex-grow-1  ">
                     <div class="d-flex justify-content-center">             
                         <img src="images/home/hmi.png"  style="width: 100px;;"    alt="hmi">
-                </div><h2 class="program-name my-2"> برنامج بكالوريوس العلوم في الإدارة الصحية والمعلوماتية         </h2>
+                </div><h2 class="program-name pb-3"> برنامج بكالوريوس العلوم في الإدارة الصحية والمعلوماتية         </h2>
                 <p class="text-start program-desc"> تقدم كلية الموسى للعلوم الصحية برنامج بكالوريوس في الإدارة الصحية والمعلوماتية لمدة أربع سنوات، تليها سنة تدريب. يجمع البرنامج بين مجموعة متنوعة من استراتيجيات التعلم والمعرفة المتقدمة في بيئة تعليمية مشتركة تجمع بين مجموعة من التخصصات. يأتي برنامج الإدارة الصحية والمعلوماتية كإضافة جديدة ومتكاملة، يقدم فرصة فريدة لاستكشاف جوانب متعددة من مجالي إدارة الرعاية الصحية وتقنيات المعلومات الصحية. تم تصميم هذا البرنامج لتلبية احتياجات سوق العمل الحالي في مجال الرعاية الصحية، وهدفه تزويد الطلبة بتدريب متخصص يهدف إلى استخدام تكنولوجيا المعلومات لدعم الإدارة الفعالة للرعاية الصحية وتقديم خدمات رعاية صحية مبتكرة. </p><br>
                 </div>
                 <button class="btn view align-self-start">Read More </button>
@@ -337,7 +350,7 @@
 </div>
 <!-- end our program -->
  <!-- start admission -->
-<div class="admission py-5 bg-white position-relative">
+<div class="admission py-md-5 bg-white position-relative">
    <div class="row m-0 py-5">
     <div class="col-md-2"></div>
     <div class="col-md-10">
@@ -345,12 +358,14 @@
             <div class="row ">
                 <div class="col-12 col-lg-6">
                     <div class="admission-content pb-5">
-                        <h3 class="admission-title fw-bold">خطوات <br><span>التقديم</span>            </h3>
-                        <p class="lead  my-3 admission-desc">ترحب كلية الموسى للعلوم الصحية بجميع الطلاب الطموحين للتقديم! صُممَت عملية القبول لدينا لتكون واضحة ومباشرة. يمكنكم مراجعة الخطوات التالية لبدء عملية التقديم:
+                        <h3 class="admission-title fw-bold">خطوات <span class="d-md-block">التقديم</span>            </h3>
+                        <p class="lead  my-3 admission-desc my-4">ترحب كلية الموسى للعلوم الصحية بجميع الطلاب الطموحين للتقديم! صُممَت عملية القبول لدينا لتكون واضحة ومباشرة. يمكنكم مراجعة الخطوات التالية لبدء عملية التقديم:
     
                         </p>
-                        <div class="owl-carousel admission-carousel owl-theme">
-                            <div class="item  bg-white">
+                        <div class="owl-carousel admission-carousel owl-theme px-5">
+                        
+                           
+                               <div class="item  bg-white">
                             
             <div class="d-flex justify-content-center">             
                        
@@ -364,44 +379,44 @@
         
             
                                 </div>
-                                <div class="item  bg-white">
+                                    <div class="item  bg-white">
                             
-                                    <div class="d-flex justify-content-center">             
-                                               
-                                    </div>
-                                    <div class="d-flex justify-content-center number mb-4 text-white rounded-circle">   
+            <div class="d-flex justify-content-center">             
+                       
+            </div>
+         <div class="d-flex justify-content-center number mb-4 text-white rounded-circle">   
         
-                                        <h2 >2</h2 >  
-                                     </div>
-                                    <p>أن تكون الطالبة حاصلة على شهادة الثانوية العامة للقسم العلمي بمعدل لا يقل عن %75 من داخل المملكة أو من خارجها.</p>
-                                 
-                                
-                                    
-                                                        </div>
-                                                        <div class="item  bg-white">
+            <h2 >2</h2 >  
+         </div>
+            <p>يجب على المتقدم ان يكون سعودي الجنسية او من مواطني دول مجلس التعاون الخليجي، أو مقيمــاً إقامــة نظاميــة ســارية المفعــول في السعودية.</p>
+         
+        
+            
+                                </div>                        
+                            <div class="item  bg-white">
                             
-                                                            <div class="d-flex justify-content-center">             
-                                                                       
-                                                            </div>
-                                                            <div class="d-flex justify-content-center number mb-4 text-white rounded-circle">   
+            <div class="d-flex justify-content-center">             
+                       
+            </div>
+         <div class="d-flex justify-content-center number mb-4 text-white rounded-circle">   
         
-                                                                <h2 >3</h2 >  
-                                                             </div>
-                                                            <p>الا تقل درجة اختبار القدرات عن 60%</p>
-                                                         
-                                                        
-                                                            
-                                                                                </div>
-                          
+            <h2 >3</h2 >  
+         </div>
+            <p>يجب على المتقدم ان يكون سعودي الجنسية او من مواطني دول مجلس التعاون الخليجي، أو مقيمــاً إقامــة نظاميــة ســارية المفعــول في السعودية.</p>
+         
+        
+            
+                                </div>  
                             </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="overlay position-absolute start-0    ">
-                        <img src="images/home/Capture.PNG" class="register-img pb-0  pb-lg-5 mb-3 mb-lg-0" alt="Capture">
+      
+                <div class="col-12 col-lg-6 ps-lg-0">
+                    <div class="overlay pe-lg-4">
+                        <img src="images/home/Capture.PNG" class="pb-0 w-100 pb-lg-5 mb-3 mb-lg-0 " alt="Capture" style="height: 430px;">
                      <button class="register position-relative  ">
                         <img src="images/home/register.png" class="position-absolute start-0 end-0 top-50 translate-middle-y w-100 h-100" alt="register">
-                     <p class="position-absolute top-50 translate-middle-y px-4">سجل الان</p>
+                     <p class="position-absolute top-50 translate-middle-y px-5">سجل الان</p>
                      </button>
            </div>
                 </div>
@@ -534,7 +549,7 @@
                         <div class="d-flex">
                             <h2 class="title fw-bold counter">300  </h2>    <h2 class="title fw-bold ">+  </h2>
                            </div>
-                        <h3 class="desc fw-bold">طالبة</h3>
+                        <h3 class="desc fw-bold ">طالبة</h3>
                     </div>
 
                 </div>
