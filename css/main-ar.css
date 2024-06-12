@@ -1,24 +1,11 @@
 /* general styles */
-                 @font-face {
-                     font-family: 'Avenir';
-                     src: url('../fonts/Avenir-Medium.eot');
         
-                     src: url('../fonts/AvenirArabic-Medium.eot?#iefix') format('embedded-opentype'),
-        
-                         url('../fonts/AvenirArabic-Medium.woff2') format('woff2'),
-                         url('../fonts/AvenirArabic-Medium.woff') format('woff'),
-                         url('../fonts/Avenir-Medium.ttf') format('truetype');
-                     font-weight: normal;
-                     font-style: normal;
-                 }
-        
-               
     
-          body {
-              font-family: 'Avenir', 'Arial', 'Helvetica', sans-serif;
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-          }
+                  body {
+                      font-family: "Tajawal", sans-serif;
+                      font-weight: 600;
+                      font-style: normal;
+                  }
 *{
     margin: 0;
     padding: 0;
@@ -607,7 +594,8 @@ left: -1.6em;
 }
 .admission-desc{
     font-size: 24px;
-    color:#555
+    color: #555;
+        font-weight: 500;
 
 }
 .admission-title span{
