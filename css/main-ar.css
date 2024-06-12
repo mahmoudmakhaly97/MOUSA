@@ -1,17 +1,27 @@
 /* general styles */
-@font-face {
-    font-family: 'Avenir';
-    src: url('./AvenirArabic-Medium.woff2') format('woff2'),
-         url('./AvenirArabic-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+          @font-face {
+              font-family: 'Avenir';
+              src: url('./AvenirArabic-Medium.eot');
+            
+              src: url('./AvenirArabic-Medium.eot?#iefix') format('embedded-opentype'),
+               
+                  url('./AvenirArabic-Medium.woff2') format('woff2'),
+                  url('./AvenirArabic-Medium.woff') format('woff'),
+                  url('./Avenir\ Medium.ttf') format('truetype');
+              font-weight: normal;
+              font-style: normal;
+          }
+    
+          body {
+              font-family: 'Avenir', 'Arial', 'Helvetica', sans-serif;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+          }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: "Avenir", sans-serif;
         }
         :root{
             --secondary:#efcf04;
@@ -345,9 +355,14 @@ width: 100%;
 }
 @media (max-width:991px) {
     .about-college-imgs{
-    padding-top: 2.5rem; 
+    padding-top: 2.5rem;
     }
-
+    
+    .about-college .container {
+        background-image: none !important;
+        padding:2rem !important
+    }
+    
 }
  
 /* end about-college */
