@@ -1,16 +1,18 @@
 /* general styles */
-          @font-face {
-              font-family: 'Avenir';
-              src: url('./AvenirArabic-Medium.eot');
-            
-              src: url('./AvenirArabic-Medium.eot?#iefix') format('embedded-opentype'),
+                 @font-face {
+                     font-family: 'Avenir';
+                     src: url('../fonts/Avenir-Medium.eot');
+        
+                     src: url('../fonts/AvenirArabic-Medium.eot?#iefix') format('embedded-opentype'),
+        
+                         url('../fonts/AvenirArabic-Medium.woff2') format('woff2'),
+                         url('../fonts/AvenirArabic-Medium.woff') format('woff'),
+                         url('../fonts/Avenir-Medium.ttf') format('truetype');
+                     font-weight: normal;
+                     font-style: normal;
+                 }
+        
                
-                  url('./AvenirArabic-Medium.woff2') format('woff2'),
-                  url('./AvenirArabic-Medium.woff') format('woff'),
-                  url('./Avenir\ Medium.ttf') format('truetype');
-              font-weight: normal;
-              font-style: normal;
-          }
     
           body {
               font-family: 'Avenir', 'Arial', 'Helvetica', sans-serif;
