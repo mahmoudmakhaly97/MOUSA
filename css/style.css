@@ -1621,6 +1621,9 @@ button:focus:not(:focus-visible) {
  }
 
  /* start application-form form  */
+  .application-form {
+      margin-bottom: 23rem;
+  }
  .application-form .application-btn {
      color: #fff;
      background-color: var(--main-color);
@@ -1656,13 +1659,17 @@ button:focus:not(:focus-visible) {
  }
 
  .application-form .career-form {
-     margin-bottom: -1rem;
+    margin-bottom: 0rem;
  }
 
  .application-form .career-form .form-control {
      border: 2px solid #e3eada
  }
-
+@media (max-width:1200px) {
+    .application-form {
+            margin-bottom: 0rem;
+        }
+}
  @media (max-width:768px) {
 
      .application-form-wrapper .title,
