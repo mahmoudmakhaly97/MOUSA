@@ -1500,3 +1500,183 @@ button:focus:not(:focus-visible) {
  }
 
  /* end our history section styles */
+ /* admission page style */
+ .admission .admission-banner {
+     height: 60vh;
+ }
+
+ .admission-banner-overlay {
+     background: linear-gradient(to bottom, #333, #33333363, transparent);
+ }
+
+ .admission .banner-title {
+     font-size: 5em;
+ }
+
+ @media (max-width:576px) {
+     .admission .banner-title {
+         font-size: 3em;
+     }
+ }
+
+ /*  start admission criteria */
+ .admission-criteria {
+     background-color: #f5f5f5;
+ }
+
+
+
+ .admission-criteria .title {
+     font-size: 4em;
+     font-weight: bold;
+     color: #555;
+     line-height: .9em;
+ }
+
+ .admission-criteria .title>span {
+     display: block;
+     color: var(--main-color);
+ }
+
+ .admission-criteria .desc {
+     color: rgb(91, 90, 91);
+     font-size: 1.5rem;
+ }
+
+ .admission-criteria .img-wrapper {
+     background-color: var(--secondary);
+     border-top-right-radius: 40px;
+     border-bottom-right-radius: 40px;
+     height: 400px;
+     padding-bottom: 1em;
+     overflow: hidden;
+     width: 40%;
+     position: absolute;
+
+ }
+
+ .admission-criteria .img-wrapper img {
+     border-top-right-radius: 40px;
+     border-bottom-right-radius: 40px;
+
+     margin-right: 1em;
+
+     display: block;
+     height: 100%;
+     width: 100%;
+
+ }
+
+ @media (max-width:1200px) {
+     .admission-criteria .title {
+         font-size: 3em;
+     }
+
+     .admission-criteria .img-wrapper {
+         position: static;
+         width: 100%;
+         border-top-left-radius: 40px;
+         border-bottom-left-radius: 40px;
+     }
+ }
+
+
+
+ /* start admission steps  */
+ .admission-steps .title {
+     font-size: 4em;
+     font-weight: bold;
+     color: #555;
+     line-height: .9em;
+ }
+
+ .admission-steps .title>span {
+
+     color: var(--main-color);
+ }
+
+ .admission-steps .desc {
+     font-size: 24px;
+     color: #555;
+ }
+
+ .admission-steps .step-num {
+     font-size: 6em;
+     font-weight: bold;
+     color: var(--main-color);
+ }
+
+ .admission-steps .step-title {
+     font-size: 2.2em;
+     font-weight: bold;
+     color: #555;
+ }
+
+ .admission-steps .step-desc {
+     font-size: 20px;
+ }
+
+ .admission-steps .admission-info {
+     border-bottom: 2px solid rgb(199, 199, 198);
+ }
+
+ /* start application-form form  */
+ .application-form .application-btn {
+     color: #fff;
+     background-color: var(--main-color);
+     font-size: 2em;
+     border-radius: 15px;
+     font-weight: 600;
+ }
+
+ .application-form-wrapper {
+     background-color: #f5f5f5;
+ }
+
+ .application-form-wrapper .title {
+     text-transform: uppercase;
+     font-size: 3.5em;
+     font-weight: bold;
+     color: #555;
+     line-height: .9em;
+
+ }
+
+
+ .application-form-wrapper .title>span {
+     color: var(--main-color);
+ }
+
+ .application-form-wrapper .career-form {
+     box-shadow: none;
+ }
+
+ .application-form .chat-img {
+     right: 0;
+ }
+
+ .application-form .career-form {
+     margin-bottom: -1rem;
+ }
+
+ .application-form .career-form .form-control {
+     border: 2px solid #e3eada
+ }
+
+ @media (max-width:768px) {
+
+     .application-form-wrapper .title,
+     .admission-steps .title {
+         font-size: 2rem;
+     }
+
+     .application-form .application-btn {
+         font-size: 1em;
+         border-radius: 0em;
+         border-radius: 5em;
+     }
+
+     .admission-steps .step-num {
+         font-size: 4rem;
+     }
+ }
