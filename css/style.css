@@ -1614,6 +1614,7 @@ button:focus:not(:focus-visible) {
 
  .admission-steps .step-desc {
      font-size: 20px;
+    color: #555;
  }
 
  .admission-steps .admission-info {
@@ -1686,4 +1687,48 @@ button:focus:not(:focus-visible) {
      .admission-steps .step-num {
          font-size: 4rem;
      }
+ }
+ .admission .accordion-button:not(.collapsed) {
+     background-color: transparent;
+     box-shadow: none;
+ }
+
+ .admission .accordion-item {
+     border: none;
+     border-bottom: 2px solid rgb(199, 199, 198);
+     padding-bottom: 1em;
+ }
+
+ .admission .accordion-button::after {
+     display: none;
+ }
+
+ .admission .accordion-body {
+     padding-top: 0;
+     padding-bottom: 0;
+ }
+
+ .admission .arrow-btn {
+     border: 0;
+     background-color: transparent;
+     transition: .3s all ease;
+     color: #555;
+     margin-top: 1em;
+ }
+
+ .admission .arrow-btn:hover {
+     color: var(--secondary)
+ }
+
+ .admission .accordion-list {
+     color: #555;
+ }
+
+ @media (max-width:576px) {
+     .admission .step-title {
+         text-align: center;
+         ;
+         font-size: 1.5em;
+     }
+
  }

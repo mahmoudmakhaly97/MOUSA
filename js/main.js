@@ -171,8 +171,23 @@ window.addEventListener("scroll", function () {
 });
 
 
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    document.querySelector('.background-left').style.transform = `translateY(${scrollPosition * 0.4}px)`;
-    document.querySelector('.background-right').style.transform = `translateY(${scrollPosition * -0.4}px)`;
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
+  document.querySelector(".background-left").style.transform = `translateY(${
+    scrollPosition * 0.4
+  }px)`;
+  document.querySelector(".background-right").style.transform = `translateY(${
+    scrollPosition * -0.4
+  }px)`;
 });
+// changeArrow
+const arrows = document.querySelectorAll(".arrow-btn");
+for (let i = 0; i < arrows.length; i++) {
+  arrow[i].addEventListener("click", function () {
+    if (arrows[i].style.transform == "rotate(180deg)") {
+      arrows[i].style.transform = "rotate(0deg)";
+    } else {
+      arrows[i].style.transform = "rotate(180deg)";
+    }
+  });
+}
