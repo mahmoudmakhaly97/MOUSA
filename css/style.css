@@ -561,6 +561,11 @@ button:focus:not(:focus-visible) {
 
 }
 
+@media (max-width:991px){
+    .history-wrapper {
+        width: 100%;
+    }
+}
 .clinic-wrapper {
     width: 317px;
     height: 197px;
