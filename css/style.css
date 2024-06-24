@@ -279,11 +279,17 @@ button:focus:not(:focus-visible) {
     background-repeat: no-repeat !important;
     height: 98vh;
 }
-
 .homer-banner-overlay {
-    background: linear-gradient(to bottom, #333, #33333363, transparent);
+    background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.9) 5%,
+    
+                /* Overlay color continues to 18% */
+                rgba(101, 145, 29, 0.28) 18%,
+                /* Main color starts at 18% */
+                rgba(101, 145, 29, 0.28) 100%
+                /* Main color continues to the bottom */
+            );
 }
-
 .home-banner .banner-info {
     bottom: 18%;
 
@@ -465,6 +471,7 @@ button:focus:not(:focus-visible) {
 
 /* end explore now */
 /* start welcome  */
+
 .welcome-info {
     background-color: #edeeee;
     padding: 2.5rem;
@@ -544,6 +551,66 @@ button:focus:not(:focus-visible) {
     }
 }
 
+.history-wrapper {
+    width: 65%;
+    height: 20rem;
+    border: 14px solid rgb(230, 230, 230);
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.clinic-wrapper {
+    width: 317px;
+    height: 197px;
+    border: 14px solid rgb(230, 230, 230);
+    border-radius: 30px;
+    position: relative;
+    bottom: 4em;
+    z-index: 1;
+}
+
+.clinic-wrapper .overlay {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: var(--secondary);
+    border-radius: 30px;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width:1200px) and (max-width:1800px) {
+    .clinic-wrapper {
+
+
+
+        right: 19em !important;
+
+    }
+}
+@media (min-width:1200px) and (max-width:1400px) {
+    .clinic-wrapper {
+
+
+
+        right: 12em !important;
+
+    }
+}
+@media (min-width:1801px) {
+    .clinic-wrapper {
+
+
+
+
+
+        right: 24em !important;
+
+    }
+}
 /* end welcome  */
 /* start our program  */
 .our-program {
@@ -596,6 +663,7 @@ button:focus:not(:focus-visible) {
 
 .program-desc {
     font-size: 16px;
+    
 }
 
 .programs-carousel .item.borderLeft {

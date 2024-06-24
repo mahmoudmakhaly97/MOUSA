@@ -45,19 +45,23 @@ $(".programs-carousel").owlCarousel({
     },
   },
 });
+
 $(".admission-carousel").owlCarousel({
   loop: true,
   margin: 30,
-  rtl: true,
+    responsiveClass:true,  
   navText: [
     "<i class='fas fa-chevron-left'></i>",
     "<i class='fas fa-chevron-right'></i>",
-  ], // Replace navigation text with Font Awesome icons
+  ],
 
   nav: true,
+ 
   responsive: {
     0: {
       items: 1,
+   
+ 
     },
     768: {
       items: 2,
@@ -70,6 +74,18 @@ $(".admission-carousel").owlCarousel({
     },
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
 $(".recent-carousel").owlCarousel({
   loop: true,
   margin: 30,
