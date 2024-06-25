@@ -261,7 +261,11 @@ button:focus:not(:focus-visible) {
     }
 
 }
-
+.nav-item .nav-link.active{
+        background-color: rgb(94, 146, 66);
+            border-radius: 8px;
+            color: #fff;
+}
 /* end navbar  */
 /* start home page  .........................*/
 /* start banner */

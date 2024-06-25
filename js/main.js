@@ -186,6 +186,47 @@ window.addEventListener("scroll", function () {
   }
 });
 
+//active link in navbar
+   document.addEventListener("DOMContentLoaded", function () {
+     // Get the current URL path
+     const currentPath = window.location.pathname;
+
+     // Define a list of objects with path fragments and their corresponding nav link IDs
+     const navLinkMapping = [
+       { path: "index-ar.html", id: "index-ar" },
+       { path: "/about-ar.html", id: "about-ar" },
+       { path: "/college-admin", id: "college-admin-link" },
+       { path: "/our-program-ar.html", id: "our-program-ar" },
+       { path: "/students", id: "students-link" },
+       { path: "/graduates", id: "graduates-link" },
+       { path: "/e-gate", id: "e-gate-link" },
+     ];
+
+     // Remove the "active" class from all nav links
+     document.querySelectorAll(".nav-link").forEach((link) => {
+       link.classList.remove("active");
+     });
+
+     // Check each mapping to see if the current path includes the defined path
+     navLinkMapping.forEach((mapping) => {
+       if (currentPath.includes(mapping.path)) {
+         document.getElementById(mapping.id).classList.add("active");
+       }
+     });
+
+     // Add click event listeners to nav links
+     document.querySelectorAll(".nav-link").forEach((link) => {
+       link.addEventListener("click", function () {
+         // Remove the "active" class from all nav links
+         document.querySelectorAll(".nav-link").forEach((link) => {
+           link.classList.remove("active");
+         });
+         // Add the "active" class to the clicked link
+         this.classList.add("active");
+       });
+     });
+   });
+
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
