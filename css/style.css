@@ -1575,7 +1575,43 @@ button:focus:not(:focus-visible) {
      }
 
  }
+.our-history .application-btn {
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 2em;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: .3s all ease;
+}
 
+.our-history .application-btn:hover {
+    background-color: var(--secondary);
+}
+
+.our-history-btns {
+    width: 30%;
+
+}
+
+@media (max-width:1400px) {
+    .our-history-btns {
+        width: 40%;
+
+    }
+    
+    @media (max-width:991px) {
+        .our-history-btns {
+            width: 60%;
+    
+        }
+    }
+    
+    @media (max-width:768px) {
+        .our-history-btns {
+            width: 100%;
+    
+        }
+    }
  /* end our history section styles */
  /* admission page style */
  .admission .admission-banner {
@@ -1712,8 +1748,11 @@ button:focus:not(:focus-visible) {
      font-size: 2em;
      border-radius: 15px;
      font-weight: 600;
+    transition: .3s all ease;
  }
-
+ .application-form .application-btn:hover {
+     background-color: var(--secondary);
+ }
  .application-form-wrapper {
      background-color: #f5f5f5;
  }
