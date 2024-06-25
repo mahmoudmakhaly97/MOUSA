@@ -1122,7 +1122,11 @@ button:focus:not(:focus-visible) {
     color: var(--main-color);
     font-size: 30px;
 }
-
+/* @media (max-width:1200px) {
+    .college {
+        margin-bottom: 0 !important;
+    }
+} */
 /* end college  */
 /* start stories */
 .stories {
@@ -2024,6 +2028,12 @@ color:#555
 .news-info::-webkit-scrollbar-track {
     background: #726837;
    
+}
+@media (max-width:768px) {
+    .owl-theme .owl-dots .owl-dot span{
+        width: 13px;
+        height: 13px;
+     }
 }
  
 
