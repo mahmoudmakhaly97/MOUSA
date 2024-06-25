@@ -267,18 +267,16 @@ button:focus:not(:focus-visible) {
 /* start banner */
 
 .home-banner {
-background: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
 .home-banner .item {
 
     overflow: hidden;
-background: no-repeat !important;
-    background-position: center !important;
-    background-size: cover !important;
+    background-repeat: no-repeat !important;
     height: 98vh;
 }
 .homer-banner-overlay {
@@ -1339,8 +1337,7 @@ background: no-repeat !important;
  /* start banner */
  .main-banner {
      min-height: 50vh;
-    background: no-repeat !important;
-        background-position: center !important;
+         background-position: center !important;
         background-size: cover !important;
 
  }
@@ -1439,7 +1436,6 @@ background: no-repeat !important;
  body {}
 
  .contact-banner {
-    background: no-repeat !important;
         background-position: center !important;
         background-size: cover !important;
  }
@@ -1828,9 +1824,8 @@ margin-bottom: 23rem;
   }
  .events .events-banner {
     height: 70vh;
-    background: no-repeat !important;
-        background-position: center !important;
-        background-size: cover !important;
+     background-position: center !important;
+    background-size: cover !important;
 }
 
 .events-banner-overlay {
