@@ -1599,19 +1599,18 @@ button:focus:not(:focus-visible) {
 
     }
     
-    @media (max-width:991px) {
-        .our-history-btns {
-            width: 60%;
+}
+                @media (max-width:991px) {
+                    .our-history-btns {
+                        width: 60%;
     
+            }
         }
-    }
+                @media (max-width:768px) {
+                    .our-history-btns {
+                        width: 100%;
     
-    @media (max-width:768px) {
-        .our-history-btns {
-            width: 100%;
-    
-        }
-    }
+            }}
  /* end our history section styles */
  /* admission page style */
  .admission .admission-banner {
@@ -2081,5 +2080,3 @@ color:#555
 }
  
 
-
-}
