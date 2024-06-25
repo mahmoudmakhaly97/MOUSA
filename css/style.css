@@ -267,16 +267,18 @@ button:focus:not(:focus-visible) {
 /* start banner */
 
 .home-banner {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+background: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
 
 }
 
 .home-banner .item {
 
     overflow: hidden;
-    background-repeat: no-repeat !important;
+background: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
     height: 98vh;
 }
 .homer-banner-overlay {
@@ -1122,11 +1124,12 @@ button:focus:not(:focus-visible) {
     color: var(--main-color);
     font-size: 30px;
 }
-/* @media (max-width:1200px) {
+ @media (max-width:1200px) {
     .college {
         margin-bottom: 0 !important;
+
     }
-} */
+}
 /* end college  */
 /* start stories */
 .stories {
@@ -1336,9 +1339,9 @@ button:focus:not(:focus-visible) {
  /* start banner */
  .main-banner {
      min-height: 50vh;
-     background: no-repeat;
-     background-position: center;
-     background-size: cover;
+    background: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
 
  }
 
@@ -1436,9 +1439,9 @@ button:focus:not(:focus-visible) {
  body {}
 
  .contact-banner {
-     background: no-repeat;
-     background-size: cover;
-     background-position: center;
+    background: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
  }
 
  /* end banner style */
@@ -1581,7 +1584,11 @@ button:focus:not(:focus-visible) {
  /* admission page style */
  .admission .admission-banner {
      height: 60vh;
+    background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
  }
+
 
  .admission-banner-overlay {
      background: linear-gradient(to bottom, #333, #33333363, transparent);
@@ -1821,6 +1828,9 @@ margin-bottom: 23rem;
   }
  .events .events-banner {
     height: 70vh;
+    background: no-repeat !important;
+        background-position: center !important;
+        background-size: cover !important;
 }
 
 .events-banner-overlay {
