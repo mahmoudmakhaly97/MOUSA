@@ -345,17 +345,15 @@ fileInput.addEventListener("change", function () {
           city: this.city.value,
           area: this.area.value,
           zipCode: this.zipCode.value,
-          letter: this.letter.value,
-          cv: fileInput,
+           cv: fileInput,
         };
 
         sendEmail(serviceId, templateId, formData);
       });
-//     // contact us 
+//     // contact us  email js 
     
 
-
-    //ccontact us
+ 
     emailjs.init("xiVC1ZJJemcTumPIW"); // Replace with your actual EmailJS public key
 
     const serviceId = "service_5cxbji9"; // Your EmailJS service ID

@@ -163,42 +163,46 @@
        <!-- start git-in-touch-->
        <section class="git-in-touch  py-4 position-relative">
          <div class="container">
+           
             <form id="contactForm" enctype="multipart/form-data">
-               <div class="row">
-                  <div class="text-center my-5 fw-bold">
-                     <h4>SUBMIT AN ENQUIRY                  </h4>
-                     <h2 class="fw-bold text-green">Get in touch with Us  </h2>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
-                     <label for="name" class="form-label me-2 "> NAME <span class="text-danger fs-2 align-middle">*</span></label>
-                     <input type="text" class="form-control" id="name" placeholder="enter your name" >
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
-                     <label for="email" class="form-label me-2   ">E-MAIL ADDRESS <span class="text-danger fs-2 align-middle">*</span></label>
-                     <input type="tel" class="form-control" id="email"  placeholder="enter your e-mail address" >
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
-                     <label for="phone" class="form-label me-2 ">PHONE NUMBER <span class="text-danger fs-2 align-middle">*</span></label>
-                     <input type="tel" class="form-control" id="phone" placeholder="enter your phone number" >
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
-                     <label for="subject" class="form-label me-2 ">SUBJECT     <span class="text-danger fs-2 align-middle">*</span></label>
-                     <input type="text" class="form-control" id="subject" placeholder="enter subject" >
-                  </div>
-                  
-                  
-                 
-                  
-                 
-                  <div class=" mb-3  ">
-                     <label for="message" class="form-label me-2   m-0">MESSAGE <span class="text-danger fs-2 align-middle">*</span></label>
-                     <input  class="form-control" id="message"  placeholder="type in a message"></input>
-                  </div>
-                 
-                  <div class="d-flex justify-content-end align-items-center my-4">
-                     <button class="submit-btn btn rounded-pill py-2 px-4" type="submit">SUBMIT</button>
-                  </div>
-            </form>
+    <div class="row">
+        <div class="text-center my-5 fw-bold">
+            <h4>أرسل لنا استفسارك </h4>
+            <h2 class="fw-bold text-green">تواصل معنا</h2>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
+            <label for="Name" class="form-label me-2 "> الاسم <span
+                    class="text-danger fs-2 align-middle">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="اسمك">
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
+            <label for="email" class="form-label me-2">البريد الاليكتروني<span
+                    class="text-danger fs-2 align-middle">*</span></label>
+
+            <input type="email" class="form-control" id="email" name="email" id="email" placeholder="بريدك الاليكتروني">
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
+            <label for="phone" class="form-label me-2">رقم الهاتف<span
+                    class="text-danger fs-2 align-middle">*</span></label>
+
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف">
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
+            <label for="subjext" class="form-label me-2 ">الموضوع<span
+                    class="text-danger fs-2 align-middle">*</span></label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="االموضوع">
+        </div>
+        <div class=" mb-3  ">
+            <label for="message" class="form-label me-2   m-0">الرسالة<span
+                    class="text-danger fs-2 align-middle">*</span></label>
+            <input class="form-control" id="message" name="message" placeholder="الرسالة"></input>
+        </div>
+
+        <div class="d-flex justify-content-end align-items-center my-4">
+            <button class="submit-btn btn rounded-pill py-2 px-4" type="submit">ارسال</button>
+        </div>
+
+</form>
             </div>
          </div>
          <!-- end git-in-touch -->
