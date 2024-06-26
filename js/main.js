@@ -186,17 +186,31 @@ window.addEventListener("scroll", function () {
   }
 });
 // active link in navbar 
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-link');
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navItems = document.querySelectorAll(".nav-item");
+  const removeActiveClasses = () => {
+    navLinks.forEach(link => link.classList.remove('active'));
+  };
 
-  navItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      navItems.forEach((navItem) => navItem.classList.remove("active"));
-      this.classList.add("active");
+  // Add click event to each nav link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      removeActiveClasses();
+      link.classList.add('active');
     });
   });
+
+  // Highlight the correct nav link based on the current URL
+  const currentPath = window.location.pathname.split('/').pop();
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
 });
+
+
 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
