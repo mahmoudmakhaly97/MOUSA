@@ -1703,6 +1703,7 @@ button:focus:not(:focus-visible) {
 
 
  /* start admission steps  */
+
  .admission-steps .title {
      font-size: 4em;
      font-weight: bold;
@@ -1740,11 +1741,13 @@ button:focus:not(:focus-visible) {
  .admission-steps .admission-info {
      border-bottom: 2px solid rgb(199, 199, 198);
  }
-
+@media (min-width:1200px){
+    .admission-steps {
+            margin-bottom: 23rem;
+        }
+}
  /* start application-form form  */
-  .application-form {
-      margin-bottom: 23rem;
-  }
+
  .application-form .application-btn {
      color: #fff;
      background-color: var(--main-color);
