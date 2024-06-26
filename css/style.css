@@ -186,8 +186,7 @@ body.fixed-nav-padding {
 .nav-item:last-child {
     background-color: var(--secondary) !important;
     border-radius: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+ 
 }
 
 .nav-item:last-child:hover {
