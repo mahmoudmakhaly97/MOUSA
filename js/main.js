@@ -292,10 +292,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //career page email js 
-    emailjs.init("Y6d7EFtIjAlZi068q"); // Replace with your actual EmailJS public key
+    emailjs.init("AuRvOuvPi559q1G0A"); // Replace with your actual EmailJS public key
 
-    const servicesId = "service_ashmdqd"; // Your EmailJS service ID
-    const templatesId = "template_gxo0ivm"; // Your EmailJS template ID
+    const servicesId = "service_rpttfao"; // Your EmailJS service ID
+    const templatesId = "template_ukrihu8"; // Your EmailJS template ID
 
     function sendEmail(servicesId, templatesId, formData) {
       emailjs.send(servicesId, templatesId, formData).then(
@@ -329,13 +329,13 @@ fileInput.addEventListener("change", function () {
   }
 });
     document
-      .getElementById("contactForm")
+      .getElementById("jobApplicationForm")
       .addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
         const formData = {
           from_email: this.email.value, // Add sender email address here
-          to_email: "mahmoudmakhaly123@gmail.com", // Replace with your recipient email address
+          to_email: "hr@almoosacollege.edu.sa", // Replace with your recipient email address
           firstName: this.firstName.value,
           lastName: this.lastName.value,
           phone: this.phone.value,
@@ -351,15 +351,15 @@ fileInput.addEventListener("change", function () {
 
         sendEmail(serviceId, templateId, formData);
       });
-    // contact us 
+//     // contact us 
     
 
 
-    //career page email js 
-    emailjs.init("Y6d7EFtIjAlZi068q"); // Replace with your actual EmailJS public key
+    //ccontact us
+    emailjs.init("xiVC1ZJJemcTumPIW"); // Replace with your actual EmailJS public key
 
-    const serviceId = "service_ashmdqd"; // Your EmailJS service ID
-    const templateId = "template_gxo0ivm"; // Your EmailJS template ID
+    const serviceId = "service_5cxbji9"; // Your EmailJS service ID
+    const templateId = "template_c66djk5"; // Your EmailJS template ID
 
     function sendEmail(serviceId, templateId, formData) {
       emailjs.send(serviceId, templateId, formData).then(
@@ -385,13 +385,12 @@ fileInput.addEventListener("change", function () {
 
         const formData = {
           from_email: this.email.value, // Add sender email address here
-          to_email: "mahmoudmakhaly123@gmail.com", // Replace with your recipient email address
+          to_email: "info@almoosacollege.edu.sa", // Replace with your recipient email address
           name: this.name.value,
-           phone: this.phone.value,
+          phone: this.phone.value,
           email: this.email.value,
           subject: this.subject.value,
           message: this.message.value,
-    
         };
 
         sendEmail(serviceId, templateId, formData);
