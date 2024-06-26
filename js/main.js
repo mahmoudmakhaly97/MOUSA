@@ -364,7 +364,7 @@ fileInput.addEventListener("change", function () {
         function (response) {
           console.log("Email sent successfully:", response);
           alert("Application submitted successfully!");
-          document.getElementById("jobApplicationForm").reset();
+          document.getElementById("contactForm").reset();
         },
         function (error) {
           console.error("Error sending email:", error);
