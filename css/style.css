@@ -124,7 +124,13 @@ body.fixed-nav-padding {
 
 
 }
+.nav-item:last-of-type>.nav-link {
+    color: #333;
+}
 
+.nav-item:last-of-type>.nav-link:hover {
+    color: #fff;
+}
 .nav-link:focus {
     color: #fff;
 }
@@ -142,24 +148,19 @@ body.fixed-nav-padding {
     color: #fff;
 }
 
-.nav-item:last-child .nav-link {
+.e-gate:nth-last-of-type(1) {
     background-color: rgb(252, 218, 6);
     border-radius: 40px;
     color: #333;
-    padding: 8px 24px;
+    padding: 8px 20px !important;
 }
 
-.nav-item:last-child .nav-link:hover {
-    background-color: rgb(94, 146, 66);
-    color: #fff;
-
-}
 
 
 .nav-dropdown {
     z-index: 999;
     width: 200px;
-    top: 62px;
+    top: 68px;
     visibility: hidden;
     ;
     opacity: 0;
@@ -182,6 +183,16 @@ body.fixed-nav-padding {
     width: 200px;
         text-wrap: nowrap;
 }
+.nav-item:last-child {
+    background-color: var(--secondary) !important;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-item:last-child:hover {
+    background-color: var(--main-color) !important;
+}
 
 .nav-dropdown li a::before {
     content: "";
@@ -191,7 +202,23 @@ body.fixed-nav-padding {
     background-color: rgb(252, 218, 6);
     left: 0;
 }
-
+    
+                                                                                                                                .nav-item:last-of-type a::before {
+                                                                                                                                    display: none !important;
+                                                                                                                                }
+                                                                
+                                                                                                                                .nav-item:last-of-type a::after {
+                                                                                                                                    content: "";
+                                                                                                                                    position: absolute;
+                                                                                                                                    height: 100%;
+                                                                                                                                    width: 4px;
+                                                                                                                                    background-color: rgb(252, 218, 6);
+                                                                                                                                    left: 0;
+                                                                                                                                }
+                                                                
+                                                                                                                                .nav-item:last-of-type>.nav-link::after {
+                                                                                                                                    display: none !important;
+                                                                                                                                }
 .nav-item:hover>.nav-dropdown {
 
         opacity: 1;
@@ -271,7 +298,6 @@ button:focus:not(:focus-visible) {
     }
 
 }
-
 
 /* end navbar  */
 /* start home page  .........................*/
