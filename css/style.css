@@ -340,14 +340,23 @@ button:focus:not(:focus-visible) {
     font-size: 3em;
     line-height: 1.2em;
 }
-
-.banner-info .btn {
-    background-color: var(--secondary);
-    border-radius: 10px;
-    transition: .5s all ease;
-}
-
-.banner-info .btn:hover {
+                .banner-info .subscribe-btn {
+                    background-color: var(--secondary);
+                    border-radius: 10px;
+                    transition: .5s all ease;
+            display: inline-block;
+                font-weight: 500;
+                color: #212529;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: middle;
+                cursor: pointer;
+                border: 0;
+                max-width: 160px;
+                max-height: 47px;
+            }
+        
+.banner-info .subscribe-btn:hover {
     background-color: var(--main-color);
     color: #fff;
 }

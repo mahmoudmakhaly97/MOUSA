@@ -204,8 +204,7 @@ window.addEventListener("scroll", function () {
        }
      });
    });
-
-
+ 
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
   document.querySelector(".background-left").style.transform = `translateY(${
@@ -227,7 +226,7 @@ for (let i = 0; i < arrows.length; i++) {
   });
 }
 // pagination logic
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   const itemsPerPage = 3;
   const eventItems = document.querySelectorAll(".event-item");
   const pageLinks = document.querySelectorAll(".page-link[data-page]");
