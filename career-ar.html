@@ -286,8 +286,71 @@
       <script src="js/libraries/jquery.waypoints.min.js"></script>
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script>
+   //career page email js 
+    emailjs.init("AuRvOuvPi559q1G0A"); // Replace with your actual EmailJS public key
 
+    const servicesId = "service_rpttfao"; // Your EmailJS service ID
+    const templatesId = "template_ukrihu8"; // Your EmailJS template ID
+
+    function sendEmail(servicesId, templatesId, formData) {
+      emailjs.send(servicesId, templatesId, formData).then(
+        function (response) {
+          console.log("Email sent successfully:", response);
+          alert("Application submitted successfully!");
+          document.getElementById("jobApplicationForm").reset();
+        },
+        function (error) {
+          console.error("Error sending email:", error);
+          alert(
+            "There was an error submitting your application. Please try again later."
+          );
+        }
+      );
+    }
+const fileInput = document.getElementById("cv");
+
+// Add an event listener to handle file selection
+fileInput.addEventListener("change", function () {
+  // Check if files are selected
+  if (this.files && this.files.length > 0) {
+    // Access the first selected file (you can loop through all files if multiple are selected)
+    const file = this.files[0];
+
+    // Log file details to console (for demonstration)
+    console.log("File selected:", file);
+    console.log("File name:", file.name);
+    console.log("File size:", file.size);
+    console.log("File type:", file.type);
+  }
+});
+    document
+      .getElementById("jobApplicationForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = {
+          from_email: this.email.value, // Add sender email address here
+          to_email: "hr@almoosacollege.edu.sa", // Replace with your recipient email address
+          firstName: this.firstName.value,
+          lastName: this.lastName.value,
+          phone: this.phone.value,
+          email: this.email.value,
+          position: this.position.value,
+          address: this.address.value,
+          city: this.city.value,
+          area: this.area.value,
+          zipCode: this.zipCode.value,
+           cv: fileInput,
+        };
+
+        sendEmail(servicesId, templatesId, formData);
+      });
+
+</script>
       <script src="js/main.js"></script>
    </body>
 </html>

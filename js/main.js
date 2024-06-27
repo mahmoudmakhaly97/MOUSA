@@ -228,119 +228,60 @@ for (let i = 0; i < arrows.length; i++) {
 }
 // pagination logic
 document.addEventListener('DOMContentLoaded', function() {
-  const itemsPerPage = 3;  
-  const eventItems = document.querySelectorAll('.event-item');
-  const pageLinks = document.querySelectorAll('.page-link[data-page]');
-  const container = document.querySelector('#available-events .row');
-  const prevArrow = document.getElementById('previous-page');
-  const nextArrow = document.getElementById('next-page');
-  let currentPage = 1;  
+  const itemsPerPage = 3;
+  const eventItems = document.querySelectorAll(".event-item");
+  const pageLinks = document.querySelectorAll(".page-link[data-page]");
+  const container = document.querySelector("#available-events .row");
+  const prevArrow = document.getElementById("previous-page");
+  const nextArrow = document.getElementById("next-page");
+  let currentPage = 1;
 
+  // Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
   function clearContainer() {
-      container.innerHTML = '';
+    container.innerHTML = "";
   }
 
   function showPage(page) {
-      clearContainer();  
+    clearContainer();
 
-      const start = (page - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-       for (let i = start; i < end; i++) {
-          if (eventItems[i]) {
-              eventItems[i].classList.add('active');
-              container.appendChild(eventItems[i]);
-          }
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    for (let i = start; i < end; i++) {
+      if (eventItems[i]) {
+        eventItems[i].classList.add("active");
+        container.appendChild(eventItems[i]);
       }
+    }
   }
 
   function showAllItems() {
-      clearContainer();
-      eventItems.forEach(item => {
-          item.classList.add('active');
-          container.appendChild(item);
-      });
+    clearContainer();
+    eventItems.forEach((item) => {
+      item.classList.add("active");
+      container.appendChild(item);
+    });
   }
 
-  pageLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const page = parseInt(this.getAttribute('data-page'));
-          currentPage = page;
-          showPage(page);
-      });
-  });
-
-  nextArrow.addEventListener('click', function(e) {
+  pageLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
-      showAllItems();  
+      const page = parseInt(this.getAttribute("data-page"));
+      currentPage = page;
+      showPage(page);
+    });
   });
 
-  prevArrow.addEventListener('click', function(e) {
-      e.preventDefault();
-      currentPage = 1; 
-      showPage(1);  
+  nextArrow?.addEventListener("click", function (e) {
+    e.preventDefault();
+    showAllItems();
   });
 
- 
+  prevArrow?.addEventListener("click", function (e) {
+    e.preventDefault();
+    currentPage = 1;
+    showPage(1);
+  });
+
   showPage(1);
 });
 
-//career page email js 
-    emailjs.init("AuRvOuvPi559q1G0A"); // Replace with your actual EmailJS public key
-
-    const servicesId = "service_rpttfao"; // Your EmailJS service ID
-    const templatesId = "template_ukrihu8"; // Your EmailJS template ID
-
-    function sendEmail(servicesId, templatesId, formData) {
-      emailjs.send(servicesId, templatesId, formData).then(
-        function (response) {
-          console.log("Email sent successfully:", response);
-          alert("Application submitted successfully!");
-          document.getElementById("jobApplicationForm").reset();
-        },
-        function (error) {
-          console.error("Error sending email:", error);
-          alert(
-            "There was an error submitting your application. Please try again later."
-          );
-        }
-      );
-    }
-const fileInput = document.getElementById("cv");
-
-// Add an event listener to handle file selection
-fileInput.addEventListener("change", function () {
-  // Check if files are selected
-  if (this.files && this.files.length > 0) {
-    // Access the first selected file (you can loop through all files if multiple are selected)
-    const file = this.files[0];
-
-    // Log file details to console (for demonstration)
-    console.log("File selected:", file);
-    console.log("File name:", file.name);
-    console.log("File size:", file.size);
-    console.log("File type:", file.type);
-  }
-});
-    document
-      .getElementById("jobApplicationForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        const formData = {
-          from_email: this.email.value, // Add sender email address here
-          to_email: "hr@almoosacollege.edu.sa", // Replace with your recipient email address
-          firstName: this.firstName.value,
-          lastName: this.lastName.value,
-          phone: this.phone.value,
-          email: this.email.value,
-          position: this.position.value,
-          address: this.address.value,
-          city: this.city.value,
-          area: this.area.value,
-          zipCode: this.zipCode.value,
-           cv: fileInput,
-        };
-
-        sendEmail(servicesId, templatesId, formData);
-      });
