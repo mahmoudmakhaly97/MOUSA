@@ -185,31 +185,25 @@ window.addEventListener("scroll", function () {
       navbar.style.background = "transparent";
   }
 });
-// active link in navbar 
-document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = document.querySelectorAll('.nav-link');
+// active link in navbar ..................................................
+   document.addEventListener("DOMContentLoaded", function () {
+     const navLinks = document.querySelectorAll(".nav-link");
 
-  const removeActiveClasses = () => {
-    navLinks.forEach(link => link.classList.remove('active'));
-  };
+     const currentUrl = window.location.href;
 
-  // Add click event to each nav link
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      removeActiveClasses();
-      link.classList.add('active');
-    });
-  });
+     navLinks.forEach((link) => {
+       if (link.href === currentUrl) {
+         link.classList.add("active");
 
-  // Highlight the correct nav link based on the current URL
-  const currentPath = window.location.pathname.split('/').pop();
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
-      link.classList.add('active');
-    }
-  });
-});
-
+         if (link.closest(".nav-dropdown")) {
+           link
+             .closest(".nav-item")
+             .querySelector(".nav-link")
+             .classList.add("active");
+         }
+       }
+     });
+   });
 
 
 window.addEventListener("scroll", function () {
