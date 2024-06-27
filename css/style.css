@@ -337,8 +337,10 @@ button:focus:not(:focus-visible) {
 }
 
 .home-banner .banner-info .title {
-    font-size: 3em;
+
     line-height: 1.2em;
+    width: 35%;
+        text-wrap: wrap;
 }
                 .banner-info .subscribe-btn {
                     background-color: var(--secondary);
@@ -354,8 +356,13 @@ button:focus:not(:focus-visible) {
                 border: 0;
                 max-width: 160px;
                 max-height: 47px;
+                box-sizing: content-box !important;
             }
-        
+                                                                button:empty {
+                                                                    display: none;
+                                                                    visibility: hidden;
+                                                                    padding: 0;
+                                                                }
 .banner-info .subscribe-btn:hover {
     background-color: var(--main-color);
     color: #fff;
@@ -2135,3 +2142,4 @@ color:#555
 }
  
 
+/* , */
