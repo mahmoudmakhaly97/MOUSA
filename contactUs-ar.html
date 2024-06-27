@@ -173,29 +173,29 @@
         <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
             <label for="Name" class="form-label me-2 "> الاسم <span
                     class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="اسمك">
+            <input type="text" class="form-control" id="name" name="name" placeholder="اسمك" required>
         </div>
         <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
             <label for="email" class="form-label me-2">البريد الاليكتروني<span
                     class="text-danger fs-2 align-middle">*</span></label>
 
-            <input type="email" class="form-control" id="email" name="email" id="email" placeholder="بريدك الاليكتروني">
+            <input type="email" class="form-control" id="email" name="email" id="email" placeholder="بريدك الاليكتروني" required>
         </div>
         <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
             <label for="phone" class="form-label me-2">رقم الهاتف<span
                     class="text-danger fs-2 align-middle">*</span></label>
 
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف" required>
         </div>
         <div class="col-sm-12 col-md-6 col-xl-3 mb-3">
             <label for="subjext" class="form-label me-2 ">الموضوع<span
                     class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="subject" name="subject" placeholder="االموضوع">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="االموضوع" required>
         </div>
         <div class=" mb-3  ">
             <label for="message" class="form-label me-2   m-0">الرسالة<span
                     class="text-danger fs-2 align-middle">*</span></label>
-            <input class="form-control" id="message" name="message" placeholder="الرسالة"></input>
+            <input class="form-control" id="message" name="message" placeholder="الرسالة" required></input>
         </div>
 
         <div class="d-flex justify-content-end align-items-center my-4">
@@ -315,27 +315,56 @@
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="js/main.js"></script>
       <script>
           // contact us  email js 
-  emailjs.init("xiVC1ZJJemcTumPIW"); // Replace with your actual EmailJS public key
+  emailjs.init("xiVC1ZJJemcTumPIW");
 
-    const serviceId = "service_5cxbji9"; // Your EmailJS service ID
-    const templateId = "template_c66djk5"; // Your EmailJS template ID
+    const serviceId = "service_5cxbji9"; 
+    const templateId = "template_c66djk5"; 
 
     function sendEmail(serviceId, templateId, formData) {
       emailjs.send(serviceId, templateId, formData).then(
         function (response) {
-          console.log("Email sent successfully:", response);
-          alert("Application submitted successfully!");
+   
+Swal.fire({
+  title: " تم الارسال بنجاح ",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
           document.getElementById("contactForm").reset();
         },
         function (error) {
-          console.error("Error sending email:", error);
-          alert(
-            "There was an error submitting your application. Please try again later."
-          );
+       Swal.fire({
+  title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
         }
       );
     }
@@ -344,11 +373,11 @@
     document
       .getElementById("contactForm")
       .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const formData = {
-          from_email: this.email.value, // Add sender email address here
-          to_email: "info@almoosacollege.edu.sa", // Replace with your recipient email address
+          from_email: this.email.value,
+          to_email: "info@almoosacollege.edu.sa", 
           name: this.name.value,
           phone: this.phone.value,
           email: this.email.value,

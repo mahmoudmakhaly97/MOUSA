@@ -123,48 +123,48 @@
       <div class="row">
          <div class="col-md-6 mb-3">
             <label for="firstName" class="form-label me-1  m-0">الاسم الاول<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="firstName"  >
+            <input type="text" class="form-control" id="firstName" required  >
          </div>
          <div class="col-md-6 mb-3">
             <label for="lastName" class="form-label me-1  m-0">الاسم الاخير<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="lastName"  >
+            <input type="text" class="form-control" id="lastName"  required >
          </div>
          <div class="col-md-6 mb-3">
             <label for="phone" class="form-label me-1  m-0">رقم الهاتف<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="tel" class="form-control" id="phone"  >
+            <input type="tel" class="form-control" id="phone"  required >
          </div>
          <div class="col-md-6 mb-3">
             <label for="email" class="form-label me-1  m-0">البريد الاليكتروني<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="tel" class="form-control" id="email"  >
+            <input type="tel" class="form-control" id="email"  required >
          </div>
          <div class=" mb-3">
             <label for="position" class="form-label me-1  m-0">الوظيفة المتقدم اليها<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="position"  >
+            <input type="text" class="form-control" id="position"  required >
          </div>
          <div class=" mb-3  ">
             <label for="address" class="form-label me-1  m-0">العنوان<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="address"  >
+            <input type="text" class="form-control" id="address"  required>
          </div>
          <div class=" mb-3 col-md-4">
             <label for="city" class="form-label me-1  m-0">المدينة<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="city"  >
+            <input type="text" class="form-control" id="city"  required>
          </div>
          <div class=" mb-3 col-md-4">
             <label for="area" class="form-label me-1  m-0">المنطقة<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="area"  >
+            <input type="text" class="form-control" id="area" required >
          </div>
          <div class=" mb-3 col-md-4">
             <label for="zipCode" class="form-label me-1  m-0">الرمز البريدي<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="zipCode"  >
+            <input type="text" class="form-control" id="zipCode"  required >
          </div>
          <div class=" mb-3 col-md-6 ">
             <label for="cv" class="form-label me-1  m-0">ارفق السيرة الذاتية<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="cv">
+            <input type="text" class="form-control" id="cv" required>
          </div>
          
          <div class=" mb-3  ">
             <div class="d-flex gap-2 align-items-center">
-               <input type="checkbox" class="form-check-input" id="privacy">
+               <input type="checkbox" class="form-check-input" id="privacy" required>
                <label class="form-check-label" for="privacy">من خلال تحديد المربع، فإنك توافق على سياسة الخصوصية وتفهم أن أي بيانات تشاركها محمية ومؤمنة</label>
             </div>
          </div>
@@ -288,40 +288,70 @@
       <script src="js/libraries/jquery.counterup.min.js"></script>
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        
 </script>
-<script>
-   //career page email js 
-    emailjs.init("AuRvOuvPi559q1G0A"); // Replace with your actual EmailJS public key
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    const servicesId = "service_rpttfao"; // Your EmailJS service ID
-    const templatesId = "template_ukrihu8"; // Your EmailJS template ID
+<script>
+ 
+    emailjs.init("AuRvOuvPi559q1G0A");  
+
+    const servicesId = "service_rpttfao";  
+    const templatesId = "template_ukrihu8"; 
 
     function sendEmail(servicesId, templatesId, formData) {
       emailjs.send(servicesId, templatesId, formData).then(
         function (response) {
           console.log("Email sent successfully:", response);
-          alert("Application submitted successfully!");
+        Swal.fire({
+  title: " تم الارسال بنجاح ",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
           document.getElementById("jobApplicationForm").reset();
         },
         function (error) {
           console.error("Error sending email:", error);
-          alert(
-            "There was an error submitting your application. Please try again later."
-          );
+           Swal.fire({
+  title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
         }
       );
     }
 const fileInput = document.getElementById("cv");
 
-// Add an event listener to handle file selection
-fileInput.addEventListener("change", function () {
-  // Check if files are selected
+ fileInput.addEventListener("change", function () {
+ 
   if (this.files && this.files.length > 0) {
-    // Access the first selected file (you can loop through all files if multiple are selected)
-    const file = this.files[0];
+     const file = this.files[0];
 
-    // Log file details to console (for demonstration)
-    console.log("File selected:", file);
+     console.log("File selected:", file);
     console.log("File name:", file.name);
     console.log("File size:", file.size);
     console.log("File type:", file.type);
