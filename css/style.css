@@ -358,11 +358,11 @@ button:focus:not(:focus-visible) {
                 max-height: 47px;
                 box-sizing: content-box !important;
             }
-                                                                button:empty {
-                                                                    display: none;
-                                                                    visibility: hidden;
-                                                                    padding: 0;
-                                                                }
+           button:empty {
+        display: none;
+           visibility: hidden;
+               padding: 0;
+              }
 .banner-info .subscribe-btn:hover {
     background-color: var(--main-color);
     color: #fff;
@@ -1162,6 +1162,9 @@ button:focus:not(:focus-visible) {
 
 /* end meet our people */
 /* start college  */
+.college{
+    margin-bottom: 22rem;
+}
 .college .title {
     font-size: 48px;
 }
