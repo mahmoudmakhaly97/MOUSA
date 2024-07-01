@@ -77,16 +77,6 @@ $(".admission-carousel").owlCarousel({
 });
 
 
-
-
-
-
-
-
-
-
-
-
 $(".recent-carousel").owlCarousel({
   loop: true,
   margin: 30,
@@ -236,7 +226,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextArrow = document.getElementById("next-page");
   let currentPage = 1;
 
-  // Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
   function clearContainer() {
     container.innerHTML = "";
   }
