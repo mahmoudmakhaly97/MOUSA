@@ -315,6 +315,7 @@ button:focus:not(:focus-visible) {
     line-height: 1.2em;
     width: 35%;
     text-wrap: wrap;
+    color: #212529;
 }
 
 .banner-info .subscribe-btn {
