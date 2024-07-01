@@ -379,12 +379,17 @@ button:empty {
     background: #fff;
     margin: 0;
 }
+@media (max-width:991px) {
+    .home-banner .banner-info .title {
+        width: 70%;
 
+    }
+}
 @media (max-width:768px) {
     .home-banner .banner-info .title {
         font-size: 1.5em;
         line-height: 1.5em;
-        width: 70%;
+     
     }
 }
 
