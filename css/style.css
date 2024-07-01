@@ -99,36 +99,30 @@ a {
     top: 3rem;
 }
 
-.navbar-brand img {
-    width: 40%;
-}
-
 body.fixed-nav-padding {
     padding-top: 70px;
 }
-
 .navbar-brand img {
     width: 8rem;
 }
-
+.nav-item:last-child {
+    background-color: var(--secondary) !important;
+    border-radius: 30px;
+}
+.nav-item:last-child:hover {
+    background-color: var(--main-color) !important;
+}
+.nav-item:last-of-type a::before {
+    display: none !important;
+}
 .nav-link {
     color: #fff;
     display: block;
     border-radius: 8px;
 }
-
-.nav-item:last-of-type>.nav-link {
-    color: #333;
-}
-
-.nav-item:last-of-type>.nav-link:hover {
-    color: #fff;
-}
-
 .nav-link:focus {
     color: #fff;
 }
-
 .nav-link.active,
 .nav-item.active {
     background-color: rgb(94, 146, 66);
@@ -137,13 +131,30 @@ body.fixed-nav-padding {
     padding-left: .7em;
     padding-right: .7em;
 }
-
 .nav-link:hover {
     background-color: rgb(94, 146, 66);
     border-radius: 8px;
     color: #fff;
 }
+.nav-item:last-of-type>.nav-link {
+    color: #333;
+}
+.nav-item:last-of-type a::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: rgb(252, 218, 6);
+    left: 0;
+}
 
+.nav-item:last-of-type>.nav-link::after {
+    display: none !important;
+}
+
+.nav-item:last-of-type>.nav-link:hover {
+    color: #fff;
+}
 .e-gate:nth-last-of-type(1) {
     background-color: rgb(252, 218, 6);
     border-radius: 40px;
@@ -165,15 +176,6 @@ body.fixed-nav-padding {
     width: 270px;
 }
 
-.nav-item:last-child {
-    background-color: var(--secondary) !important;
-    border-radius: 30px;
-}
-
-.nav-item:last-child:hover {
-    background-color: var(--main-color) !important;
-}
-
 .nav-dropdown li a::before {
     content: "";
     position: absolute;
@@ -181,23 +183,6 @@ body.fixed-nav-padding {
     width: 4px;
     background-color: rgb(252, 218, 6);
     left: 0;
-}
-
-.nav-item:last-of-type a::before {
-    display: none !important;
-}
-
-.nav-item:last-of-type a::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 4px;
-    background-color: rgb(252, 218, 6);
-    left: 0;
-}
-
-.nav-item:last-of-type>.nav-link::after {
-    display: none !important;
 }
 
 .nav-item:hover>.nav-dropdown {
