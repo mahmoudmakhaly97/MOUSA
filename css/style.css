@@ -102,27 +102,34 @@ a {
 body.fixed-nav-padding {
     padding-top: 70px;
 }
+
 .navbar-brand img {
     width: 8rem;
 }
+
 .nav-item:last-child {
     background-color: var(--secondary) !important;
     border-radius: 30px;
 }
+
 .nav-item:last-child:hover {
     background-color: var(--main-color) !important;
 }
+
 .nav-item:last-of-type a::before {
     display: none !important;
 }
+
 .nav-link {
     color: #fff;
     display: block;
     border-radius: 8px;
 }
+
 .nav-link:focus {
     color: #fff;
 }
+
 .nav-link.active,
 .nav-item.active {
     background-color: rgb(94, 146, 66);
@@ -131,14 +138,17 @@ body.fixed-nav-padding {
     padding-left: .7em;
     padding-right: .7em;
 }
+
 .nav-link:hover {
     background-color: rgb(94, 146, 66);
     border-radius: 8px;
     color: #fff;
 }
+
 .nav-item:last-of-type>.nav-link {
     color: #333;
 }
+
 .nav-item:last-of-type a::after {
     content: "";
     position: absolute;
@@ -155,6 +165,7 @@ body.fixed-nav-padding {
 .nav-item:last-of-type>.nav-link:hover {
     color: #fff;
 }
+
 .e-gate:nth-last-of-type(1) {
     background-color: rgb(252, 218, 6);
     border-radius: 40px;
@@ -300,8 +311,7 @@ button:focus:not(:focus-visible) {
 .homer-banner-overlay {
     background: linear-gradient(to bottom, rgba(15, 15, 15, .9) 7%,
             rgba(101, 145, 29, 0.28) 18%,
-            rgba(101, 145, 29, 0.28) 100%
-        )
+            rgba(101, 145, 29, 0.28) 100%)
 }
 
 .home-banner .banner-info {
@@ -379,17 +389,19 @@ button:empty {
     background: #fff;
     margin: 0;
 }
+
 @media (max-width:991px) {
     .home-banner .banner-info .title {
         width: 70%;
 
     }
 }
+
 @media (max-width:768px) {
     .home-banner .banner-info .title {
         font-size: 1.5em;
         line-height: 1.5em;
-     
+
     }
 }
 
@@ -1344,10 +1356,11 @@ footer .touch ul li:last-of-type {
     .main-banner {
         height: 60vh;
     }
-                .main-banner .title {
-                    font-size: 3em;
-               
-                }
+
+    .main-banner .title {
+        font-size: 3em;
+
+    }
 }
 
 /* end banner */
@@ -1535,7 +1548,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     position: relative;
     z-index: 99999;
     background-color: #fff;
- 
+
     min-height: 500px;
     overflow: hidden;
 }
@@ -1564,11 +1577,13 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .our-history-btns {
     width: 30%;
 }
+
 @media (min-width:1200px) {
-    .our-history{
+    .our-history {
         margin-bottom: 22rem;
     }
 }
+
 @media (max-width:1400px) {
     .our-history-btns {
         width: 40%;
@@ -2059,4 +2074,109 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 }
 
-/* , */
+/* start adminstrative form */
+
+.adminstrative-form .form-label {
+    color: #565757
+}
+
+.adminstrative-form .form-control,
+.adminstrative-form .form-select {
+    background-color: #fbf5d0;
+    padding: 4px 0 4px 8px;
+    height: 2.75rem;
+    border-color: rgb(239, 207, 4);
+    border-radius: .5rem;
+}
+
+.adminstrative-form .form-control:focus,
+.adminstrative-form .form-select:focus {
+    border-color: none;
+    box-shadow: none;
+}
+
+.adminstrative-form .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;base64,<base64_encoded_arrow>') no-repeat right 10px center;
+    background-size: 10px 10px;
+    background-color: #fbf5d0;
+    cursor: pointer;
+}
+
+
+.adminstrative-form .form-control:focus-visible {
+    border: 2px solid #000;
+}
+
+.adminstrative-form .form-group {
+    position: relative;
+}
+
+.adminstrative-form .form-group .arrow-down {
+    position: absolute;
+    left: 0;
+    top: 2em;
+    left: 0em;
+    height: 44px;
+    width: 32px;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+
+
+}
+
+.adminstrative-form .form-group .arrow-down svg {
+    color: #fff;
+}
+
+.adminstrative-form .apply-btn {
+    background-color: rgb(252, 218, 6);
+    border-radius: 40px;
+    color: #333;
+    padding: 10px 40px !important;
+    color: #6e673a;
+    font-weight: 600;
+}
+
+/* end adminstrative form */
+/* end contact info */
+.contact-info {
+    background-color: #f5f5f5;
+}
+
+.contact-info .card {
+    border-radius: 1rem;
+    border: 0;
+    border-inline-end: 7px solid var(--secondary);
+}
+
+.contact-info .card .title {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.contact-info ul li {
+    color: #5c5d5c;
+}
+
+.contact-info ul li>span {
+    font-weight: bold;
+}
+
+.contact-info .tools .title {
+    font-size: 15px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.contact-info .page-item.active .page-link{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+/*  end contact info */

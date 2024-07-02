@@ -216,7 +216,7 @@ for (let i = 0; i < arrows.length; i++) {
     }
   });
 }
-// pagination logic
+//upcoming events   pagination logic
 document.addEventListener("DOMContentLoaded", function () {
   const itemsPerPage = 3;
   const eventItems = document.querySelectorAll(".event-item");
