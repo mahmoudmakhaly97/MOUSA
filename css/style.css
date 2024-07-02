@@ -1344,6 +1344,10 @@ footer .touch ul li:last-of-type {
     .main-banner {
         height: 60vh;
     }
+                .main-banner .title {
+                    font-size: 3em;
+               
+                }
 }
 
 /* end banner */
