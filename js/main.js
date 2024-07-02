@@ -274,3 +274,87 @@ document.addEventListener("DOMContentLoaded", function () {
   showPage(1);
 });
 
+// adminstrative pagination logic
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const cardsPerPage = 9; // Number of cards per page
+    let currentPage = 1;    // Current page number
+    const cards = document.querySelectorAll('.card');
+    const totalPages = Math.ceil(cards.length / cardsPerPage); // Calculate total pages
+
+    function showPage(page) {
+      cards.forEach((card, index) => {
+        if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function generatePagination() {
+      const paginationContainer = document.querySelector('.pagination');
+      paginationContainer.innerHTML = ''; // Clear existing pagination
+
+      // Previous page button
+      paginationContainer.insertAdjacentHTML('beforeend', `
+        <li class="page-item">
+          <a class="page-link" href="#" id="previous-page" aria-label="Previous">
+            <i class="fa-solid fa-chevron-right fa-xs"></i>
+          </a>
+        </li>
+      `);
+
+      // Page number buttons
+      for (let i = 1; i <= totalPages; i++) {
+        paginationContainer.insertAdjacentHTML('beforeend', `
+          <li class="page-item mx-1">
+            <a class="page-link" href="#" data-page="${i}">${i}</a>
+          </li>
+        `);
+      }
+
+      // Next page button
+      paginationContainer.insertAdjacentHTML('beforeend', `
+        <li class="page-item">
+          <a class="page-link" href="#" id="next-page" aria-label="Next">
+            <i class="fa-solid fa-chevron-left fa-xs"></i>
+          </a>
+        </li>
+      `);
+
+      // Add event listeners to pagination links
+      document.querySelectorAll('.pagination .page-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const page = this.getAttribute('data-page');
+          if (page) {
+            currentPage = parseInt(page);
+          } else {
+            if (this.id === 'previous-page' && currentPage > 1) {
+              currentPage--;
+            }
+            if (this.id === 'next-page' && currentPage < totalPages) {
+              currentPage++;
+            }
+          }
+          showPage(currentPage);
+          setActivePage(currentPage);
+        });
+      });
+    }
+
+    function setActivePage(page) {
+      document.querySelectorAll('.pagination .page-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      document.querySelector(`.pagination .page-item a[data-page="${page}"]`).parentElement.classList.add('active');
+    }
+
+    // Initialize pagination
+    generatePagination();
+
+    // Initialize the first page
+    showPage(currentPage);
+    setActivePage(currentPage);
+  });

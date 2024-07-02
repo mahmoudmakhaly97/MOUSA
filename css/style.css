@@ -1281,6 +1281,12 @@ footer .touch ul li:last-of-type {
     font-size: 14px;
 }
 
+@media (max-width:768px) {
+    .copyright p:last-of-type {
+        text-align: center;
+    }
+}
+
 /* end copyright */
 /* media query */
 @media (max-width:1500px) {
@@ -2175,8 +2181,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     font-weight: bold;
 }
 
-.contact-info .page-item.active .page-link{
+.contact-info .page-item.active .page-link {
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
+
 /*  end contact info */
