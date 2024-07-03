@@ -2135,6 +2135,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
+    cursor: pointer;
+    pointer-events: none;
 
 
 }
@@ -2317,3 +2319,16 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 /* end our councils  */
+select {
+    padding: 2px 2px 2px 2px !important;
+    border: none !important;
+    ;
+    background-image: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") !important;
+    ;
+    background-position: right center !important;
+    ;
+    /*Positioning*/
+    background-repeat: no-repeat !important;
+    ;
+    /*Prevent showing multiple background images*/
+}
