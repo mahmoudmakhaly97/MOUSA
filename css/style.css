@@ -2288,7 +2288,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 /* end  vice dean */
 /* start our councils  */
-.our-councils .council-card h2 {
+.our-councils .council-card .title {
     color: #555556;
     font-size: 30px;
 }
@@ -2311,8 +2311,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 @media (max-width:768px) {
-    .our-councils .council-card h2 {
-        font-size: 25px;
+    .our-councils .council-card .title {
+        font-size: 20px;
     }
 }
 
