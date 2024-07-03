@@ -40,13 +40,17 @@ ul {
 a {
     text-decoration: none;
 }
- 
+
 .font-20 {
     font-size: 20px;
 }
 
 .text-green {
     color: var(--main-color);
+}
+
+.bg-gray {
+    background-color: #f5f5f5;
 }
 
 /* start topbar */
@@ -2260,3 +2264,29 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 
 /* end  dean message */
+/*start  vice dean */
+
+
+.vice-dean h3 {
+    color: var(--main-color);
+    font-size: 36px;
+    font-weight: 500;
+}
+
+@media (max-width:400px) {
+    .vice-dean h3 {
+        font-size: 25px
+    }
+}
+
+.vice-dean p {
+    margin-top: 20px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.75rem;
+}
+
+
+
+
+/* end  vice dean */
