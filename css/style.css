@@ -2286,7 +2286,34 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     line-height: 1.75rem;
 }
 
-
-
-
 /* end  vice dean */
+/* start our councils  */
+.our-councils .council-card h2 {
+    color: #555556;
+    font-size: 30px;
+}
+
+.our-councils .council-card p span {
+    color: #555556;
+}
+
+.our-councils .line {
+    width: 70%;
+    height: 2px;
+    background-color: var(--main-color);
+    margin: 20px 0;
+}
+
+@media (max-width:1200px) {
+    .our-councils .line {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .our-councils .council-card h2 {
+        font-size: 25px;
+    }
+}
+
+/* end our councils  */
