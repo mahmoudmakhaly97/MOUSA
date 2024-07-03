@@ -350,12 +350,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       document.querySelector(`.pagination .page-item a[data-page="${page}"]`).parentElement.classList.add('active');
     }
-
-    // Initialize pagination
-    generatePagination();
-
-    // Initialize the first page
-    showPage(currentPage);
+ generatePagination();
+ showPage(currentPage);
     setActivePage(currentPage);
   });
   
