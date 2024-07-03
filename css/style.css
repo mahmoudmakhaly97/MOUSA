@@ -40,11 +40,7 @@ ul {
 a {
     text-decoration: none;
 }
-
-.text-green {
-    color: #85c34c;
-}
-
+ 
 .font-20 {
     font-size: 20px;
 }
@@ -2247,3 +2243,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 /* end  our-vision */
+/* start  dean message */
+.dean-message .dean-info h3 {
+    color: var(--main-color);
+    font-size: 30px;
+}
+
+
+.dean-message .dean-info p {
+    margin-top: 15px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.75rem;
+}
+
+
+
+/* end  dean message */
