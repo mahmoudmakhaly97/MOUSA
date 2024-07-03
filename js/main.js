@@ -354,4 +354,19 @@ document.addEventListener("DOMContentLoaded", function () {
  showPage(currentPage);
     setActivePage(currentPage);
   });
-  
+// events & news logic(our news section )
+let newsImgTitleNumber = document.querySelector(".newsImgTitleNumber"); 
+let newsImgTitleMonth = document.querySelector(".newsImgTitleMonth");
+let newsImgTitleDay = document.querySelector(".newsImgTitleDay");
+let newsImgDesc = document.querySelector(".newsImgDesc");
+let newsImg = document.querySelector(".newsImg");
+let newsInfoContainers = document.querySelectorAll(".news-info-container");
+newsInfoContainers.forEach((container) => {
+  container.addEventListener("click", function () {
+    newsImgTitleNumber.textContent= container.querySelector(".newsInfoNumber").textContent 
+    newsImgTitleMonth.textContent = container.querySelector(".newsInfoMonth").textContent;
+    newsImgTitleDay.textContent = container.querySelector(".newsInfoDay").textContent;
+    newsImgDesc.textContent = container.querySelector(".newsInfoDesc").textContent;
+    newsImg.src = container.querySelector(".infoImg").src;
+    })
+})
