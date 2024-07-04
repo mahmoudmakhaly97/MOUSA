@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Previous page button
       paginationContainer.insertAdjacentHTML('beforeend', `
-        <li class="page-item">
+        <li class="page-item ms-1">
           <a class="page-link" href="#" id="previous-page" aria-label="Previous">
             <i class="fa-solid fa-chevron-right fa-xs"></i>
           </a>
@@ -306,14 +306,15 @@ document.addEventListener("DOMContentLoaded", function () {
       `);
 
       // Page number buttons
+    if (totalPages > 1) {
       for (let i = 1; i <= totalPages; i++) {
         paginationContainer.insertAdjacentHTML('beforeend', `
-          <li class="page-item mx-1">
+          <li class="page-item ms-1">
             <a class="page-link" href="#" data-page="${i}">${i}</a>
           </li>
         `);
       }
-
+    }
       // Next page button
       paginationContainer.insertAdjacentHTML('beforeend', `
         <li class="page-item">
@@ -354,6 +355,16 @@ document.addEventListener("DOMContentLoaded", function () {
  showPage(currentPage);
     setActivePage(currentPage);
   });
+  // adminstartive filter logic
+// let adminstartionCards = document.querySelectorAll(".adminstration-info-card");
+
+// adminstartionCards.forEach((card) => {
+//   card.addEventListener("click", function () {
+//     alert("hello");
+//   });
+// });
+
+
 // events & news logic(our news section )
 let newsImgTitleNumber = document.querySelector(".newsImgTitleNumber"); 
 let newsImgTitleMonth = document.querySelector(".newsImgTitleMonth");
@@ -370,3 +381,35 @@ newsInfoContainers.forEach((container) => {
     newsImg.src = container.querySelector(".infoImg").src;
     })
 })
+// adminstartive filter logic
+    document.getElementById('filterButton').addEventListener('click', function(e) {
+             e.preventDefault();
+             // Get input values
+             const nameValue = document.getElementById('name').value.toLowerCase();
+             const positionValue = document.getElementById('position').value;
+             const departmentValue = document.getElementById('department').value;
+             const deanshipValue = document.getElementById('deanship').value;
+         
+             // Get all cards
+             const cards = document.querySelectorAll('.card');
+         
+             cards.forEach(card => {
+                 // Get card data attributes
+                 const cardName = card.getAttribute('data-name').toLowerCase();
+                 const cardPosition = card.getAttribute('data-position');
+                 const cardDepartment = card.getAttribute('data-department');
+                 const cardDeanship = card.getAttribute('data-deanship');
+         
+                 // Check if card matches the filter criteria
+                 const nameMatch = !nameValue || cardName.includes(nameValue);
+                 const positionMatch = positionValue === 'حدد عنصر' || cardPosition === positionValue;
+                 const departmentMatch = departmentValue === 'حدد عنصر' || cardDepartment === departmentValue;
+                 const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
+         
+                 if (nameMatch && positionMatch  && departmentMatch && deanshipMatch) {
+                     card.parentElement.style.display = 'block';
+                 } else {
+                     card.parentElement.style.display = 'none';
+                 }
+             });
+         });
