@@ -198,7 +198,7 @@ window.addEventListener("scroll", function () {
  
 window.addEventListener("scroll", function () {
   const scrollPosition = window.scrollY;
-  document.querySelector(".background-left").style.transform = `translateY(${
+  document.querySelector(".background-left")?.style.transform = `translateY(${
     scrollPosition * 0.4
   }px)`;
   document.querySelector(".background-right").style.transform = `translateY(${

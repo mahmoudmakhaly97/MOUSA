@@ -119,7 +119,7 @@
       <div class="container">
       
          
-          <form  id="jobApplicationForm" enctype="multipart/form-data">
+          <form  id="jobApplicationForm"  onsubmit="formSubmit()" enctype="multipart/form-data" method="post">
       <div class="row">
          <div class="col-md-6 mb-3">
             <label for="firstName" class="form-label me-1  m-0">الاسم الاول<span class="text-danger fs-2 align-middle">*</span></label>
@@ -159,7 +159,7 @@
          </div>
          <div class=" mb-3 col-md-6 ">
             <label for="cv" class="form-label me-1  m-0">ارفق السيرة الذاتية<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="file" class="form-control" id="cv" required>
+            <input type="file" name="file" class="form-control" id="cv" required>
          </div>
          
          <div class=" mb-3  ">
@@ -170,7 +170,7 @@
          </div>
          
         <div class="d-flex justify-content-end align-items-center my-4">
-            <button class="submit-btn btn rounded-pill py-2 px-4" type="submit">ارسال</button>
+            <button class="submit-btn btn rounded-pill py-2 px-4" type="submit"  >ارسال</button>
         </div>
    </form>
          </div>
@@ -286,101 +286,85 @@
       <script src="js/libraries/jquery.waypoints.min.js"></script>
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
+</script>
 <script type="text/javascript"
-        src="js/libraries/email.min.js">
-        
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
- 
-    emailjs.init("Mnna9L51Qk64mUYew");  
+ <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("5Z0xZO24RXoEXXW2v");
 
-    const servicesId = "service_fjvjhhw";  
-    const templatesId = "template_rj3sbc9"; 
+    const servicesId = "service_s7vny6w";
+    const templateId = "template_v4xkkph";
 
-    function sendEmail(servicesId, templatesId, formData) {
-      emailjs.send(servicesId, templatesId, formData).then(
-        function (response) {
+    function sendEmail(servicesId, templateId, formData) {
+      emailjs.send(servicesId, templateId, formData).then(
+        function(response) {
           console.log("Email sent successfully:", response);
-        Swal.fire({
-  title: " تم الارسال بنجاح ",
-  showClass: {
-    popup: `
-      animate__animated
-      animate__fadeInUp
-      animate__faster
-    `
-  },
-  hideClass: {
-    popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `
-  }
-});
+          Swal.fire({
+            title: "تم الارسال بنجاح",
+            showClass: {
+              popup: "animate__animated animate__fadeInUp animate__faster"
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutDown animate__faster"
+            }
+          });
           document.getElementById("jobApplicationForm").reset();
         },
-        function (error) {
+        function(error) {
           console.error("Error sending email:", error);
-           Swal.fire({
-  title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
-  showClass: {
-    popup: `
-      animate__animated
-      animate__fadeInUp
-      animate__faster
-    `
-  },
-  hideClass: {
-    popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `
-  }
-});
+          Swal.fire({
+            title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
+            showClass: {
+              popup: "animate__animated animate__fadeInUp animate__faster"
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutDown animate__faster"
+            }
+          });
         }
       );
     }
-const fileInput = document.getElementById("cv");
 
- fileInput.addEventListener("change", function () {
- 
-  if (this.files && this.files.length > 0) {
-     const file = this.files[0];
+    const fileInput = document.getElementById("cv");
 
-     console.log("File selected:", file);
-    console.log("File name:", file.name);
-    console.log("File size:", file.size);
-    console.log("File type:", file.type);
-  }
-});
-    document
-      .getElementById("jobApplicationForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
+    fileInput.addEventListener("change", function() {
+      if (this.files && this.files.length > 0) {
+        const file = this.files[0];
+       
+      }
+    });
 
-        const formData = {
-          from_email: this.email.value, // Add sender email address here
-          to_email: "ahmed.mohmaed.33@outlook.com", // Replace with your recipient email address
-          firstName: this.firstName.value,
-          lastName: this.lastName.value,
-          phone: this.phone.value,
-          email: this.email.value,
-          position: this.position.value,
-          address: this.address.value,
-          city: this.city.value,
-          area: this.area.value,
-          zipCode: this.zipCode.value,
-           cv: fileInput,
-        };
+    document.getElementById("jobApplicationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
 
-        sendEmail(servicesId, templatesId, formData);
-      });
+      const formData = {
+        from_email: this.email.value,
+        to_email: "hralmoosacollege@outlook.com",
+        firstName: this.firstName.value,
+        lastName: this.lastName.value,
+        phone: this.phone.value,
+        email: this.email.value,
+        position: this.position.value,
+        address: this.address.value,
+        city: this.city.value,
+        area: this.area.value,
+        zipCode: this.zipCode.value,
+        cv:  this.cv.value              
+      };
 
+      sendEmail(servicesId, templateId, formData);
+    });
+  });
+  function formSubmit(event) {
+    event.preventDefault();
+    emailjs.sendForm(servicesId, templateId, this);
+}
 </script>
-      <script src="js/main.js"></script>
+
+
    </body>
 </html>
