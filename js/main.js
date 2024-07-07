@@ -155,6 +155,7 @@ $(".stories-carousel").owlCarousel({
     },
   },
 });
+// counter js logic in home page 
 $(document).ready(function () {
   $(".counter").counterUp({
     delay: 10,
@@ -273,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('DOMContentLoaded', function () {
     const cardsPerPage = 9; // Number of cards per page
     let currentPage = 1;    // Current page number
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.adminstrative-card');
     const totalPages = Math.ceil(cards.length / cardsPerPage); // Calculate total pages
 
     function showPage(page) {
@@ -287,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function generatePagination() {
-      const paginationContainer = document.querySelector('.pagination');
+      const paginationContainer = document.querySelector('.admistrative-pagination');
       paginationContainer.innerHTML = ''; // Clear existing pagination
 
       // Previous page button
