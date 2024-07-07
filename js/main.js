@@ -161,6 +161,7 @@ $(document).ready(function () {
     time: 1000,
   });
 });
+
 // career pag logic
 window.addEventListener("scroll", function () {
   var navbar = document.querySelector(".navbar");
@@ -176,6 +177,7 @@ window.addEventListener("scroll", function () {
       navbar.style.background = "transparent";
   }
 });
+
 // active link in navbar ..................................................
    document.addEventListener("DOMContentLoaded", function () {
      const navLinks = document.querySelectorAll(".nav-link");
@@ -196,15 +198,7 @@ window.addEventListener("scroll", function () {
      });
    });
  
-window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-  document.querySelector(".background-left")?.style.transform = `translateY(${
-    scrollPosition * 0.4
-  }px)`;
-  document.querySelector(".background-right").style.transform = `translateY(${
-    scrollPosition * -0.4
-  }px)`;
-});
+
 // changeArrow
 const arrows = document.querySelectorAll(".arrow-btn");
 for (let i = 0; i < arrows.length; i++) {

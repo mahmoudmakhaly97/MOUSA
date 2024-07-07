@@ -292,79 +292,80 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("5Z0xZO24RXoEXXW2v");
 
-    const servicesId = "service_s7vny6w";
-    const templateId = "template_v4xkkph";
+
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("5Z0xZO24RXoEXXW2v"); // Replace with your EmailJS user ID
+
+    const servicesId = "service_s7vny6w"; // Replace with your EmailJS service ID
+    const templateId = "template_v4xkkph"; // Replace with your EmailJS template ID
 
     function sendEmail(servicesId, templateId, formData) {
-      emailjs.send(servicesId, templateId, formData).then(
-        function(response) {
-          console.log("Email sent successfully:", response);
-          Swal.fire({
-            title: "تم الارسال بنجاح",
-            showClass: {
-              popup: "animate__animated animate__fadeInUp animate__faster"
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutDown animate__faster"
-            }
-          });
-          document.getElementById("jobApplicationForm").reset();
-        },
-        function(error) {
-          console.error("Error sending email:", error);
-          Swal.fire({
-            title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
-            showClass: {
-              popup: "animate__animated animate__fadeInUp animate__faster"
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutDown animate__faster"
-            }
-          });
-        }
-      );
+        emailjs.send(servicesId, templateId, formData)
+            .then(function(response) {
+                console.log("Email sent successfully:", response);
+                Swal.fire({
+                    title: "تم الارسال بنجاح",
+                    showClass: {
+                        popup: "animate__animated animate__fadeInUp animate__faster"
+                    },
+                    hideClass: {
+                        popup: "animate__animated animate__fadeOutDown animate__faster"
+                    }
+                });
+                document.getElementById("jobApplicationForm").reset();
+            })
+            .catch(function(error) {
+                console.error("Error sending email:", error);
+                Swal.fire({
+                    title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
+                    showClass: {
+                        popup: "animate__animated animate__fadeInUp animate__faster"
+                    },
+                    hideClass: {
+                        popup: "animate__animated animate__fadeOutDown animate__faster"
+                    }
+                });
+            });
     }
 
-    const fileInput = document.getElementById("cv");
-
-    fileInput.addEventListener("change", function() {
-      if (this.files && this.files.length > 0) {
-        const file = this.files[0];
-       
-      }
-    });
-
     document.getElementById("jobApplicationForm").addEventListener("submit", function(event) {
-      event.preventDefault(); 
+        event.preventDefault();
+      const fileInput = document.getElementById("cv");
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+        
 
-      const formData = {
-        from_email: this.email.value,
-        to_email: "hralmoosacollege@outlook.com",
-        firstName: this.firstName.value,
-        lastName: this.lastName.value,
-        phone: this.phone.value,
-        email: this.email.value,
-        position: this.position.value,
-        address: this.address.value,
-        city: this.city.value,
-        area: this.area.value,
-        zipCode: this.zipCode.value,
-        cv:  this.cv.value              
-      };
+        reader.onload = function() {
+            const base64File = reader.result.split(",")[1];  // Get base64 part only
 
-      sendEmail(servicesId, templateId, formData);
+            const formData = {
+                from_email: document.getElementById("jobApplicationForm").email.value,
+                to_email: "hralmoosacollege@outlook.com",
+                firstName: document.getElementById("jobApplicationForm").firstName.value,
+                lastName: document.getElementById("jobApplicationForm").lastName.value,
+                phone: document.getElementById("jobApplicationForm").phone.value,
+                email: document.getElementById("jobApplicationForm").email.value,
+                position: document.getElementById("jobApplicationForm").position.value,
+                address: document.getElementById("jobApplicationForm").address.value,
+                city: document.getElementById("jobApplicationForm").city.value,
+                area: document.getElementById("jobApplicationForm").area.value,
+                zipCode: document.getElementById("jobApplicationForm").zipCode.value,
+                cv: base64File,  // Attach the base64 encoded file
+                cv_filename: file.name  // Optionally, send the filename
+            };
+
+            sendEmail(servicesId, templateId, formData);
+        };
+
+
+        reader.readAsDataURL(file);
     });
-  });
-  function formSubmit(event) {
-    event.preventDefault();
-    emailjs.sendForm(servicesId, templateId, this);
-}
+});
 </script>
 
+ <script src="js/main.js"></script>
 
    </body>
 </html>
