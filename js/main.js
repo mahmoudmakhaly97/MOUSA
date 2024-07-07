@@ -211,8 +211,9 @@ for (let i = 0; i < arrows.length; i++) {
     }
   });
 }
-//upcoming events   pagination logic
-document.addEventListener("DOMContentLoaded", function () {
+//events & news  pagination logic
+
+ document.addEventListener("DOMContentLoaded", function () {
   const itemsPerPage = 3;
   const eventItems = document.querySelectorAll(".event-item");
   const pageLinks = document.querySelectorAll(".page-link[data-page]");
@@ -236,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(eventItems[i]);
       }
     }
+    updateActivePageLink(page);
   }
 
   function showAllItems() {
@@ -243,6 +245,20 @@ document.addEventListener("DOMContentLoaded", function () {
     eventItems.forEach((item) => {
       item.classList.add("active");
       container.appendChild(item);
+    });
+    updateActivePageLink(null); // No active page link when showing all items
+  }
+
+  function updateActivePageLink(page) {
+    pageLinks.forEach((link) => {
+      const pageNumber = parseInt(link.getAttribute("data-page"));
+      if (pageNumber === page) {
+        link.classList.add("active");
+        link.style.backgroundColor = "#5e9242"; // Add background color
+      } else {
+        link.classList.remove("active");
+        link.style.backgroundColor = ""; // Remove background color
+      }
     });
   }
 
@@ -257,17 +273,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   nextArrow?.addEventListener("click", function (e) {
     e.preventDefault();
-    showAllItems();
+    // Increment the current page and ensure it does not exceed the total number of pages
+    const totalPages = Math.ceil(eventItems.length / itemsPerPage);
+    if (currentPage < totalPages) {
+      currentPage++;
+      showPage(currentPage);
+    }
   });
 
   prevArrow?.addEventListener("click", function (e) {
     e.preventDefault();
-    currentPage = 1;
-    showPage(1);
+    // Decrement the current page and ensure it does not go below 1
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
   });
 
-  showPage(1);
+  // Set the active page on initial load
+  function setActivePage(page) {
+    document.querySelectorAll('.pagination .page-item').forEach(item => {
+      item.classList.remove('active-pagination');
+    });
+    document.querySelector(`.pagination .page-item a[data-page="${page}"]`).style.backgroundColor = '#5e9242';
+        document.querySelector(`.pagination .page-item a[data-page="${page}"]`).style.color = '#555';
+  }
+
+  showPage(currentPage);
+  setActivePage(currentPage);
 });
+
 
 // adminstrative pagination logic
 
