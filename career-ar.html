@@ -119,43 +119,43 @@
       <div class="container">
       
          
-          <form  id="jobApplicationForm"  onsubmit="formSubmit()" enctype="multipart/form-data" method="post">
+          <form    id="jobApplicationForm" enctype="multipart/form-data">
       <div class="row">
          <div class="col-md-6 mb-3">
             <label for="firstName" class="form-label me-1  m-0">الاسم الاول<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="firstName" required  >
+            <input type="text" class="form-control" id="firstName" name="firstName" required  >
          </div>
          <div class="col-md-6 mb-3">
             <label for="lastName" class="form-label me-1  m-0">الاسم الاخير<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="lastName"  required >
+            <input type="text" class="form-control" id="lastName"  name="lastName"  required >
          </div>
          <div class="col-md-6 mb-3">
             <label for="phone" class="form-label me-1  m-0">رقم الهاتف<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="tel" class="form-control" id="phone"  required >
+            <input type="tel" class="form-control" id="phone" name="phone"  required >
          </div>
          <div class="col-md-6 mb-3">
             <label for="email" class="form-label me-1  m-0">البريد الاليكتروني<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="tel" class="form-control" id="email"  required >
+            <input type="tel" class="form-control" id="email" name="email"  required >
          </div>
          <div class=" mb-3">
             <label for="position" class="form-label me-1  m-0">الوظيفة المتقدم اليها<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="position"  required >
+            <input type="text" class="form-control" id="position"   name="position"  required >
          </div>
          <div class=" mb-3  ">
             <label for="address" class="form-label me-1  m-0">العنوان<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="address"  required>
+            <input type="text" class="form-control" id="address"  name="address" required>
          </div>
          <div class=" mb-3 col-md-4">
             <label for="city" class="form-label me-1  m-0">المدينة<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="city"  required>
+            <input type="text" class="form-control" id="city"  name="city"  required>
          </div>
          <div class=" mb-3 col-md-4">
             <label for="area" class="form-label me-1  m-0">المنطقة<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="area" required >
+            <input type="text" class="form-control" id="area"  name="area" required >
          </div>
          <div class=" mb-3 col-md-4">
             <label for="zipCode" class="form-label me-1  m-0">الرمز البريدي<span class="text-danger fs-2 align-middle">*</span></label>
-            <input type="text" class="form-control" id="zipCode"  required >
+            <input type="text" class="form-control" id="zipCode"  name="zipCode"  required >
          </div>
          <div class=" mb-3 col-md-6 ">
             <label for="cv" class="form-label me-1  m-0">ارفق السيرة الذاتية<span class="text-danger fs-2 align-middle">*</span></label>
@@ -164,7 +164,7 @@
          
          <div class=" mb-3  ">
             <div class="d-flex gap-2 align-items-center">
-               <input type="checkbox" class="form-check-input" id="privacy" required>
+               <input type="checkbox" class="form-check-input" name="privacy" id="privacy" required>
                <label class="form-check-label" for="privacy">من خلال تحديد المربع، فإنك توافق على سياسة الخصوصية وتفهم أن أي بيانات تشاركها محمية ومؤمنة</label>
             </div>
          </div>
@@ -293,79 +293,64 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-
- <script>
-document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("5Z0xZO24RXoEXXW2v"); // Replace with your EmailJS user ID
-
-    const servicesId = "service_s7vny6w"; // Replace with your EmailJS service ID
-    const templateId = "template_v4xkkph"; // Replace with your EmailJS template ID
-
-    function sendEmail(servicesId, templateId, formData) {
-        emailjs.send(servicesId, templateId, formData)
-            .then(function(response) {
-                console.log("Email sent successfully:", response);
-                Swal.fire({
-                    title: "تم الارسال بنجاح",
-                    showClass: {
-                        popup: "animate__animated animate__fadeInUp animate__faster"
-                    },
-                    hideClass: {
-                        popup: "animate__animated animate__fadeOutDown animate__faster"
-                    }
-                });
-                document.getElementById("jobApplicationForm").reset();
-            })
-            .catch(function(error) {
-                console.error("Error sending email:", error);
-                Swal.fire({
-                    title: "عذرا ، فشل في الارسال. حاول مرة اخرى في وقت لاحق.",
-                    showClass: {
-                        popup: "animate__animated animate__fadeInUp animate__faster"
-                    },
-                    hideClass: {
-                        popup: "animate__animated animate__fadeOutDown animate__faster"
-                    }
-                });
-            });
-    }
-
-    document.getElementById("jobApplicationForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-      const fileInput = document.getElementById("cv");
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-        
-
-        reader.onload = function() {
-            const base64File = reader.result.split(",")[1];  // Get base64 part only
-
-            const formData = {
-                from_email: document.getElementById("jobApplicationForm").email.value,
-                to_email: "hralmoosacollege@outlook.com",
-                firstName: document.getElementById("jobApplicationForm").firstName.value,
-                lastName: document.getElementById("jobApplicationForm").lastName.value,
-                phone: document.getElementById("jobApplicationForm").phone.value,
-                email: document.getElementById("jobApplicationForm").email.value,
-                position: document.getElementById("jobApplicationForm").position.value,
-                address: document.getElementById("jobApplicationForm").address.value,
-                city: document.getElementById("jobApplicationForm").city.value,
-                area: document.getElementById("jobApplicationForm").area.value,
-                zipCode: document.getElementById("jobApplicationForm").zipCode.value,
-                cv: base64File,  // Attach the base64 encoded file
-                cv_filename: file.name  // Optionally, send the filename
-            };
-
-            sendEmail(servicesId, templateId, formData);
-        };
-
-
-        reader.readAsDataURL(file);
-    });
-});
-</script>
+ 
 
  <script src="js/main.js"></script>
+ <script>
+        // Initialize EmailJS with your User ID (public key)
+        emailjs.init('5Z0xZO24RXoEXXW2v');
+
+        document.getElementById('jobApplicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var fileInput = document.getElementById('cv');
+            var file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file.');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('https://file.io/?expires=1d', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var shareableLink = data.link;
+                console.log('File uploaded successfully. Shareable link:', shareableLink);
+
+               
+                var templateParams = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                position: document.getElementById('position').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                area : document.getElementById('area').value,
+                zipCode: document.getElementById('zipCode').value,
+                    link: shareableLink // Add the shareable link here
+                };
+
+                emailjs.send('service_s7vny6w', 'template_v4xkkph', templateParams)
+                    .then(function(response) {
+                        console.log('Email sent!', response.status, response.text);
+                        alert('CV uploaded successfully! Check your email for the shareable link.');
+                    }, function(error) {
+                        console.error('Failed to send email', error);
+                        alert('Failed to send email. Please try again.');
+                    });
+            })
+            .catch(error => {
+                console.error('Error uploading file to File.io', error);
+                alert('Failed to upload CV. Please try again.');
+            });
+        });
+    </script>
 
    </body>
 </html>
