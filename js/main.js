@@ -385,14 +385,6 @@ for (let i = 0; i < arrows.length; i++) {
  showPage(currentPage);
     setActivePage(currentPage);
   });
-  // adminstartive filter logic
-// let adminstartionCards = document.querySelectorAll(".adminstration-info-card");
-
-// adminstartionCards.forEach((card) => {
-//   card.addEventListener("click", function () {
-//     alert("hello");
-//   });
-// });
 
 
 // events & news logic(our news section )
@@ -418,7 +410,9 @@ newsInfoContainers.forEach((container) => {
              const nameValue = document.getElementById('name').value.toLowerCase();
              const positionValue = document.getElementById('position').value;
              const departmentValue = document.getElementById('department').value;
-             const deanshipValue = document.getElementById('deanship').value;
+      const deanshipValue = document.getElementById('deanship').value;
+      const centerValue = document.getElementById('center').value;
+      const collegeValue = document.getElementById('college').value;
          
              // Get all cards
              const cards = document.querySelectorAll('.card');
@@ -428,15 +422,19 @@ newsInfoContainers.forEach((container) => {
                  const cardName = card.getAttribute('data-name').toLowerCase();
                  const cardPosition = card.getAttribute('data-position');
                  const cardDepartment = card.getAttribute('data-department');
-                 const cardDeanship = card.getAttribute('data-deanship');
+               const cardDeanship = card.getAttribute('data-deanship');
+               const cardCenter = card.getAttribute('data-center');
+               const cardCollege = card.getAttribute('data-college');
          
                  // Check if card matches the filter criteria
                  const nameMatch = !nameValue || cardName.includes(nameValue);
                  const positionMatch = positionValue === 'حدد عنصر' || cardPosition === positionValue;
                  const departmentMatch = departmentValue === 'حدد عنصر' || cardDepartment === departmentValue;
-                 const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
+               const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
+               const centerMatch = centerValue === 'حدد عنصر' || cardCenter === centerValue;
+               const collegeMatch = collegeValue === 'حدد عنصر' || cardCollege === collegeValue;
          
-                 if (nameMatch && positionMatch  && departmentMatch && deanshipMatch) {
+                 if (nameMatch && positionMatch  && departmentMatch && deanshipMatch&& centerMatch&& collegeMatch) {
                      card.parentElement.style.display = 'block';
                  } else {
                      card.parentElement.style.display = 'none';
