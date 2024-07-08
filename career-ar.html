@@ -292,8 +292,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
- 
+  
 
  <script src="js/main.js"></script>
  <script>
@@ -306,7 +305,11 @@
             var fileInput = document.getElementById('cv');
             var file = fileInput.files[0];
             if (!file) {
-                alert('Please select a file.');
+                Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "Please Select a CV File",
+ });
                 return;
             }
 
@@ -320,7 +323,7 @@
             .then(response => response.json())
             .then(data => {
                 var shareableLink = data.link;
-                console.log('File uploaded successfully. Shareable link:', shareableLink);
+ 
 
                
                 var templateParams = {
@@ -333,16 +336,30 @@
                 city: document.getElementById('city').value,
                 area : document.getElementById('area').value,
                 zipCode: document.getElementById('zipCode').value,
-                    link: shareableLink // Add the shareable link here
+                    link: shareableLink  
                 };
 
                 emailjs.send('service_s7vny6w', 'template_v4xkkph', templateParams)
                     .then(function(response) {
-                        console.log('Email sent!', response.status, response.text);
-                        alert('CV uploaded successfully! Check your email for the shareable link.');
+                        Swal.fire({
+  title: " تم الارسال بنجاح ",
+  showClass: {
+    popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `
+  },
+  hideClass: {
+    popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `
+  }
+});
                     }, function(error) {
-                        console.error('Failed to send email', error);
-                        alert('Failed to send email. Please try again.');
+                         alert('Failed to send email. Please try again.');
                     });
             })
             .catch(error => {
