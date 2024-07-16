@@ -21,6 +21,12 @@
    <!-- start banner -->
    
  <!-- start topbar -->
+   <div id="search-bar" class="d-none search-bar position-absolute  w-100 end-0 top-0 start-0 d-flex justify-content-center align-items-center">
+<div class="container d-flex gap-4">
+   <i  onclick="document.getElementById('search-bar').classList.add('d-none')" class="fa-solid fa-xmark fa-2x text-white pointer"></i>
+            <input type="text" class="form-control" placeholder="ابحث هنا">
+</div>
+ </div>
       <div class="topbar ">
       <div class="container">
         <div class="d-flex justify-content-end gap-5 topbar-wrapper">
@@ -35,7 +41,8 @@
             <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
             <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
             <a href="#">   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
- 
+             <a href="#"  id="search-icon" >   <i  class="fas fa-search font-20 text-white"></i></a>
+
         </div>
         <div>
             <a href="" class="text-white font-20 language-link"> English</a>
@@ -111,7 +118,7 @@
             <a href="#">    <i class="fa-brands fa-twitter font-20 text-white"></i></a>
             <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
             <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
-            <a href="#">   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
+            <a href="#" >   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
  
         </div>
    
@@ -735,6 +742,16 @@
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let searchBar = document.getElementById("search-bar");
+ 
+            document.getElementById("search-icon").addEventListener("click", function() {
+                searchBar.classList.toggle("d-none");
+            });
 
+            
+        });
+    </script>
    </body>
 </html>

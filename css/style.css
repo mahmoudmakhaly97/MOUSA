@@ -1955,7 +1955,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     box-shadow: none;
     color: #fff
 }
- 
+
 
 /* .event-item {
     display: none;
@@ -2322,4 +2322,12 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     .our-councils .council-card .title {
         font-size: 20px;
     }
+}
+
+/* search bar style */
+.search-bar {
+    min-height: 140px;
+    z-index: 100000008;
+    background-color: rgb(79, 79, 79);
+    transition: .4s all ease;
 }

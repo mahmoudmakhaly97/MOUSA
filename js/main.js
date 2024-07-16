@@ -440,4 +440,4 @@ newsInfoContainers.forEach((container) => {
                      card.parentElement.style.display = 'none';
                  }
              });
-         });
+    });
