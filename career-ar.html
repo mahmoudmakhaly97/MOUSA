@@ -295,38 +295,40 @@
   
 
  <script src="js/main.js"></script>
- <script>
-        // Initialize EmailJS with your User ID (public key)
-        emailjs.init('5Z0xZO24RXoEXXW2v ');
+<script>
+    // Initialize EmailJS with your User ID (public key)
+    emailjs.init('5Z0xZO24RXoEXXW2v');
 
-        document.getElementById('jobApplicationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+    document.getElementById('jobApplicationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-            var fileInput = document.getElementById('cv');
-            var file = fileInput.files[0];
-            if (!file) {
-                Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Please Select a CV File",
- });
-                return;
+        var fileInput = document.getElementById('cv');
+        var file = fileInput.files[0];
+        if (!file) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please Select a CV File",
+            });
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append('file', file);
+
+        fetch('https://file.io/?expires=1d', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                throw new Error('File upload failed');
             }
+            var shareableLink = data.link;
+            console.log('File uploaded successfully. Link:', shareableLink);
 
-            var formData = new FormData();
-            formData.append('file', file);
-
-            fetch('https://file.io/?expires=1d', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                var shareableLink = data.link;
- 
-
-               
-                var templateParams = {
+            var templateParams = {
                 firstName: document.getElementById('firstName').value,
                 lastName: document.getElementById('lastName').value,
                 email: document.getElementById('email').value,
@@ -334,40 +336,36 @@
                 position: document.getElementById('position').value,
                 address: document.getElementById('address').value,
                 city: document.getElementById('city').value,
-                area : document.getElementById('area').value,
+                area: document.getElementById('area').value,
                 zipCode: document.getElementById('zipCode').value,
-                    link: shareableLink  
-                };
+                link: shareableLink
+            };
 
-                emailjs.send('service_s7vny6w', 'template_v4xkkph', templateParams)
-                    .then(function(response) {
-                        Swal.fire({
-  title: " تم الارسال بنجاح ",
-  showClass: {
-    popup: `
-      animate__animated
-      animate__fadeInUp
-      animate__faster
-    `
-  },
-  hideClass: {
-    popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `
-  }
-});
-                    }, function(error) {
-                         alert('Failed to send email. Please try again.');
-                    });
-            })
-            .catch(error => {
-                console.error('Error uploading file to File.io', error);
-                alert('Failed to upload CV. Please try again.');
+            return emailjs.send('service_s7vny6w', 'template_v4xkkph', templateParams);
+        })
+        .then(function(response) {
+            console.log('Email sent successfully:', response.status, response.text);
+            Swal.fire({
+                title: "تم الارسال بنجاح",
+                showClass: {
+                    popup: "animate__animated animate__fadeInUp animate__faster"
+                },
+                hideClass: {
+                    popup: "animate__animated animate__fadeOutDown animate__faster"
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: error.message,
             });
         });
-    </script>
+    });
+</script>
+
 
    </body>
 </html>
