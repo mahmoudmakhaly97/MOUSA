@@ -31,7 +31,7 @@
 
       <div class="topbar ">
       <div class="container">
-        <div class="d-flex justify-content-end gap-5 topbar-wrapper">
+        <div class="d-flex  justify-content-between justify-content-lg-end gap-5 topbar-wrapper">
  <div class="d-flex gap-3  topbar-links d-none d-lg-flex">
    <a href="#" class="text-white">   الاخبار والفعاليات</a>
              <a href="#" class="text-white">اتصل بنا</a>
@@ -43,12 +43,15 @@
             <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
             <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
             <a href="#">   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
-             <a href="#"  id="search-icon" >   <i  class="fas fa-search font-20 text-white"></i></a>
-
+             <a href="#"  class="search-icon" >   <i  class="fas fa-search font-20 text-white"></i></a>
+ 
         </div>
         <div>
+
             <a href="" class="text-white font-20 language-link"> English</a>
         </div>
+                                 <a href="#"  class="search-icon" >   <i  class="fas fa-search font-20 text-white"></i></a>
+
         </div>
             
        
@@ -752,10 +755,12 @@
         let searchResults = document.getElementById("search-results");
         let content = document.getElementById("content");
 
-        document.getElementById("search-icon").addEventListener("click", function() {
-            searchBar.classList.toggle("d-none");
+        document.querySelectorAll(".search-icon").forEach(function(icon) {
+            icon.addEventListener("click", function() {
+                 searchBar.classList.toggle("d-none");
             searchResults.classList.add("d-none");
-        });
+            });
+        })
 
         closeSearch.addEventListener("click", function() {
             searchBar.classList.add("d-none");
