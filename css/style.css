@@ -2353,3 +2353,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .result-item:hover {
     background-color: #f0f0f0;
 }
+
+@media (max-width:991px) {
+    .results {
+        min-height: 100vh !important;
+    }
+}
