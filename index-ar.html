@@ -744,68 +744,89 @@
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let searchBar = document.getElementById("search-bar");
+        let closeSearch = document.getElementById("close-search");
+        let searchInput = document.getElementById("search-input");
+        let searchResults = document.getElementById("search-results");
+        let content = document.getElementById("content");
 
-   <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let searchBar = document.getElementById("search-bar");
-            let closeSearch = document.getElementById("close-search");
-            let searchInput = document.getElementById("search-input");
-            let searchResults = document.getElementById("search-results");
-            let content = document.getElementById("content");
+        document.getElementById("search-icon").addEventListener("click", function() {
+            searchBar.classList.toggle("d-none");
+            searchResults.classList.add("d-none");
+        });
 
-            document.getElementById("search-icon").addEventListener("click", function() {
-                searchBar.classList.toggle("d-none");
+        closeSearch.addEventListener("click", function() {
+            searchBar.classList.add("d-none");
+            searchResults.classList.add("d-none");
+        });
+
+        searchInput.addEventListener("input", function() {
+            let query = searchInput.value.toLowerCase();
+            if (query.length === 0) {
                 searchResults.classList.add("d-none");
-            });
-
-            closeSearch.addEventListener("click", function() {
-                searchBar.classList.add("d-none");
-                searchResults.classList.add("d-none");
-            });
-
-            searchInput.addEventListener("input", function() {
-                let query = searchInput.value.toLowerCase();
-                if (query.length === 0) {
-                    searchResults.classList.add("d-none");
-                }
-            });
-
-            searchInput.addEventListener("keypress", function(event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    let query = searchInput.value.toLowerCase();
-                    if (query.length > 0) {
-                        let results = searchInContent(query);
-                        displayResults(results);
-                    } else {
-                        searchResults.classList.add("d-none");
-                    }
-                }
-            });
-
-            function searchInContent(query) {
-                let results = [];
-                let bodyText = content.innerText.toLowerCase();
-                let index = bodyText.indexOf(query);
-                while (index !== -1) {
-                    let context = content.innerText.substring(index - 30, index + 30 + query.length);
-                    results.push(context);
-                    index = bodyText.indexOf(query, index + 1);
-                }
-                return results;
-            }
-
-            function displayResults(results) {
-                searchResults.innerHTML = "";
-                results.forEach(result => {
-                    let item = document.createElement("div");
-                    item.className = "result-item";
-                    item.textContent = result;
-                    searchResults.appendChild(item);
-                });
-                searchResults.classList.remove("d-none");
             }
         });
-    </script>
+
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                let query = searchInput.value.toLowerCase();
+                if (query.length > 0) {
+                    let results = searchInContent(query);
+                    displayResults(results);
+                } else {
+                    searchResults.classList.add("d-none");
+                }
+            }
+        });
+
+        function searchInContent(query) {
+            let results = [];
+            let bodyText = content.innerText.toLowerCase();
+            let index = bodyText.indexOf(query);
+            while (index !== -1) {
+                let context = content.innerText.substring(index - 50, index + 50 + query.length);
+                results.push(context);
+                index = bodyText.indexOf(query, index + 1);
+            }
+            return results;
+        }
+
+        function displayResults(results) {
+            searchResults.innerHTML = "";
+            results.forEach(result => {
+                let item = document.createElement("div");
+                item.className = "result-item";
+                item.innerHTML = createResultLink(result); // Create link here
+                searchResults.appendChild(item);
+            });
+            searchResults.classList.remove("d-none");
+        }
+
+        function createResultLink(result) {
+            // Assume you have a way to map results to URLs
+            let url = getPageUrl(result); // Function to get the corresponding URL
+            return `<p>
+             ${result} </p>
+             </a>
+                 <a href="${url}" target="_blank">index-ar.html</a>
+               `;
+        }
+
+        function getPageUrl(result) {
+            // Example: You can define a mapping of keywords to URLs
+            const urlMapping = {
+                "keyword1": "index-ar.html",
+               
+                // Add more mappings as needed
+            };
+            // Return the corresponding URL or a default one
+            return urlMapping[result.trim()] || "#"; // Default to "#" if not found
+        }
+    });
+</script>
+
    </body>
 </html>
