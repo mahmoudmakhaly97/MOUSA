@@ -2331,3 +2331,25 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     background-color: rgb(79, 79, 79);
     transition: .4s all ease;
 }
+
+.results {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    min-height: calc(100vh - 140px);
+    z-index: 999999999999999;
+}
+
+.result-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0;
+}
