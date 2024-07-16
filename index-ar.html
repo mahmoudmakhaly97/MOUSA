@@ -807,7 +807,7 @@
 
         function createResultLink(result) {
             // Assume you have a way to map results to URLs
-            let url = getPageUrl(result); // Function to get the corresponding URL
+            let url = getPageUrl(result);
             return `<p>
              ${result} </p>
              </a>
@@ -816,14 +816,11 @@
         }
 
         function getPageUrl(result) {
-            // Example: You can define a mapping of keywords to URLs
             const urlMapping = {
-                "keyword1": "index-ar.html",
+                "keyword1":  window.location.href,
                
-                // Add more mappings as needed
             };
-            // Return the corresponding URL or a default one
-            return urlMapping[result.trim()] || "#"; // Default to "#" if not found
+            return urlMapping[result.trim()] || "#";
         }
     });
 </script>
