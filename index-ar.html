@@ -18,9 +18,6 @@
      
    </head>
    <body id="content">
-   <!-- start banner -->
-   
- <!-- start topbar -->
   <div id="search-bar" class="d-none search-bar position-absolute w-100 end-0 top-0 start-0 d-flex justify-content-center align-items-center">
     <div class="container d-flex gap-4">
         <i onclick="document.getElementById('search-bar').classList.add('d-none')" id="close-search" class="fa-solid fa-xmark fa-2x text-white pointer"></i>
@@ -28,6 +25,8 @@
     </div>
     <div id="search-results" class="results d-none"></div>
 </div>
+
+
 
       <div class="topbar ">
       <div class="container">
@@ -747,77 +746,103 @@
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
-<script>
+ <script>
     document.addEventListener("DOMContentLoaded", function() {
-        let searchBar = document.getElementById("search-bar");
-        let closeSearch = document.getElementById("close-search");
-        let searchInput = document.getElementById("search-input");
-        let searchResults = document.getElementById("search-results");
-        let bodyContent = document.body.innerText.toLowerCase();
+    let searchBar = document.getElementById("search-bar");
+    let closeSearch = document.getElementById("close-search");
+    let searchInput = document.getElementById("search-input");
+    let searchResults = document.getElementById("search-results");
 
-        document.querySelectorAll(".search-icon").forEach(function(icon) {
-            icon.addEventListener("click", function() {
-                searchBar.classList.toggle("d-none");
-                searchResults.classList.add("d-none");
-            });
-        });
-
-        closeSearch.addEventListener("click", function() {
-            searchBar.classList.add("d-none");
+const pages = ["index-ar.html" , "about-ar.html" , "adminstrative-ar.html","admission-ar.html","career-ar.html","collage-councils-ar.html","contactUs-ar.html","dean-ar.html","events_news_ar.html","mission-vision-ar.html","our-program-ar.html","vice-deans-ar.html"];
+    document.querySelectorAll(".search-icon").forEach(function(icon) {
+        icon.addEventListener("click", function() {
+            searchBar.classList.toggle("d-none");
             searchResults.classList.add("d-none");
         });
+    });
 
-        searchInput.addEventListener("input", function() {
+    closeSearch.addEventListener("click", function() {
+        searchBar.classList.add("d-none");
+        searchResults.classList.add("d-none");
+    });
+
+    searchInput.addEventListener("input", function() {
+        let query = searchInput.value.toLowerCase();
+        if (query.length === 0) {
+            searchResults.classList.add("d-none");
+        }
+    });
+
+    searchInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
             let query = searchInput.value.toLowerCase();
-            if (query.length === 0) {
+            if (query.length > 0) {
+                searchInAllPages(query);
+            } else {
                 searchResults.classList.add("d-none");
             }
-        });
-
-        searchInput.addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                let query = searchInput.value.toLowerCase();
-                if (query.length > 0) {
-                    let results = searchInContent(query);
-                    displayResults(results);
-                } else {
-                    searchResults.classList.add("d-none");
-                }
-            }
-        });
-
-        function searchInContent(query) {
-            let results = [];
-            let index = bodyContent.indexOf(query);
-            while (index !== -1) {
-                // Determine the page URL for the result
-                let pageUrl = determinePageUrl(index);
-                let context = document.body.innerText.substring(index - 50, index + 50 + query.length);
-                results.push({ context, url: pageUrl });
-                index = bodyContent.indexOf(query, index + 1);
-            }
-            return results;
         }
+    });
 
-        function determinePageUrl(index) {
- 
-            return window.location.pathname;
+    async function searchInAllPages(query) {
+        let results = [];
+        for (let page of pages) {
+            let content = await fetchPageContent(page);
+            results = results.concat(searchInContent(query, content, page));
         }
+        displayResults(results);
+    }
 
-        function displayResults(results) {
-            searchResults.innerHTML = "";
+    function searchInContent(query, content, pageUrl) {
+        let results = [];
+        let lowerCaseContent = content.toLowerCase();
+        let index = lowerCaseContent.indexOf(query);
+        while (index !== -1) {
+            let context = content.substring(index - 50, index + 50 + query.length);
+            results.push({ context, url: pageUrl });
+            index = lowerCaseContent.indexOf(query, index + 1);
+        }
+        return results;
+    }
+
+    async function fetchPageContent(url) {
+        try {
+            let response = await fetch(url);
+            if (response.ok) {
+                const html = await response.text();
+                const tempElement = document.createElement('div');
+                tempElement.innerHTML = html;
+                return tempElement.textContent; // Get plain text
+            } else {
+                console.error("Failed to fetch content from", url);
+                return "";
+            }
+        } catch (error) {
+            console.error("Error fetching content from", url, error);
+            return "";
+        }
+    }
+
+    function displayResults(results) {
+        searchResults.innerHTML = "";
+        if (results.length === 0) {
+            let noDataItem = document.createElement("div");
+            noDataItem.className = "result-item";
+            noDataItem.innerHTML = "<p>No data found</p>";
+            searchResults.appendChild(noDataItem);
+        } else {
             results.forEach(result => {
                 let item = document.createElement("div");
                 item.className = "result-item";
-                item.innerHTML = `<p>${result.context}<br/> <a href="${result.url}">${result.url}</a></p>`;
+                item.innerHTML = `<p>${result.context} <br/> <a href="${result.url}">${result.url}</a></p>`;
                 searchResults.appendChild(item);
             });
-            searchResults.classList.remove("d-none");
         }
-    });
-</script>
- 
+        searchResults.classList.remove("d-none");
+    }
+});
 
+ </script>
    </body>
 </html>

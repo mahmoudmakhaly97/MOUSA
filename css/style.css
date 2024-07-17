@@ -2348,7 +2348,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: center;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+ }
 
 .result-item:hover {
     background-color: #f0f0f0;
