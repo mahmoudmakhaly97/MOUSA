@@ -21,13 +21,13 @@
    <!-- start banner -->
    
  <!-- start topbar -->
-   <div id="search-bar" class="d-none search-bar position-absolute w-100 end-0 top-0 start-0 d-flex justify-content-center align-items-center">
-        <div class="container d-flex gap-4">
-            <i onclick="document.getElementById('search-bar').classList.add('d-none')" id="close-search" class="fa-solid fa-xmark fa-2x text-white pointer"></i>
-            <input id="search-input" type="text" class="form-control" placeholder="ابحث هنا">
-        </div>
-        <div id="search-results" class="results d-none"></div>
+  <div id="search-bar" class="d-none search-bar position-absolute w-100 end-0 top-0 start-0 d-flex justify-content-center align-items-center">
+    <div class="container d-flex gap-4">
+        <i onclick="document.getElementById('search-bar').classList.add('d-none')" id="close-search" class="fa-solid fa-xmark fa-2x text-white pointer"></i>
+        <input id="search-input" type="text" class="form-control" placeholder="ابحث هنا">
     </div>
+    <div id="search-results" class="results d-none"></div>
+</div>
 
       <div class="topbar ">
       <div class="container">
@@ -753,14 +753,14 @@
         let closeSearch = document.getElementById("close-search");
         let searchInput = document.getElementById("search-input");
         let searchResults = document.getElementById("search-results");
-        let content = document.getElementById("content");
+        let bodyContent = document.body.innerText.toLowerCase();
 
         document.querySelectorAll(".search-icon").forEach(function(icon) {
             icon.addEventListener("click", function() {
-                 searchBar.classList.toggle("d-none");
-            searchResults.classList.add("d-none");
+                searchBar.classList.toggle("d-none");
+                searchResults.classList.add("d-none");
             });
-        })
+        });
 
         closeSearch.addEventListener("click", function() {
             searchBar.classList.add("d-none");
@@ -789,14 +789,20 @@
 
         function searchInContent(query) {
             let results = [];
-            let bodyText = content.innerText.toLowerCase();
-            let index = bodyText.indexOf(query);
+            let index = bodyContent.indexOf(query);
             while (index !== -1) {
-                let context = content.innerText.substring(index - 50, index + 50 + query.length);
-                results.push(context);
-                index = bodyText.indexOf(query, index + 1);
+                // Determine the page URL for the result
+                let pageUrl = determinePageUrl(index);
+                let context = document.body.innerText.substring(index - 50, index + 50 + query.length);
+                results.push({ context, url: pageUrl });
+                index = bodyContent.indexOf(query, index + 1);
             }
             return results;
+        }
+
+        function determinePageUrl(index) {
+ 
+            return window.location.pathname;
         }
 
         function displayResults(results) {
@@ -804,31 +810,14 @@
             results.forEach(result => {
                 let item = document.createElement("div");
                 item.className = "result-item";
-                item.innerHTML = createResultLink(result); // Create link here
+                item.innerHTML = `<p>${result.context}<br/> <a href="${result.url}">${result.url}</a></p>`;
                 searchResults.appendChild(item);
             });
             searchResults.classList.remove("d-none");
         }
-
-        function createResultLink(result) {
-            // Assume you have a way to map results to URLs
-            let url = getPageUrl(result);
-            return `<p>
-             ${result} </p>
-             </a>
-                 <a href="${url}" target="_blank">${window.location.pathname}</a>
-               `;
-        }
-
-        function getPageUrl(result) {
-            const urlMapping = {
-                "keyword1":  window.location.href,
-               
-            };
-            return urlMapping[result.trim()] || "#";
-        }
     });
 </script>
+ 
 
    </body>
 </html>
