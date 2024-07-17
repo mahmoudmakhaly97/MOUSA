@@ -304,50 +304,7 @@
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
- <script>
-        $(document).ready(function(){
-            function initializeCarousel(selector) {
-                var owl = $(selector);
-                owl.owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    nav: true,
-                    rtl: false,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items: 3
-                        }
-                    },
-                    onInitialized: function(event) {
-                        highlightCenterItem(event.target);
-                    },
-                    onTranslated: function(event) {
-                        highlightCenterItem(event.target);
-                    }
-                });
-            }
-
-            function highlightCenterItem(carousel) {
-                var $carousel = $(carousel);
-                var centerIndex = Math.floor($carousel.find('.owl-item.active').length / 2);
-                $carousel.find('.owl-item').removeClass('center-item');
-                $carousel.find('.owl-item.active').eq(centerIndex).addClass('center-item');
-            }
-
-            // Initialize each carousel
-            initializeCarousel('.student-tour-carousel').eq(0);
-            initializeCarousel('.student-tour-carousel').eq(1);
-                        initializeCarousel('.student-tour-carousel').eq(2);
- initializeCarousel('.student-tour-carousel').eq(3);
-
-        });
-    </script>
+ 
 </body>
 </html>
    </body>

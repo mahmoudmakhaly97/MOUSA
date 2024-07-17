@@ -1,4 +1,5 @@
 // home logic 
+
 $('.banner-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -239,15 +240,7 @@ for (let i = 0; i < arrows.length; i++) {
     }
     updateActivePageLink(page);
   }
-
-  function showAllItems() {
-    clearContainer();
-    eventItems.forEach((item) => {
-      item.classList.add("active");
-      container.appendChild(item);
-    });
-    updateActivePageLink(null); // No active page link when showing all items
-  }
+ 
 
   function updateActivePageLink(page) {
     pageLinks.forEach((link) => {
@@ -322,6 +315,49 @@ newsInfoContainers.forEach((container) => {
     newsImg.src = container.querySelector(".infoImg").src;
     })
 })
+// student tour logic 
+  $(document).ready(function(){
+            function initializeCarousel(selector) {
+                var owl = $(selector);
+                owl.owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    rtl: false,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    },
+                    onInitialized: function(event) {
+                        highlightCenterItem(event.target);
+                    },
+                    onTranslated: function(event) {
+                        highlightCenterItem(event.target);
+                    }
+                });
+            }
+
+            function highlightCenterItem(carousel) {
+                var $carousel = $(carousel);
+                var centerIndex = Math.floor($carousel.find('.owl-item.active').length / 2);
+                $carousel.find('.owl-item').removeClass('center-item');
+                $carousel.find('.owl-item.active').eq(centerIndex).addClass('center-item');
+            }
+
+            // Initialize each carousel
+            initializeCarousel('.student-tour-carousel').eq(0);
+            initializeCarousel('.student-tour-carousel').eq(1);
+                        initializeCarousel('.student-tour-carousel').eq(2);
+ initializeCarousel('.student-tour-carousel').eq(3);
+
+        });
 // adminstartive filter logic
     document.getElementById('filterButton').addEventListener('click', function(e) {
              e.preventDefault();
@@ -360,6 +396,7 @@ newsInfoContainers.forEach((container) => {
                  }
              });
     });
+    
 // adminstrative pagination logic
 document.addEventListener('DOMContentLoaded', function () {
   const cardsPerPage = 9; // Number of cards per page
@@ -489,3 +526,5 @@ document.addEventListener('DOMContentLoaded', function () {
     setActivePage(currentPage);
   });
 });
+
+
