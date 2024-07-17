@@ -48,7 +48,9 @@ a {
 .text-green {
     color: var(--main-color);
 }
-
+.text-gray{
+    color: #555;
+}
 .bg-gray {
     background-color: #f5f5f5;
 }
