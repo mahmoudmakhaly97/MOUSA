@@ -304,87 +304,6 @@ for (let i = 0; i < arrows.length; i++) {
 });
 
 
-// adminstrative pagination logic
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const cardsPerPage = 9; // Number of cards per page
-    let currentPage = 1;    // Current page number
-    const cards = document.querySelectorAll('.adminstrative-card');
-    const totalPages = Math.ceil(cards.length / cardsPerPage); // Calculate total pages
-
-    function showPage(page) {
-      cards.forEach((card, index) => {
-        if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    function generatePagination() {
-      const paginationContainer = document.querySelector('.admistrative-pagination');
-      paginationContainer.innerHTML = ''; // Clear existing pagination
-
-      // Previous page button
-      paginationContainer.insertAdjacentHTML('beforeend', `
-        <li class="page-item ms-1">
-          <a class="page-link" href="#" id="previous-page" aria-label="Previous">
-            <i class="fa-solid fa-chevron-right fa-xs"></i>
-          </a>
-        </li>
-      `);
-
-      // Page number buttons
-    if (totalPages > 1) {
-      for (let i = 1; i <= totalPages; i++) {
-        paginationContainer.insertAdjacentHTML('beforeend', `
-          <li class="page-item ms-1">
-            <a class="page-link" href="#" data-page="${i}">${i}</a>
-          </li>
-        `);
-      }
-    }
-      // Next page button
-      paginationContainer.insertAdjacentHTML('beforeend', `
-        <li class="page-item">
-          <a class="page-link" href="#" id="next-page" aria-label="Next">
-            <i class="fa-solid fa-chevron-left fa-xs"></i>
-          </a>
-        </li>
-      `);
-
-      // Add event listeners to pagination links
-      document.querySelectorAll('.pagination .page-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const page = this.getAttribute('data-page');
-          if (page) {
-            currentPage = parseInt(page);
-          } else {
-            if (this.id === 'previous-page' && currentPage > 1) {
-              currentPage--;
-            }
-            if (this.id === 'next-page' && currentPage < totalPages) {
-              currentPage++;
-            }
-          }
-          showPage(currentPage);
-          setActivePage(currentPage);
-        });
-      });
-    }
-
-    function setActivePage(page) {
-      document.querySelectorAll('.pagination .page-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      document.querySelector(`.pagination .page-item a[data-page="${page}"]`).parentElement.classList.add('active');
-    }
- generatePagination();
- showPage(currentPage);
-    setActivePage(currentPage);
-  });
 
 
 // events & news logic(our news section )
@@ -441,3 +360,132 @@ newsInfoContainers.forEach((container) => {
                  }
              });
     });
+// adminstrative pagination logic
+document.addEventListener('DOMContentLoaded', function () {
+  const cardsPerPage = 9; // Number of cards per page
+  let currentPage = 1;    // Current page number
+  const cards = document.querySelectorAll('.adminstrative-card');
+
+  function updateTotalPages() {
+    const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+    return Math.max(1, Math.ceil(visibleCards.length / cardsPerPage));
+  }
+
+  function showPage(page) {
+    cards.forEach((card, index) => {
+      if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function generatePagination() {
+    const paginationContainer = document.querySelector('.admistrative-pagination');
+    paginationContainer.innerHTML = ''; // Clear existing pagination
+
+    const totalPages = updateTotalPages(); // Update total pages
+
+    // Previous page button
+    paginationContainer.insertAdjacentHTML('beforeend', 
+      `<li class="page-item ms-1">
+        <a class="page-link" href="#" id="previous-page" aria-label="Previous">
+          <i class="fa-solid fa-chevron-right fa-xs"></i>
+        </a>
+      </li>`
+    );
+
+    // Page number buttons
+    if (totalPages > 1) {
+      for (let i = 1; i <= totalPages; i++) {
+        paginationContainer.insertAdjacentHTML('beforeend', 
+          `<li class="page-item ms-1">
+            <a class="page-link" href="#" data-page="${i}">${i}</a>
+          </li>`
+        );
+      }
+    }
+
+    // Next page button
+    paginationContainer.insertAdjacentHTML('beforeend', 
+      `<li class="page-item">
+        <a class="page-link" href="#" id="next-page" aria-label="Next">
+          <i class="fa-solid fa-chevron-left fa-xs"></i>
+        </a>
+      </li>`
+    );
+
+    // Add event listeners to pagination links
+    document.querySelectorAll('.pagination .page-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const page = this.getAttribute('data-page');
+        if (page) {
+          currentPage = parseInt(page);
+        } else {
+          if (this.id === 'previous-page' && currentPage > 1) {
+            currentPage--;
+          }
+          if (this.id === 'next-page' && currentPage < totalPages) {
+            currentPage++;
+          }
+        }
+        showPage(currentPage);
+        setActivePage(currentPage);
+      });
+    });
+  }
+
+  function setActivePage(page) {
+    document.querySelectorAll('.pagination .page-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    document.querySelector(`.pagination .page-item a[data-page="${page}"]`).parentElement.classList.add('active');
+  }
+
+  // Initial display
+  generatePagination();
+  showPage(currentPage);
+  setActivePage(currentPage);
+
+  // Filter logic
+  document.getElementById('filterButton').addEventListener('click', function (e) {
+    e.preventDefault();
+    const nameValue = document.getElementById('name').value.toLowerCase();
+    const positionValue = document.getElementById('position').value;
+    const departmentValue = document.getElementById('department').value;
+    const deanshipValue = document.getElementById('deanship').value;
+    const centerValue = document.getElementById('center').value;
+    const collegeValue = document.getElementById('college').value;
+
+    const cards = document.querySelectorAll('.adminstrative-card'); // Use correct class
+
+    cards.forEach(card => {
+      const cardName = card.getAttribute('data-name').toLowerCase();
+      const cardPosition = card.getAttribute('data-position');
+      const cardDepartment = card.getAttribute('data-department');
+      const cardDeanship = card.getAttribute('data-deanship');
+      const cardCenter = card.getAttribute('data-center');
+      const cardCollege = card.getAttribute('data-college');
+
+      const nameMatch = !nameValue || cardName.includes(nameValue);
+      const positionMatch = positionValue === 'حدد عنصر' || cardPosition === positionValue;
+      const departmentMatch = departmentValue === 'حدد عنصر' || cardDepartment === departmentValue;
+      const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
+      const centerMatch = centerValue === 'حدد عنصر' || cardCenter === centerValue;
+      const collegeMatch = collegeValue === 'حدد عنصر' || cardCollege === collegeValue;
+
+      if (nameMatch && positionMatch && departmentMatch && deanshipMatch && centerMatch && collegeMatch) {
+        card.parentElement.style.display = 'block';
+      } else {
+        card.parentElement.style.display = 'none';
+      }
+    });
+
+    // Update pagination and display after filtering
+    generatePagination();
+    showPage(currentPage);
+    setActivePage(currentPage);
+  });
+});
