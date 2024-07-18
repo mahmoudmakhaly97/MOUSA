@@ -323,7 +323,9 @@ newsInfoContainers.forEach((container) => {
                     loop: true,
                     margin: 10,
                     nav: true,
-                    rtl: false,
+                  rtl: false,
+                        navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+
                     responsive: {
                         0: {
                             items: 1
