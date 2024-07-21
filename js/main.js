@@ -377,9 +377,9 @@ newsInfoContainers.forEach((container) => {
     const visibleCards = cards.filter(card => card.parentElement.style.display !== 'none');
     visibleCards.forEach((card, index) => {
       if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
-        card.parentElement.style.display = 'block';
+        card.style.display = 'block';
       } else {
-        card.parentElement.style.display = 'none';
+        card.style.display = 'none';
       }
     });
   }
