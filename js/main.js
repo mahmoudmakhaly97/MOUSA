@@ -360,62 +360,26 @@ newsInfoContainers.forEach((container) => {
  initializeCarousel('.student-tour-carousel').eq(3);
 
         });
-// adminstartive filter logic
-    document.getElementById('filterButton').addEventListener('click', function(e) {
-             e.preventDefault();
-             // Get input values
-             const nameValue = document.getElementById('name').value.toLowerCase();
-             const positionValue = document.getElementById('position').value;
-             const departmentValue = document.getElementById('department').value;
-      const deanshipValue = document.getElementById('deanship').value;
-      const centerValue = document.getElementById('center').value;
-      const collegeValue = document.getElementById('college').value;
-         
-             // Get all cards
-             const cards = document.querySelectorAll('.card');
-         
-             cards.forEach(card => {
-                 // Get card data attributes
-                 const cardName = card.getAttribute('data-name').toLowerCase();
-                 const cardPosition = card.getAttribute('data-position');
-                 const cardDepartment = card.getAttribute('data-department');
-               const cardDeanship = card.getAttribute('data-deanship');
-               const cardCenter = card.getAttribute('data-center');
-               const cardCollege = card.getAttribute('data-college');
-         
-                 // Check if card matches the filter criteria
-                 const nameMatch = !nameValue || cardName.includes(nameValue);
-                 const positionMatch = positionValue === 'حدد عنصر' || cardPosition === positionValue;
-                 const departmentMatch = departmentValue === 'حدد عنصر' || cardDepartment === departmentValue;
-               const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
-               const centerMatch = centerValue === 'حدد عنصر' || cardCenter === centerValue;
-               const collegeMatch = collegeValue === 'حدد عنصر' || cardCollege === collegeValue;
-         
-                 if (nameMatch && positionMatch  && departmentMatch && deanshipMatch&& centerMatch&& collegeMatch) {
-                     card.parentElement.style.display = 'block';
-                 } else {
-                     card.parentElement.style.display = 'none';
-                 }
-             });
-    });
-    
-// adminstrative pagination logic
-document.addEventListener('DOMContentLoaded', function () {
+ 
+ 
+    // adminstraive pagination
+ document.addEventListener('DOMContentLoaded', function () {
   const cardsPerPage = 9; // Number of cards per page
   let currentPage = 1;    // Current page number
-  const cards = document.querySelectorAll('.adminstrative-card');
+  const cards = Array.from(document.querySelectorAll('.adminstrative-card'));
 
   function updateTotalPages() {
-    const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+    const visibleCards = cards.filter(card => card.parentElement.style.display !== 'none');
     return Math.max(1, Math.ceil(visibleCards.length / cardsPerPage));
   }
 
   function showPage(page) {
-    cards.forEach((card, index) => {
+    const visibleCards = cards.filter(card => card.parentElement.style.display !== 'none');
+    visibleCards.forEach((card, index) => {
       if (index >= (page - 1) * cardsPerPage && index < page * cardsPerPage) {
-        card.style.display = 'block';
+        card.parentElement.style.display = 'block';
       } else {
-        card.style.display = 'none';
+        card.parentElement.style.display = 'none';
       }
     });
   }
@@ -480,7 +444,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.pagination .page-item').forEach(item => {
       item.classList.remove('active');
     });
-    document.querySelector(`.pagination .page-item a[data-page="${page}"]`).parentElement.classList.add('active');
+    const activePage = document.querySelector(`.pagination .page-item a[data-page="${page}"]`);
+    if (activePage) {
+      activePage.parentElement.classList.add('active');
+    }
   }
 
   // Initial display
@@ -492,41 +459,51 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('filterButton').addEventListener('click', function (e) {
     e.preventDefault();
     const nameValue = document.getElementById('name').value.toLowerCase();
-    const positionValue = document.getElementById('position').value;
-    const departmentValue = document.getElementById('department').value;
-    const deanshipValue = document.getElementById('deanship').value;
-    const centerValue = document.getElementById('center').value;
-    const collegeValue = document.getElementById('college').value;
-
-    const cards = document.querySelectorAll('.adminstrative-card'); // Use correct class
+    const jobValue = document.getElementById('job').value;
 
     cards.forEach(card => {
       const cardName = card.getAttribute('data-name').toLowerCase();
-      const cardPosition = card.getAttribute('data-position');
-      const cardDepartment = card.getAttribute('data-department');
-      const cardDeanship = card.getAttribute('data-deanship');
-      const cardCenter = card.getAttribute('data-center');
-      const cardCollege = card.getAttribute('data-college');
+      const cardJob = card.getAttribute('data-job');
 
       const nameMatch = !nameValue || cardName.includes(nameValue);
-      const positionMatch = positionValue === 'حدد عنصر' || cardPosition === positionValue;
-      const departmentMatch = departmentValue === 'حدد عنصر' || cardDepartment === departmentValue;
-      const deanshipMatch = deanshipValue === 'حدد عنصر' || cardDeanship === deanshipValue;
-      const centerMatch = centerValue === 'حدد عنصر' || cardCenter === centerValue;
-      const collegeMatch = collegeValue === 'حدد عنصر' || cardCollege === collegeValue;
+      const jobMatch = jobValue === 'حدد عنصر' || cardJob === jobValue;
 
-      if (nameMatch && positionMatch && departmentMatch && deanshipMatch && centerMatch && collegeMatch) {
+      if (nameMatch && jobMatch) {
         card.parentElement.style.display = 'block';
       } else {
         card.parentElement.style.display = 'none';
       }
     });
 
-    // Update pagination and display after filtering
+    // Reset to the first page after filtering
+    currentPage = 1;
     generatePagination();
     showPage(currentPage);
     setActivePage(currentPage);
   });
+
+  // Show all items when inputs are empty
+  document.getElementById('name').addEventListener('input', function () {
+    if (this.value === '') {
+      cards.forEach(card => {
+        card.parentElement.style.display = 'block';
+      });
+      currentPage = 1;
+      generatePagination();
+      showPage(currentPage);
+      setActivePage(currentPage);
+    }
+  });
+
+  document.getElementById('job').addEventListener('change', function () {
+    if (this.value === 'حدد عنصر') {
+      cards.forEach(card => {
+        card.parentElement.style.display = 'block';
+      });
+      currentPage = 1;
+      generatePagination();
+      showPage(currentPage);
+      setActivePage(currentPage);
+    }
+  });
 });
-
-

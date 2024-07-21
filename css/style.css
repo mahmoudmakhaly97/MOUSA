@@ -2191,6 +2191,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .contact-info ul li>span {
     font-weight: bold;
+    font-size: 15px;
 }
 
 .contact-info .tools .title {
