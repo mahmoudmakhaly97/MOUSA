@@ -1619,7 +1619,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 /* end our history section styles */
 /* admission page style */
 .admission .admission-banner {
-    height: 60vh;
+    height: 50vh;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
@@ -1866,7 +1866,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .events .events-banner {
-    height: 70vh;
+    height: 50vh;
     background-position: center !important;
     background-size: cover !important;
 }
