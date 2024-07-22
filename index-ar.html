@@ -839,7 +839,7 @@ const pages = ["index-ar.html" , "about-ar.html" , "adminstrative-ar.html","admi
             results.forEach(result => {
                 let item = document.createElement("div");
                 item.className = "result-item";
-                item.innerHTML = `<p>${result.context} <br/> <a href="${result.url}">${result.url}</a></p>`;
+                item.innerHTML = `<p class="fs-1">${result.context} <br/> <a href="${result.url}">${window.location.origin}/${result.url}</a></p>`;
                 searchResults.appendChild(item);
             });
         }

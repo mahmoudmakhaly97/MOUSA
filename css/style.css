@@ -2369,6 +2369,10 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     text-align: center;
 }
 
+.result-item p {
+    font-size: 20px;
+}
+
 .result-item:hover {
     background-color: #f0f0f0;
 }
