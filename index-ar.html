@@ -832,6 +832,10 @@ const pages = ["index-ar.html" , "about-ar.html" , "adminstrative-ar.html","admi
             noDataItem.innerHTML = "<p>No data found</p>";
             searchResults.appendChild(noDataItem);
         } else {
+               // Store results in sessionStorage
+        sessionStorage.setItem('searchResults', JSON.stringify(results));
+        // Redirect to search.html
+        window.location.href = 'search.html';
             results.forEach(result => {
                 let item = document.createElement("div");
                 item.className = "result-item";

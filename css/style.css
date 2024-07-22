@@ -2443,3 +2443,15 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     transition: all .3 ease;
 
 }
+
+/* search style */
+
+.search-container #searchResults {
+    padding: 200px 0;
+}
+
+@media (min-width:1200px) {
+    #searchResults {
+        margin-bottom: 22rem !important;
+    }
+}
