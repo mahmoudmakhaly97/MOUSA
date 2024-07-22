@@ -831,6 +831,8 @@ const pages = ["index-ar.html" , "about-ar.html" , "adminstrative-ar.html","admi
             noDataItem.className = "result-item";
             noDataItem.innerHTML = "<p>No data found</p>";
             searchResults.appendChild(noDataItem);
+           
+
         } else {
                // Store results in sessionStorage
         sessionStorage.setItem('searchResults', JSON.stringify(results));
