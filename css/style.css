@@ -1575,7 +1575,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     height: 100%;
 }
 
-.our-history .application-btn {
+.download-btn {
     color: #fff;
     background-color: var(--main-color);
     font-size: 2em;
@@ -1584,12 +1584,12 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     transition: .3s all ease;
 }
 
-.our-history .application-btn:hover {
+.download-btn:hover {
     background-color: var(--secondary);
 }
 
 .our-history-btns {
-    width: 30%;
+    width:fit-content;
 }
 
 @media (min-width:1200px) {
@@ -1739,7 +1739,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 /* start application-form form */
-.application-form .application-btn {
+
+.download-btn {
     color: #fff;
     background-color: var(--main-color);
     font-size: 2em;
@@ -1748,7 +1749,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     transition: .3s all ease;
 }
 
-.application-form .application-btn:hover {
+
+ .download-btn:hover {
     background-color: var(--secondary);
 }
 
@@ -1797,7 +1799,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         font-size: 2rem;
     }
 
-    .application-form .application-btn {
+
+     .download-btn {
         font-size: 1em;
         border-radius: 0em;
         border-radius: 5em;
