@@ -60,7 +60,7 @@
 <!-- end topbar -->
  
 <!-- start navbar -->
-<nav class="navbar navbar-expand-xl bg-dark">
+<nav class="navbar navbar-expand-xl ">
   <div class="container">
     <a class="navbar-brand" href="#">
       <div class="d-flex align-items-center gap-2">
@@ -132,10 +132,21 @@
     </div>
   </div>
 </nav>
-
+<!-- end navbar -->
  <!-- end navbar -->
+    <!-- start banner -->
+      <section class="main-banner position-relative" style="background:  url(https://placehold.co/600x400); background-repeat: no-repeat;background-position: center center;">
+        
+         <div class="banner-overlay position-absolute top-0 start-0 w-100 h-100" >
+
+         <div class="container">
+            <h1 class="title fw-bolder position-absolute text-white py-4 bottom-0"></h1>
+         </div>
+         </div>
+      </section>
+      <!-- end banner -->
 <div class="search-page bg-white">
-      <div id="searchResults" style="padding-top: 200px;"></div>
+      <div id="searchResults"></div>
 
 </div>
       <!-- start footer-->
@@ -258,7 +269,8 @@
                 noDataItem.innerHTML = "<p>No data found</p>";
                 searchResults.appendChild(noDataItem);
             } else {
-                results.forEach(result => {
+                results.forEach(result  => {
+                 
                     let item = document.createElement("div");
                     item.className = "result-item";
                     item.innerHTML = `<p>${result.context}  </p> <a href="${result.url}">${window.location.origin}${result.url }</a>`;

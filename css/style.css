@@ -163,7 +163,7 @@ body.fixed-nav-padding {
     height: 100%;
     width: 4px;
     background-color: rgb(252, 218, 6);
-    left: 0;
+    right: 0;
 }
 
 .nav-item:last-of-type>.nav-link::after {
@@ -2450,8 +2450,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 /* search style */
 
-.search-container #searchResults {
-    padding: 200px 0;
+.search-page #searchResults {
+    padding: 2em 0;
 }
 
 @media (min-width:1200px) {
