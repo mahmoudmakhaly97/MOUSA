@@ -111,12 +111,12 @@ body.fixed-nav-padding {
     width: 8rem;
 }
 
-.logo2  {
+.logo2 {
     width: 13rem;
 }
 
 @media (max-width:400px) {
-    .logo2  {
+    .logo2 {
         width: 9rem;
 
     }
@@ -1938,6 +1938,23 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     font-size: 24px;
     color: rgb(85, 85, 85);
     font-weight: 500;
+}
+
+.upcoming-events .calendar-dark {
+    display: none;
+}
+
+.calendar-light,
+.calendar-dark {
+    transition: .4s all ease;
+}
+
+.upcoming-events .download-btn:hover .calendar-light {
+    display: none;
+}
+
+.upcoming-events .download-btn:hover .calendar-dark {
+    display: flex;
 }
 
 @media (max-width:1500px) {
