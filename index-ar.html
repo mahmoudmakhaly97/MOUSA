@@ -54,33 +54,39 @@
             <a class="navbar-brand" href="#">
                <div class="d-flex align-items-center gap-2">
                   <img src="images/career/logo.png" alt="logo1">
-                  <img src="images/career/logo2.png" class="d-none d-xl-flex" alt="logo2">
+                
+                     <img src="images/career/logo-2.png " class="logo2"  alt="logo2">
+                 
                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav align-items-center mb-2 mb-lg-0 gap-2">
+           
+            <button class="btn d-xl-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">    <i class="fa-solid fa-bars text-white"></i></button>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex justify-content-end d-lg-none ">
+  <i class="fa-solid fa-rectangle-xmark fa-lg " data-bs-dismiss="offcanvas" aria-label="Close"></i>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav align-items-center mb-2 mb-lg-0 gap-2">
                   <li class="nav-item">
-                     <a class="nav-link py-2 px-4" href="index-ar.html">الرئيسية</a>
+                     <a class="nav-link py-2 px-4 pe-none" href="index-ar.html">الرئيسية</a>
                   </li>
                   <li class="nav-item position-relative">
-                     <a class="nav-link" href="about-ar.html" >الموسي لايف</a>
+                     <a class="nav-link pe-none" href="about-ar.html"   >الموسي لايف</a>
                      <!-- dropdown -->
                      <ul class="position-absolute nav-dropdown end-0">
                         <li><a class="nav-link" href="about-ar.html">عن الموسي</a></li>
                      </ul>
                   </li>
                   <li class="nav-item position-relative">
-                     <a class="nav-link" href="admission-ar.html" > ادارة الكلية   </a>
+                     <a class="nav-link pe-none" href="admission-ar.html" > ادارة الكلية   </a>
                      <!-- dropdown -->
                      <ul class="position-absolute nav-dropdown end-0">
-                        <li><a class="nav-link" href="admission-ar.html"> التقديم والقبول </a></li>
+                        <li><a class="nav-link pe-none" href="admission-ar.html"> التقديم والقبول </a></li>
                      </ul>
                   </li>
                   <li class="nav-item position-relative">
-                     <a class="nav-link" href="our-program-ar.html" >برامجنا</a>
+                     <a class="nav-link pe-none" href="our-program-ar.html" >برامجنا</a>
                      <!-- dropdown -->
                      <ul class="position-absolute nav-dropdown end-0 ">
                         <li><a class="nav-link " href="our-program-ar.html">العلوم ف التمريض</a></li>
@@ -113,8 +119,9 @@
                   </div>
                   <!-- end social icons in off canvas -->
                </ul>
-            </div>
-         </div>
+  </div>
+</div>
+          </div>
       </nav>
       <!-- end navbar -->
       <div class="home-banner  position-relative ">

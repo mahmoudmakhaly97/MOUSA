@@ -107,13 +107,22 @@ body.fixed-nav-padding {
     padding-top: 70px;
 }
 
-.navbar-brand img {
+.navbar-brand img:first-of-type {
     width: 8rem;
 }
 
-.logo2 img {
+.logo2  {
     width: 13rem;
 }
+
+@media (max-width:400px) {
+    .logo2  {
+        width: 9rem;
+
+    }
+}
+
+
 
 .nav-item:last-child {
     background-color: var(--secondary) !important;
@@ -193,6 +202,21 @@ body.fixed-nav-padding {
 
 .nav-item:nth-child(3) .nav-dropdown {
     width: 270px;
+}
+
+@media (max-width:1200px) {
+    .nav-item:nth-child(2) .nav-dropdown {
+        /* width: 100px  */
+        background-color: rgb(79, 79, 79, 1);
+    }
+
+    .nav-item:nth-child(3) .nav-dropdown {
+        width: 100px
+    }
+
+    .navbar-nav li:nth-child(2) .nav-dropdown {
+        margin-inline-start: 1.4em !important;
+    }
 }
 
 .nav-dropdown li a::before {
@@ -283,7 +307,7 @@ button:focus:not(:focus-visible) {
     }
 
     .topbar-wrapper {
-        bottom: 20%;
+        bottom: 5%;
     }
 
     .navbar {
@@ -298,6 +322,22 @@ button:focus:not(:focus-visible) {
     .nav-link:not(:nth-last-of-type(1)):hover {
         padding-left: .7rem !important;
         padding-right: .7rem !important;
+    }
+}
+
+@media (max-width:1200px) {
+    .search-icon {
+        line-height: 3.4em;
+    }
+}
+
+.offcanvas.show {
+    background-color: rgb(79, 79, 79, 1)
+}
+
+@media (min-width: 1200px) {
+    .navbar-expand-xl .offcanvas-body {
+        justify-content: flex-end;
     }
 }
 
@@ -1589,7 +1629,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .our-history-btns {
-    width:fit-content;
+    width: fit-content;
 }
 
 @media (min-width:1200px) {
@@ -1750,7 +1790,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 
- .download-btn:hover {
+.download-btn:hover {
     background-color: var(--secondary);
 }
 
@@ -1800,7 +1840,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 
 
-     .download-btn {
+    .download-btn {
         font-size: 1em;
         border-radius: 0em;
         border-radius: 5em;
