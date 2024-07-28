@@ -2510,7 +2510,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .student-tour-carousel .owl-next svg:hover,
-.navs-carousel .owl-next svg:hover   , 
+.navs-carousel .owl-next svg:hover,
 .student-tour-carousel .owl-prev svg:hover,
 .student-tour-carousel .owl-prev svg:hover {
     color: var(--secondary);
@@ -2560,4 +2560,26 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     #searchResults {
         margin-bottom: 22rem !important;
     }
+}
+
+/* start scientific research styles */
+.scientific-research .description {
+    color: #555;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.scientific-research .item {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.scientific-research .item img {
+    width: 80px;
+}
+
+.scientific-research .item .text {
+    color: #555;
+    font-weight: 500;
+    font-size: 18px;
+    font-weight: 500;
 }
