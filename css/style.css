@@ -2148,11 +2148,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .news-info-container {
     cursor: pointer;
+    padding: 1em 1.3em;
 }
 
 .news-info-container:not(.news-info-container:last-of-type) {
-    padding-bottom: 1.03em;
-    ;
+
     border-bottom: 2px solid rgba(255, 255, 255, .7);
 }
 
@@ -2162,6 +2162,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .news-info::-webkit-scrollbar-track {
     background: #726837;
+}
+
+.news-info::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.newsInfoNumber,
+.newsInfoMonth,
+.newsInfoDay {
+    text-align: center;
 }
 
 @media (max-width:768px) {
