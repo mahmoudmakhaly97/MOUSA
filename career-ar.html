@@ -296,8 +296,7 @@
 
  <script src="js/main.js"></script>
 <script>
-    // Initialize EmailJS with your User ID (public key)
-    emailjs.init('5Z0xZO24RXoEXXW2v');
+     emailjs.init('5Z0xZO24RXoEXXW2v');
 
     document.getElementById('jobApplicationForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -340,7 +339,6 @@
                 zipCode: document.getElementById('zipCode').value,
                 link: shareableLink
             };
-
             return emailjs.send('service_s7vny6w', 'template_v4xkkph', templateParams);
         })
         .then(function(response) {
@@ -363,15 +361,7 @@
                 text: error.message,
             });
         });
-        document.getElementById('firstName').value = "" ; 
-        document.getElementById('lastName').value = "" ;
-        document.getElementById('email').value = "" ;
-        document.getElementById('phone').value = "" ;
-        document.getElementById('position').value = "" ;
-        document.getElementById('address').value = "" ;
-        document.getElementById('city').value = "" ;
-        document.getElementById('area').value = "" ;
-        document.getElementById('zipCode').value = "" ;
+ 
     });
 </script>
 

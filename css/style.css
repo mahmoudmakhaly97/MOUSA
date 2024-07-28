@@ -2087,7 +2087,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .news-info {
     background-color: #414143;
-    overflow-y: scroll;
+    overflow-y: auto;
+    max-height: 558px;
+}
+
+@media (min-width:1200px) and (max-width:1400px) {
+    .news-info {
+        max-height: 500px;
+    }
+}
+
+@media (min-width:991px) and (max-width:1200px) {
+    .news-info {
+        max-height: 440px;
+    }
 }
 
 .news-info .title {
