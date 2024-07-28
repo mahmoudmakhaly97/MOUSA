@@ -2507,6 +2507,13 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     color: var(--secondary);
 }
 
+.student-tour .navs-button {
+    background-color: var(--main-color);
+    color: #fff;
+    box-shadow: none;
+    
+}
+
 @media (min-width:991px) {
     .student-tour-carousel .owl-dots {
         display: none;
