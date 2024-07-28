@@ -1622,6 +1622,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     border-radius: 15px;
     font-weight: 600;
     transition: .3s all ease;
+    justify-content: center;
+    text-wrap: nowrap;
 }
 
 .download-btn:hover {
