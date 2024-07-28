@@ -2471,11 +2471,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 
 /* start student tour carousel*/
-.student-tour .container:not(.student-tour .container:last-of-type) {
-    border-bottom: 1px solid rgba(86, 109, 53, .7);
+.student-tour {
+    min-height: 465px;
 }
 
-.student-tour-carousel .owl-next svg {
+.student-tour .container:not(.student-tour .container:last-of-type) {
+    border-bottom: 1px solid rgba(86, 109, 53, .7);
+
+}
+
+.student-tour-carousel .owl-next svg,
+.navs-carousel .owl-next svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -2489,7 +2495,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 
-.student-tour-carousel .owl-prev svg {
+.student-tour-carousel .owl-prev svg,
+.navs-carousel .owl-prev svg {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -2503,6 +2510,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .student-tour-carousel .owl-next svg:hover,
+.navs-carousel .owl-next svg:hover   , 
+.student-tour-carousel .owl-prev svg:hover,
 .student-tour-carousel .owl-prev svg:hover {
     color: var(--secondary);
 }
@@ -2511,7 +2520,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     background-color: var(--main-color);
     color: #fff;
     box-shadow: none;
-    
+
 }
 
 @media (min-width:991px) {

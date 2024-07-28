@@ -507,3 +507,38 @@ newsInfoContainers.forEach((container) => {
     }
   });
 });
+// student tour logic
+   document.addEventListener("DOMContentLoaded", function() {
+        var buttons = document.querySelectorAll(".navs-button");
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                var target = button.getAttribute("href");
+                var collapses = document.querySelectorAll(".collapse");
+                collapses.forEach(function(collapse) {
+                    if (collapse.id !== target.substring(1)) {
+                        collapse.classList.remove("show");
+                    }
+                });
+            });
+        });
+   });
+    
+   $('.navs-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+     nav: true,
+     navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
+     rtl: true,
+    dots : false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:5
+        },
+        1000:{
+            items:7
+        }
+    }
+   })
