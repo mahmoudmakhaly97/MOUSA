@@ -272,7 +272,7 @@
             results.forEach(result => {
                 let item = document.createElement("div");
                 item.className = "result-item";
-                item.innerHTML = `<h3>${result.title}</h3><p>${result.context}</p><a href="${result.url}">${window.location.origin}/${result.url}</a>`;
+                item.innerHTML = `<h4 class="text-green">${result.title}</h4><p>${result.context}</p><a href="${result.url}">${window.location.origin}/${result.url}</a>`;
                 searchResults.appendChild(item);
             });
         }
