@@ -666,118 +666,112 @@
       <script src="js/libraries/jquery.waypoints.min.js"></script>
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
-      <script>
-         document.addEventListener("DOMContentLoaded", function() {
-         let searchBar = document.getElementById("search-bar");
-         let closeSearch = document.getElementById("close-search");
-         let searchButton = document.getElementById("search-button");
-         let searchInput = document.getElementById("search-input");
-         let searchResults = document.getElementById("search-results");
-         
-         const pages = ["index-ar.html" , "about-ar.html" , "adminstrative-ar.html","admission-ar.html","career-ar.html","collage-councils-ar.html","contactUs-ar.html","dean-ar.html","events_news_ar.html","mission-vision-ar.html","our-program-ar.html","vice-deans-ar.html" , "student-tour-ar.html"];
-         document.querySelectorAll(".search-icon").forEach(function(icon) {
-             icon.addEventListener("click", function() {
-                 searchBar.classList.toggle("d-none");
-                 searchResults.classList.add("d-none");
-             });
-         });
-         
-         closeSearch.addEventListener("click", function() {
-             searchBar.classList.add("d-none");
-             searchResults.classList.add("d-none");
-         });
-         
-         searchInput.addEventListener("input", function() {
-             let query = searchInput.value.toLowerCase();
-             if (query.length === 0) {
-                 searchResults.classList.add("d-none");
-             }
-         });
-         
-         searchInput.addEventListener("keypress", function(event) {
-             if (event.key === "Enter") {
-                 event.preventDefault();
-                 let query = searchInput.value.toLowerCase();
-                 if (query.length > 0) {
-                     searchInAllPages(query);
-                 } else {
-                     searchResults.classList.add("d-none");
-                 }
-             }
-         });
-         searchButton.addEventListener("click", function(event) {
-          event.preventDefault();
-                 let query = searchInput.value.toLowerCase();
-                 if (query.length > 0) {
-                     searchInAllPages(query);
-                 } else {
-                     searchResults.classList.add("d-none");
-                 }
-         })
-         async function searchInAllPages(query) {
-             let results = [];
-             for (let page of pages) {
-                 let content = await fetchPageContent(page);
-                 results = results.concat(searchInContent(query, content, page));
-             }
-             displayResults(results);
-         }
-         
-         function searchInContent(query, content, pageUrl) {
-             let results = [];
-             let lowerCaseContent = content.toLowerCase();
-             let index = lowerCaseContent.indexOf(query);
-             while (index !== -1) {
-                 let context = content.substring(index - 50, index + 50 + query.length);
-                 results.push({ context, url: pageUrl });
-                 index = lowerCaseContent.indexOf(query, index + 1);
-             }
-             return results;
-         }
-         
-         async function fetchPageContent(url) {
-             try {
-                 let response = await fetch(url);
-                 if (response.ok) {
-                     const html = await response.text();
-                     const tempElement = document.createElement('div');
-                     tempElement.innerHTML = html;
-                     return tempElement.textContent; // Get plain text
-                 } else {
-                     console.error("Failed to fetch content from", url);
-                     return "";
-                 }
-             } catch (error) {
-                 console.error("Error fetching content from", url, error);
-                 return "";
-             }
-         }
-         
-         function displayResults(results) {
-             searchResults.innerHTML = "";
-             if (results.length === 0) {
-                 let noDataItem = document.createElement("div");
-                 noDataItem.className = "result-item";
-                 noDataItem.innerHTML = "<p>No data found</p>";
-                 searchResults.appendChild(noDataItem);
-                
-         
-             } else {
-                    // Store results in sessionStorage
-             sessionStorage.setItem('searchResults', JSON.stringify(results));
-             // Redirect to search.html
-             window.location.href = '/search.html';
-                 results.forEach(result => {
-                     let item = document.createElement("div");
-                     item.className = "result-item";
-                     item.innerHTML = `<p class="fs-1">${result.context} <br/> <a href="${result.url}">${window.location.origin}/${result.url}</a></p>`;
-                     searchResults.appendChild(item);
-                 });
-             }
-             searchResults.classList.remove("d-none");
-         }
-         });
-         
-      </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let searchBar = document.getElementById("search-bar");
+        let closeSearch = document.getElementById("close-search");
+        let searchButton = document.getElementById("search-button");
+        let searchInput = document.getElementById("search-input");
+        let searchResults = document.getElementById("search-results");
+
+        const pages = ["index-ar.html", "about-ar.html", "adminstrative-ar.html", "admission-ar.html", "career-ar.html", "collage-councils-ar.html", "contactUs-ar.html", "dean-ar.html", "events_news_ar.html", "mission-vision-ar.html", "our-program-ar.html", "vice-deans-ar.html", "student-tour-ar.html"];
+        document.querySelectorAll(".search-icon").forEach(function(icon) {
+            icon.addEventListener("click", function() {
+                searchBar.classList.toggle("d-none");
+                searchResults.classList.add("d-none");
+            });
+        });
+
+        closeSearch.addEventListener("click", function() {
+            searchBar.classList.add("d-none");
+            searchResults.classList.add("d-none");
+        });
+
+        searchInput.addEventListener("input", function() {
+            let query = searchInput.value.toLowerCase();
+            if (query.length === 0) {
+                searchResults.classList.add("d-none");
+            }
+        });
+
+        searchInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                let query = searchInput.value.toLowerCase();
+                if (query.length > 0) {
+                    searchInAllPages(query);
+                } else {
+                    searchResults.classList.add("d-none");
+                }
+            }
+        });
+
+        searchButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            let query = searchInput.value.toLowerCase();
+            if (query.length > 0) {
+                searchInAllPages(query);
+            } else {
+                searchResults.classList.add("d-none");
+            }
+        });
+
+        async function searchInAllPages(query) {
+            let results = [];
+            for (let page of pages) {
+                let content = await fetchPageContent(page);
+                results = results.concat(searchInContent(query, content, page));
+            }
+            displayResults(results);
+        }
+
+        function searchInContent(query, { content, title }, pageUrl) {
+            let results = [];
+            let lowerCaseContent = content.toLowerCase();
+            let index = lowerCaseContent.indexOf(query);
+            while (index !== -1) {
+                let context = content.substring(index - 50, index + 50 + query.length);
+                results.push({ context, url: pageUrl, title });
+                index = lowerCaseContent.indexOf(query, index + 1);
+            }
+            return results;
+        }
+
+        async function fetchPageContent(url) {
+            try {
+                let response = await fetch(url);
+                if (response.ok) {
+                    const html = await response.text();
+                    const tempElement = document.createElement('div');
+                    tempElement.innerHTML = html;
+                    const title = tempElement.querySelector('title')?.innerText || 'No Title';
+                    console.log(`Fetched title from ${url}: ${title}`); // Debugging line
+                    return { content: tempElement.textContent, title }; // Get plain text and title
+                } else {
+                    console.error("Failed to fetch content from", url);
+                    return { content: "", title: "Error" };
+                }
+            } catch (error) {
+                console.error("Error fetching content from", url, error);
+                return { content: "", title: "Error" };
+            }
+        }
+
+        function displayResults(results) {
+            searchResults.innerHTML = "";
+            if (results.length === 0) {
+                let noDataItem = document.createElement("div");
+                noDataItem.className = "result-item";
+                noDataItem.innerHTML = "<p>No data found</p>";
+                searchResults.appendChild(noDataItem);
+            } else {
+                sessionStorage.setItem('searchResults', JSON.stringify(results));
+                window.location.href = '/search.html';
+            }
+            searchResults.classList.remove("d-none");
+        }
+    });
+</script>
+
    </body>
 </html>

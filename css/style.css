@@ -2550,6 +2550,16 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 }
 
+.student-control {
+    width: 40%;
+    margin: auto;
+}
+
+.student-control-item {
+    width: 33.33%;
+    height: 20px;
+}
+
 /* search style */
 
 .search-page #searchResults {
@@ -2582,5 +2592,5 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     font-weight: 500;
     font-size: 18px;
     font-weight: 500;
-  display: inline-block;
+    display: inline-block;
 }
