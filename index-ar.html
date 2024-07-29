@@ -737,26 +737,26 @@
             return results;
         }
 
-        async function fetchPageContent(url) {
-            try {
-                let response = await fetch(url);
-                if (response.ok) {
-                    const html = await response.text();
-                    const tempElement = document.createElement('div');
-                    tempElement.innerHTML = html;
-                    const title = tempElement.querySelector('title')?.innerText || 'No Title';
-                    console.log(`Fetched title from ${url}: ${title}`); // Debugging line
-                    return { content: tempElement.textContent, title }; // Get plain text and title
-                } else {
-                    console.error("Failed to fetch content from", url);
-                    return { content: "", title: "Error" };
-                }
-            } catch (error) {
-                console.error("Error fetching content from", url, error);
-                return { content: "", title: "Error" };
-            }
+  async function fetchPageContent(url) {
+    try {
+        let response = await fetch(url);
+        if (response.ok) {
+            const html = await response.text();
+            console.log(`Fetched HTML from ${url}: ${html}`); // Debugging line
+            const tempElement = document.createElement('div');
+            tempElement.innerHTML = html;
+            const title = tempElement.querySelector('title')?.innerText || 'No Title';
+            console.log(`Fetched title from ${url}: ${title}`); // Debugging line
+            return { content: tempElement.textContent, title };
+        } else {
+            console.error("Failed to fetch content from", url);
+            return { content: "", title: "Error" };
         }
-
+    } catch (error) {
+        console.error("Error fetching content from", url, error);
+        return { content: "", title: "Error" };
+    }
+}
         function displayResults(results) {
             searchResults.innerHTML = "";
             if (results.length === 0) {
