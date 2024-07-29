@@ -2551,14 +2551,14 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 
-@media(min-width:991px) {
+
 
     .navs-carousel .owl-nav button.owl-next,
     .navs-carousel .owl-nav button.owl-prev,
     .navs-carousel button.owl-dot {
         display: none;
     }
-}
+
 
 @media (max-width:991px) {
     .student-control {

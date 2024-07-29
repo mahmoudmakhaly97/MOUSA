@@ -327,15 +327,15 @@ newsInfoContainers.forEach((container) => {
                         navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
 
                     responsive: {
-                        0: {
-                            items: 1
-                        },
-                        600: {
-                            items: 3
-                        },
-                        1000: {
-                            items: 3
-                        }
+                      0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:3
+        }
                     },
                     onInitialized: function(event) {
                         highlightCenterItem(event.target);
@@ -520,7 +520,7 @@ newsInfoContainers.forEach((container) => {
             items:1
         },
         600:{
-            items:3
+            items:1
         },
         1000:{
             items:3
