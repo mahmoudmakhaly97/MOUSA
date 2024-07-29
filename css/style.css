@@ -2554,11 +2554,13 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     width: 60%;
     margin: auto;
 }
+
 @media (max-width:991px) {
     .student-control {
         width: 80%;
     }
 }
+
 .student-control-container {
     width: 33.3%;
 }
@@ -2608,6 +2610,10 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 .centered::after,
 .centered::before {
     background-color: #6a9720;
+}
+
+.centered.student-control-item {
+    background-color: #a6c459;
 }
 
 .student-control {
