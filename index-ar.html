@@ -736,8 +736,7 @@
             }
             return results;
         }
-
-  async function fetchPageContent(url) {
+async function fetchPageContent(url) {
     try {
         let response = await fetch(url);
         if (response.ok) {
@@ -757,6 +756,7 @@
         return { content: "", title: "Error" };
     }
 }
+
         function displayResults(results) {
             searchResults.innerHTML = "";
             if (results.length === 0) {
