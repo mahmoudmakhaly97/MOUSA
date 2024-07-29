@@ -142,8 +142,9 @@
 <!-- start student tour carousel -->
 <div class="student-tour bg-white">
     <div class="container">
-      <div class="py-4">
-                <h2 class="fw-bold fs-1"><span class="text-green"> 2023 - توجية الطالب</span></h2>
+     <div id="content-2021" class="content-section" style="display:none;">
+            <div class="py-4">
+                <h2 class="fw-bold fs-1"><span class="text-green">2021 - توجية الطالب</span></h2>
             </div>
             <div dir="ltr">
                 <div class="owl-carousel student-tour-carousel owl-theme">
@@ -158,9 +159,10 @@
                     </div>
                 </div>
             </div>
-        
-         <div class="py-4">
-                <h2 class="fw-bold fs-1"><span class="text-green"> 2022 - توجية الطالب</span></h2>
+        </div>
+             <div id="content-2022" class="content-section" >
+            <div class="py-4">
+                <h2 class="fw-bold fs-1"><span class="text-green">2022 - توجية الطالب</span></h2>
             </div>
             <div dir="ltr">
                 <div class="owl-carousel student-tour-carousel owl-theme">
@@ -175,28 +177,44 @@
                     </div>
                 </div>
             </div>
+        </div>
+             <div id="content-2023" class="content-section"  style="display:none;">
+            <div class="py-4">
+                <h2 class="fw-bold fs-1"><span class="text-green">2023 - توجية الطالب</span></h2>
+            </div>
+            <div dir="ltr">
+                <div class="owl-carousel student-tour-carousel owl-theme">
+                    <div class="item">
+                        <img src="images/student-tour/slider1.webp" alt="slider1">
+                    </div>
+                    <div class="item">
+                        <img src="images/student-tour/slider2.webp" alt="slider1">
+                    </div>
+                    <div class="item">
+                        <img src="images/student-tour/slider3.webp" alt="slider1">
+                    </div>
+                </div>
+            </div>
+        </div>
     <div class=" student-control   m-auto d-flex justify-content-center gap-0 pb-4">
-    <div class="student-control-container ">
-    <h3 class="text-center text-green fw-bold mb-2 ">2022 </h3>
-     <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
-       <input class="form-check-input" type="radio" name="studentBtn"   >
- 
-    </div>
-   </div>
-     <div class="student-control-container  centered order-0">
-    <h3 class="text-center text-green fw-bold mb-2">2023 </h3>
-     <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
-       <input class="form-check-input" type="radio" name="studentBtn"   >
- 
-    </div>
-   </div>
-     <div class="student-control-container order-1">
-    <h3 class="text-center text-green fw-bold mb-2">2022 </h3>
-     <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
-       <input class="form-check-input" type="radio" name="studentBtn"   >
- 
-    </div>
-   </div>
+    <div class="student-control-container">
+                <h3 class="text-center text-green fw-bold mb-2">2021</h3>
+                <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
+                    <input class="form-check-input" type="radio" name="studentBtn" value="2021">
+                </div>
+            </div>
+     <div class="student-control-container">
+                <h3 class="text-center text-green fw-bold mb-2 " >2022</h3>
+                <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
+                    <input class="form-check-input" type="radio" name="studentBtn" value="2022" checked>
+                </div>
+            </div>
+               <div class="student-control-container">
+                <h3 class="text-center text-green fw-bold mb-2">2023</h3>
+                <div class="student-control-item rounded-pill border d-flex align-items-center justify-content-center">
+                    <input class="form-check-input" type="radio" name="studentBtn" value="2023">
+                </div>
+            </div>
     </div>
     </div>
 </div>
@@ -320,18 +338,27 @@
 <script>
     document.querySelectorAll('.form-check-input').forEach(radio => {
         radio.addEventListener('change', function() {
-            // Remove the centered class from all containers
-            document.querySelectorAll('.student-control-container').forEach(container => {
-                container.classList.remove('centered');
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
             });
             
-            // Add the centered class to the closest container of the checked radio button
+            // Show the content section corresponding to the checked radio button
             if (this.checked) {
-                this.closest('.student-control-container').classList.add('centered');
+              this.closest('.student-control-container').style.background="red" ; 
+              
+                const value = this.value;
+                const section = document.getElementById(`content-${value}`);
+                if (section) {
+                    section.style.display = 'block';
+                    
+                }
             }
         });
     });
 </script>
+
+
 </body>
 </html>
    </body>
