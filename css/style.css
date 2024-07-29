@@ -2610,7 +2610,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     display: flex;
     justify-content: space-between;
     align-items: center;
-                overflow-x: auto; /* Allows horizontal overflow */
+    overflow-x: auto;
+    /* Allows horizontal overflow */
 
 }
 
@@ -2625,7 +2626,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     cursor: pointer;
 }
 
- 
+
 
 /* search style */
 
@@ -2636,6 +2637,19 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 @media (min-width:1200px) {
     #searchResults {
         margin-bottom: 22rem !important;
+    }
+}
+
+.search-context {
+    width: 50%;
+    margin: auto;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media (max-width:768px) {
+    .search-context {
+        width: 100%;
     }
 }
 

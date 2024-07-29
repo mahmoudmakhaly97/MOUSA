@@ -130,8 +130,9 @@
                <div class="homer-banner-overlay position-absolute w-100 h-100 start-0 top-0 bottom-0 end-0"></div>
                <div class="container">
                   <div class="banner-info d-inline-block position-absolute text-white">
-                     <h1 class="fw-bold title">aaaaaaaa</h1>
-                     <h1 class="fw-bold title"> </h1>
+                     <h1 class="fw-bold title banner-title d-none">الصفحة الرئيسية</h1>
+                     <h1 class="fw-bold title"> تم فتح باب التسجيل في تخصصي التمريض, الادارة الصحية والمعلوماتية للبنين لاول مرة
+</h1>
                      <div>
                         <h1 class="fw-bold title"><span> </span>  </h1>
                         <button  id="subscribe-btn" class="subscribe-btn fs-4 px-4 py-2">btn</button>
@@ -730,7 +731,7 @@
             let lowerCaseContent = content.toLowerCase();
             let index = lowerCaseContent.indexOf(query);
             while (index !== -1) {
-                let context = content.substring(index - 50, index + 50 + query.length);
+                let context = content.substring(index - 200, index + 50 + query.length);
                 results.push({ context, url: pageUrl, title });
                 index = lowerCaseContent.indexOf(query, index + 1);
             }
@@ -744,7 +745,7 @@ async function fetchPageContent(url) {
             console.log(`Fetched HTML from ${url}: ${html}`); // Debugging line
             const tempElement = document.createElement('div');
             tempElement.innerHTML = html;
-            const title = tempElement.querySelector('title')?.innerText || 'No Title';
+            const title = tempElement.querySelector('.banner-title')?.innerHTML ;
             console.log(`Fetched title from ${url}: ${title}`); // Debugging line
             return { content: tempElement.textContent, title };
         } else {
