@@ -2550,9 +2550,14 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 }
 
-.student-control {
-    width: 60%;
-    margin: auto;
+
+@media(min-width:991px) {
+
+    .navs-carousel .owl-nav button.owl-next,
+    .navs-carousel .owl-nav button.owl-prev,
+    .navs-carousel button.owl-dot {
+        display: none;
+    }
 }
 
 @media (max-width:991px) {
@@ -2562,7 +2567,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .student-control-container {
-    width: 33.3%;
+    width: 100%
 }
 
 .student-control-item {
