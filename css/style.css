@@ -2551,7 +2551,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .student-control {
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 
@@ -2570,7 +2570,6 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #cadc9e;
     border-radius: 50%;
     right: 0;
 }
@@ -2580,9 +2579,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #cadc9e;
     border-radius: 50%;
     left: 0;
+
 }
 
 .student-control-item .form-check-input {
@@ -2597,16 +2596,36 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     border-color: #9fb777;
 }
 
+.student-control-container {
+    order: 0;
+    text-align: center;
+}
 
-
-.centered .student-control-item::after,
-.centered .student-control-item::before {
+.centered::after,
+.centered::before {
     background-color: #6a9720;
 }
 
-.centered .student-control-item .form-check-input {
-    background-color: #638c1d;
+.student-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+                overflow-x: auto; /* Allows horizontal overflow */
+
 }
+
+.student-control-container {
+    flex: 1;
+    text-align: center;
+    transition: order 0.3s ease;
+    /* Smooth transition for reordering */
+}
+
+.student-control-item {
+    cursor: pointer;
+}
+
+ 
 
 /* search style */
 
