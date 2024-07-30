@@ -667,7 +667,8 @@
       <script src="js/libraries/jquery.waypoints.min.js"></script>
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
-   <script>
+
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         let searchBar = document.getElementById("search-bar");
         let closeSearch = document.getElementById("close-search");
@@ -737,26 +738,38 @@
             }
             return results;
         }
-async function fetchPageContent(url) {
-    try {
-        let response = await fetch(url);
-        if (response.ok) {
-            const html = await response.text();
-            console.log(`Fetched HTML from ${url}: ${html}`); // Debugging line
-            const tempElement = document.createElement('div');
-            tempElement.innerHTML = html;
-            const title = tempElement.querySelector('.banner-title')?.innerHTML ;
-            console.log(`Fetched title from ${url}: ${title}`); // Debugging line
-            return { content: tempElement.textContent, title };
-        } else {
-            console.error("Failed to fetch content from", url);
-            return { content: "", title: "Error" };
+
+        async function fetchPageContent(url) {
+            try {
+                let response = await fetch(url);
+                if (response.ok) {
+                    const html = await response.text();
+                    const tempElement = document.createElement('div');
+                    tempElement.innerHTML = html;
+
+                    // Remove footer
+                    const footer = tempElement.querySelector('footer');
+                    if (footer) {
+                        footer.remove();
+                    }
+
+                    // Remove copyright section
+                    const copyrightSection = tempElement.querySelector('.copyright');
+                    if (copyrightSection) {
+                        copyrightSection.remove();
+                    }
+
+                    const title = tempElement.querySelector('.banner-title')?.innerHTML;
+                    return { content: tempElement.textContent, title };
+                } else {
+                    console.error("Failed to fetch content from", url);
+                    return { content: "", title: "Error" };
+                }
+            } catch (error) {
+                console.error("Error fetching content from", url, error);
+                return { content: "", title: "Error" };
+            }
         }
-    } catch (error) {
-        console.error("Error fetching content from", url, error);
-        return { content: "", title: "Error" };
-    }
-}
 
         function displayResults(results) {
             searchResults.innerHTML = "";
@@ -773,6 +786,8 @@ async function fetchPageContent(url) {
         }
     });
 </script>
+
+
 
    </body>
 </html>

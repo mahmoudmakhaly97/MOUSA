@@ -1631,7 +1631,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 .our-history-btns {
-    width: fit-content;
+    width: 46%;
 }
 
 @media (min-width:1200px) {
@@ -1639,7 +1639,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         margin-bottom: 22rem;
     }
 }
- 
+
 
 @media (max-width:991px) {
     .our-history-btns {
@@ -2530,7 +2530,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     overflow: hidden;
 }
 
- .student-tour-carousel .owl-item .item {
+.student-tour-carousel .owl-item .item {
     opacity: 0.5;
     transition: opacity 0.3s ease;
     transform: scale(.9);
