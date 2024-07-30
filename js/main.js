@@ -320,7 +320,7 @@ newsInfoContainers.forEach((container) => {
             function initializeCarousel(selector) {
                 var owl = $(selector);
                 owl.owlCarousel({
-                    loop: true,
+                    loop: false,
                     margin: 10,
                     nav: true,
                   rtl: false,
@@ -509,7 +509,7 @@ newsInfoContainers.forEach((container) => {
 });
 
    $('.navs-carousel').owlCarousel({
-    loop:true,
+    loop:false,
     margin:0,
      nav: false,
      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
