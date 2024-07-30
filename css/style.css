@@ -1639,12 +1639,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         margin-bottom: 22rem;
     }
 }
-
-@media (max-width:1400px) {
-    .our-history-btns {
-        width: 40%;
-    }
-}
+ 
 
 @media (max-width:991px) {
     .our-history-btns {
@@ -1942,7 +1937,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     font-weight: 500;
 }
 
-.upcoming-events .calendar-dark {
+.calendar-dark {
     display: none;
 }
 
@@ -1951,11 +1946,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     transition: .4s all ease;
 }
 
-.upcoming-events .download-btn:hover .calendar-light {
+.download-btn:hover .calendar-light {
     display: none;
 }
 
-.upcoming-events .download-btn:hover .calendar-dark {
+.download-btn:hover .calendar-dark {
     display: flex;
 }
 
