@@ -527,3 +527,14 @@ newsInfoContainers.forEach((container) => {
         }
     }
    })
+// float icon logic
+
+       
+       window.addEventListener('scroll', function() {
+            var whatsappIcon = document.querySelector('.whatsapp-icon');
+            if (window.scrollY > window.innerHeight / 3 ) {
+                whatsappIcon.style.display = 'block';
+            } else {
+                whatsappIcon.style.display = 'none';
+            }
+        });
