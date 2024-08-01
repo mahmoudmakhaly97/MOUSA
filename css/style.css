@@ -258,7 +258,11 @@ body.fixed-nav-padding {
 }
 
 .bg-nav .nav-dropdown {
-    top: 100%;
+    top: 105%;
+}
+
+.bg-nav  .nav-dropdown.e-gate-dropdown {
+    top: 110% !important;
 }
 
 button:focus:not(:focus-visible) {
@@ -673,7 +677,7 @@ button:empty {
     border: 14px solid rgb(230, 230, 230);
     border-radius: 30px;
     position: relative;
- }
+}
 
 @media (max-width:991px) {
     .history-wrapper {
