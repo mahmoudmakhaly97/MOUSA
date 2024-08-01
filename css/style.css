@@ -261,7 +261,7 @@ body.fixed-nav-padding {
     top: 105%;
 }
 
-.bg-nav  .nav-dropdown.e-gate-dropdown {
+.bg-nav .nav-dropdown.e-gate-dropdown {
     top: 110% !important;
 }
 
@@ -2722,27 +2722,24 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     width: 70%;
 }
 
-.whatsapp-float {
+.whatsapp-icon {
     position: fixed;
     width: 60px;
     height: 60px;
     bottom: 1.25rem;
     right: .5rem;
-    background-color: #25d366;
-    color: #fff;
     border-radius: 50px;
     font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 0;
+    z-index: 9999;
     transition: background-color 0.3s ease;
+    display: none;
+
 }
 
-.whatsapp-float:hover {
-    background-color: #20b358;
-    color: #fff;
-}
 
-.whatsapp-float i {
+
+.whatsapp-icon img {
     margin-top: 16px;
     /* Centers the icon vertically */
+
 }
