@@ -193,10 +193,10 @@ body.fixed-nav-padding {
 .nav-dropdown {
     z-index: 999;
     width: 200px;
-    top: 4.5em;
-    ;
+    top: 100%;
     opacity: 0;
     transition: .3s all ease;
+    padding-top: 2em !important;
 }
 
 .nav-item:nth-child(3) .nav-dropdown {
@@ -205,12 +205,12 @@ body.fixed-nav-padding {
 
 @media (max-width:1200px) {
     .nav-item:nth-child(2) .nav-dropdown {
-
+        width: 100px;
         background-color: rgb(79, 79, 79, 1);
     }
 
     .nav-item:nth-child(3) .nav-dropdown {
-        width: auto
+        width: 100px
     }
 
     .navbar-nav .management .nav-dropdown {
@@ -238,8 +238,13 @@ body.fixed-nav-padding {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
 
-    right: 0em;
+@media (min-width:1200px) {
+    .nav-item .dropdown-menu {
+        position: absolute;
+        right: 0;
+    }
 }
 
 .nav-item:hover .management {
@@ -247,15 +252,22 @@ body.fixed-nav-padding {
 }
 
 
-
 .bg-nav {
     background-color: transparent;
     position: fixed;
     z-index: 9999;
     width: 100%;
+    top: 3rem;
 }
 
+.bg-nav .nav-dropdown {
+    top: 100%;
+    padding-top: 1em !important;
+}
 
+.bg-nav .nav-dropdown.e-gate-dropdown {
+    top: 110% !important;
+}
 
 button:focus:not(:focus-visible) {
     box-shadow: none;
@@ -296,7 +308,7 @@ button:focus:not(:focus-visible) {
 @media (max-width:1200px) {
     .nav-dropdown {
         top: 48px;
-        background-color: rgb(79, 79, 79, 1);
+         background-color: rgb(79, 79, 79, 1);
         border: 0;
     }
 
@@ -362,6 +374,10 @@ button:focus:not(:focus-visible) {
 .dropdown-menu {
     background-color: transparent !important;
     border: 0 !important;
+}
+
+.navbar .main-link {
+    cursor: pointer !important;
 }
 
 /* end navbar */
@@ -478,11 +494,11 @@ button:empty {
 
 :dir(rtl) {
     .shared-background .background-left {
-        top: 30px;
+        top: -3em;
     }
 
     .shared-background .background-right {
-        bottom: 0;
+        bottom: -30em;
     }
 }
 
@@ -2444,12 +2460,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 }
 
-@media (min-width:991px) {
-    .council-container {
-        margin: auto;
-        width: fit-content;
-    }
-}
+
 
 /* search bar style */
 .search-bar {
@@ -2726,7 +2737,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     right: .5rem;
     border-radius: 50px;
     font-size: 30px;
-    z-index: 99999999;
+    z-index: 9999;
     transition: background-color 0.3s ease;
     display: none;
 
