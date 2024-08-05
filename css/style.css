@@ -199,9 +199,6 @@ body.fixed-nav-padding {
     padding-top: 2em !important;
 }
 
-.nav-item:nth-child(3) .nav-dropdown {
-    width: 270px;
-}
 
 @media (max-width:1200px) {
     .nav-item:nth-child(2) .nav-dropdown {
@@ -224,7 +221,14 @@ body.fixed-nav-padding {
     height: 100%;
     width: 4px;
     background-color: rgb(252, 218, 6);
-    left: 0;
+
+}
+
+:dir(rtl) {
+    .nav-dropdown li a::before {
+
+        left: 0;
+    }
 }
 
 .nav-item .nav-dropdown {
@@ -308,7 +312,7 @@ button:focus:not(:focus-visible) {
 @media (max-width:1200px) {
     .nav-dropdown {
         top: 48px;
-         background-color: rgb(79, 79, 79, 1);
+        background-color: rgb(79, 79, 79, 1);
         border: 0;
     }
 
@@ -2749,4 +2753,83 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     margin-top: 16px;
     /* Centers the icon vertically */
 
+}
+
+/* direction ltr styles */
+:dir(ltr) {
+    @media (min-width: 1200px) {
+        .nav-item .dropdown-menu {
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    .navbar-expand-xl .navbar-nav .nav-link {
+        text-align: left !important;
+    }
+
+
+
+    .home-banner .banner-info {
+        text-align: left;
+    }
+
+    .home-banner .banner-info .title {
+        margin-right: auto;
+    }
+
+    .nav-dropdown li a::before {
+        right: 0
+    }
+
+    .nav-dropdown {
+        left: 0;
+    }
+
+    .navbar-brand .d-flex {
+        flex-direction: row-reverse;
+    }
+
+    .about-college .container {
+        background-position: 5% 4em;
+    }
+
+    .explore-info {
+        text-align: start;
+    }
+
+    .welcome-info {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    .shared-background img:nth-child(2) {
+        bottom: 0;
+    }
+
+    .copyright p:first-of-type {
+        text-align: left;
+    }
+
+    .col-md-6:nth-of-type(2) p {
+        text-align: right;
+    }
+
+    @media (min-width: 1801px) {
+        .clinic-wrapper {
+            right: 0;
+            left: 24em !important;
+        }
+    }
+
+    .clinic-wrapper .overlay {
+        left: 100%;
+    }
+
+.whatsapp-icon{
+        right: 0;
+        left: .5rem;
+    }
 }

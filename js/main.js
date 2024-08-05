@@ -1,3 +1,33 @@
+
+function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    if (lang === 'en-US') {
+        document.documentElement.dir = 'ltr';
+    } 
+
+    // save the selected language
+    localStorage.setItem('selectedLanguage', lang);
+
+    // load the content for the selected language
+    loadContent(lang);
+}
+
+function loadContent(lang) {
+    fetch(`/api/content?lang=${lang}`)
+        .then(response => response.json())
+        .then(data => {
+            // update your content areas with the fetched data
+            document.getElementById('content').innerHTML = data.content;
+        })
+        .catch(error => console.error('Error fetching content:', error));
+}
+
+// on page load, check for a saved language preference and load the content
+window.onload = function() {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'ar';
+    setLanguage(savedLanguage);
+};
 // home logic 
 
 $('.banner-carousel').owlCarousel({
