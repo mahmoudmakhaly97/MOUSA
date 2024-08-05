@@ -432,6 +432,7 @@ button:focus:not(:focus-visible) {
     max-width: 160px;
     max-height: 47px;
     box-sizing: content-box !important;
+    margin-right: .5rem;
 }
 
 button:empty {
@@ -1103,6 +1104,7 @@ button:empty {
     border-radius: 8px;
     color: #fff;
     transition: .3s all ease;
+    text-wrap: nowrap;
 }
 
 .recent .view:hover {
@@ -2778,6 +2780,10 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         margin-right: auto;
     }
 
+    .home-banner .banner-info {
+        padding-inline-end: 1em;
+    }
+
     .nav-dropdown li a::before {
         right: 0
     }
@@ -2817,6 +2823,12 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         text-align: right;
     }
 
+    @media (max-width:991px) {
+        .col-md-6:nth-of-type(2) p {
+            text-align: center;
+        }
+    }
+
     @media (min-width: 1801px) {
         .clinic-wrapper {
             right: 0;
@@ -2828,8 +2840,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         left: 100%;
     }
 
-.whatsapp-icon{
+    .whatsapp-icon {
         right: 0;
         left: .5rem;
     }
+
+    .search-bar .container {
+        flex-direction: row-reverse;
+    }
+
+    .offcanvas-header {
+        justify-content: flex-start !important;
+    }
+
 }
