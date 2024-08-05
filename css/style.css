@@ -503,7 +503,7 @@ button:empty {
     }
 
     .shared-background .background-right {
-        bottom: -30em;
+        bottom: 0em;
     }
 }
 
@@ -2743,7 +2743,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     right: .5rem;
     border-radius: 50px;
     font-size: 30px;
-    z-index: 9999;
+    z-index: 999999999;
     transition: background-color 0.3s ease;
     display: none;
 
