@@ -789,6 +789,12 @@ button:empty {
     font-size: 16px;
 }
 
+:dir(ltr) {
+    .program-desc {
+        text-align: left!important;
+    }
+}
+
 .programs-carousel .item.borderLeft {
     border-left: 2px solid var(--secondary);
 }
@@ -2278,6 +2284,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     pointer-events: none;
 
 
+}
+
+:dir(ltr) {
+    .adminstrative-form .form-group .arrow-down {
+        right: 0 !important;
+        left: auto;
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+    }
 }
 
 .adminstrative-form .form-group .arrow-down svg {
