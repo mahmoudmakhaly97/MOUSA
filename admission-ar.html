@@ -19,88 +19,114 @@
    </head>
    <body>
 
-       
- <!-- start topbar -->
+       <div id="search-bar" class="d-none search-bar position-absolute w-100 end-0 top-0 start-0 d-flex justify-content-center align-items-center">
+         <div class="container d-flex gap-4 align-items-center">
+            <i onclick="document.getElementById('search-bar').classList.add('d-none')" id="close-search" class="fa-solid fa-xmark fa-2x text-white pointer"></i>
+            <input id="search-input" type="text" class="form-control" placeholder="ابحث هنا">
+            <button class="btn px-0"  id="search-button">        <i class="fa-solid fa-magnifying-glass text-white pointer fa-lg"></i>
+            </button>
+         </div>
+         <div id="search-results" class="results d-none"></div>
+      </div>
       <div class="topbar ">
-      <div class="container">
-        <div class="d-flex justify-content-end gap-5 topbar-wrapper">
- <div class="d-flex gap-3  topbar-links d-none d-lg-flex">
-            <a href="#" class="text-white">   الاخبار والفعاليات</a>
-             <a href="#" class="text-white">اتصل بنا</a>
-            <a href="#" class="text-white">   الوظائف</a>
-        </div>
-        <div class="d-flex gap-3 socail d-none d-lg-flex">
-            <a href="#">  <i class="fa-brands fa-facebook font-20 text-white"></i>  </a>
-             <a href="#">   <i class="fa-brands fa-instagram font-20 text-white"></i></a>
-            <a href="#">    <i class="fa-brands fa-twitter font-20 text-white"></i></a>
-            <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
-            <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
-            <a href="#">   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
- 
-        </div>
-        <div>
-            <a href="" class="text-white font-20 language-link"> English</a>
-        </div>
-        </div>
-            
-       
+         <div class="container">
+            <div class="d-flex  justify-content-between justify-content-lg-end gap-5 topbar-wrapper">
+               <div class="d-flex gap-3  topbar-links d-none d-lg-flex">
+                  <a href="#" class="text-white" data-ar="الاخبار والفعاليات" data-en="News and events">    </a>
+                  <a href="#" class="text-white" data-en="contact us" data-ar="اتصل بنا">   </a>
+                  <a href="#" class="text-white" data-ar="الوظائف" data-en="Jobs">   </a>        
+               </div>
+               <div class="d-flex gap-3 socail d-none d-lg-flex">
+                  <a href="#">  <i class="fa-brands fa-facebook font-20 text-white"></i>  </a>
+                  <a href="#">   <i class="fa-brands fa-instagram font-20 text-white"></i></a>
+                  <a href="#">    <i class="fa-brands fa-twitter font-20 text-white"></i></a>
+                  <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
+                  <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
+                  <a href="#">   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
+                  <a href="#"  class="search-icon" >   <i  class="fas fa-search font-20 text-white"></i></a>
+               </div>
+               <div>
+                  <a href="" class="text-white font-20 language-link" data-ar="English" data-en="عربي"> </a>
+               </div>
+               <a href="#"  class="search-icon d-lg-none" >   <i  class="fas fa-search font-20 text-white"></i></a>
+            </div>
+         </div>
       </div>
-        
-      </div>
-<!-- end topbar -->
-<!-- start navbar -->
-<nav class="navbar navbar-expand-xl">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <div class="d-flex align-items-center gap-2">
-        <img src="images/career/logo.png" alt="logo1">
-        <img src="images/career/logo2.png" class="d-none d-xl-flex" alt="logo2">
-      </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa-solid fa-bars text-white"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav align-items-center mb-2 mb-lg-0 gap-2">
-        <li class="nav-item">
-          <a class="nav-link py-2 px-4" href="index-ar.html">الرئيسية</a>
-        </li>
-        <li class="nav-item position-relative">
-          <a class="nav-link" href="about-ar.html" >الموسي لايف</a>
-          <!-- dropdown -->
-          <ul class="position-absolute nav-dropdown end-0">
-            <li><a class="nav-link" href="about-ar.html">عن الموسي</a></li>
-          </ul>
-        </li>
-   <li class="nav-item position-relative">
-          <a class="nav-link" href="admission-ar.html" > ادارة الكلية   </a>
-          <!-- dropdown -->
-          <ul class="position-absolute nav-dropdown end-0">
-            <li><a class="nav-link" href="admission-ar.html"> التقديم والقبول </a></li>
-          </ul>
-        </li>
-        <li class="nav-item position-relative">
-          <a class="nav-link" href="our-program-ar.html" >برامجنا</a>
-          <!-- dropdown -->
-          <ul class="position-absolute nav-dropdown end-0 ">
-            <li><a class="nav-link" href="our-program-ar.html">العلوم ف التمريض</a></li>
-            <li><a class="nav-link" href="our-program-ar.html">الادارة الصحية والمعلوماتية</a></li>
-          </ul>
-        </li>
-        <li class="nav-item position-relative">
-          <a class="nav-link e-gate" href="#">البوابة الالكترونية</a>
-          <!-- dropdown -->
-          <ul class="position-absolute nav-dropdown end-0">
-            <li><a class="nav-link" target="_blank" href="https://sis.almoosacollege.edu.sa/psp/ps/?cmd=login&languageCd=ENG">نظام معلومات الطالب</a></li>
-            <li><a class="nav-link" target="_blank" href="https://lms.almoosacollege.edu.sa/almoosa/login/index.php">نظام ادارة التعلم</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- end navbar -->
+      <!-- end topbar -->
+      <!-- start navbar -->
+      <nav class="navbar navbar-expand-xl">
+         <div class="container">
+            <a class="navbar-brand" href="#">
+               <div class="d-flex align-items-center gap-2">
+                  <img src="images/career/logo.png" alt="logo1">
+                  <img src="images/career/logo-2.png " class="logo2"  alt="logo2">
+               </div>
+            </a>
+            <button class="btn d-xl-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">    <i class="fa-solid fa-bars text-white"></i></button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+               <div class="offcanvas-header d-flex justify-content-end d-lg-none ">
+                  <i class="fa-solid fa-rectangle-xmark fa-lg " data-bs-dismiss="offcanvas" aria-label="Close"></i>
+               </div>
+               <div class="offcanvas-body">
+                  <ul class="navbar-nav align-items-center mb-2 mb-lg-0 gap-2">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link main-link py-2 px-4 " href="index-ar.html"  data-ar="الرئيسية" data-en="Home"></a>
+                     </li>
+                     <li class="nav-item position-relative dropdown d-flex flex-column align-items-center ">
+                        <a class="nav-link dropdown-toggle  pe-none" href="about-ar.html" data-ar="" data-en="Almousa Life"  >
+                         </a>
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu rounded-3 nav-dropdown p-0">
+                           <li><a class="nav-link text-end" href="about-ar.html" data-en=" About Almousa" data-ar=" عن الموسي"></a></li>
+                        </ul>
+                     </li>
+                    
+                      <li class="nav-item position-relative dropdown d-flex flex-column align-items-center   ">
+                        <a class="nav-link dropdown-toggle  pe-none" href="admission-ar.html"  data-en="college management"   data-ar="ادارة الكلية">        </a>
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu rounded-3  nav-dropdown p-0">
+                           <li><a class="nav-link text-end" href="admission-ar.html" data-en="Application and acceptance" data-ar=" التقديم والقبول">    </a></li>
+                         </ul>
+                     </li>
+                     <li class="nav-item position-relative dropdown p-0 d-flex flex-column align-items-center   ">
+                        <a class="nav-link dropdown-toggle  pe-none" href="#"   data-en="Our Program" data-ar="برامجنا" >     </a>
+                        <!-- dropdown -->
+                        <ul class="dropdown-menu rounded-3 nav-dropdown   p-0">
+                           <li><a class="nav-link text-end" href="our-program-ar.html" data-en="Science in Nursing" data-ar="العلوم في التمريض">  </a></li>
+                           <li><a class="nav-link" href="our-program-ar.html" data-en="Health and Medical Information" data-ar="الادارة الصحية والمعلوماتية">  </a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item position-relative">
+                        <a class="nav-link e-gate" href="#" data-en="e-gate" data-ar="البوابة الالكترونية"> </a>
+                        <!-- dropdown -->
+                        <ul class="position-absolute nav-dropdown end-0 e-gate-dropdown">
+                           <li><a class="nav-link" target="_blank" href="https://sis.almoosacollege.edu.sa/psp/ps/?cmd=login&languageCd=ENG" data-ar="نظام معلومات الطالب " data-en="Student Information System">  </a></li>
+                           <li><a class="nav-link" target="_blank" href="https://lms.almoosacollege.edu.sa/almoosa/login/index.php" data-ar="نظام ادارة التعلم" data-en="Learning Management System">  </a></li>
+                        </ul>
+                     </li>
+                     <!--start social icons in off canvas -->
+                     <div class="d-flex flex-column flex-column-reverse align-items-center  topbar-wrapper position-absolute d-xl-none">
+                        <div class="d-flex gap-3  topbar-links ">
+                           <a href="#" class="text-white" data-ar="الوظائف" data-en="Jobs"> </a>
+                           <a href="#" class="text-white" data-ar="اتصل بنا" data-en="Contact us">   </a>
+                           <a href="#" class="text-white" data-ar="الاخبار والفعاليات" data-en="News and events">      </a>
+                        </div>
+                        <div class="d-flex gap-3 socail mt-auto">
+                           <a href="#">  <i class="fa-brands fa-facebook font-20 text-white"></i>  </a>
+                           <a href="#">   <i class="fa-brands fa-instagram font-20 text-white"></i></a>
+                           <a href="#">    <i class="fa-brands fa-twitter font-20 text-white"></i></a>
+                           <a href="#">   <i class="fa-brands fa-youtube font-20 text-white"></i></a>
+                           <a href="#">    <i class="fa-brands fa-linkedin font-20 text-white"></i></a>
+                           <a href="#" >   <i class="fa-brands fa-whatsapp font-20 text-white"></i></a>
+                        </div>
+                     </div>
+                     <!-- end social icons in off canvas -->
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- end navbar -->
  <div class="admission">
 
    <!-- start banner -->
@@ -471,6 +497,7 @@
       <script src="js/libraries/jquery.waypoints.min.js"></script>
 
       <script src="js/libraries/jquery.counterup.min.js"></script>
+ 
       <script src="js/main.js"></script>
    </body>
 </html>

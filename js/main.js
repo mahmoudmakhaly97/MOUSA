@@ -485,32 +485,37 @@ newsInfoContainers.forEach((container) => {
   showPage(currentPage);
   setActivePage(currentPage);
 
-  // Filter logic
-  document.getElementById('filterButton').addEventListener('click', function (e) {
-    e.preventDefault();
-    const nameValue = document.getElementById('name').value.toLowerCase();
-    const jobValue = document.getElementById('job').value;
+// Filter logic
+document.getElementById('filterButton').addEventListener('click', function (e) {
+  e.preventDefault();
+  const nameValue = document.getElementById('name').value.toLowerCase().trim(); 
+  const jobValue = document.getElementById('job').value.toLowerCase().trim(); 
 
-    cards.forEach(card => {
-      const cardName = card.getAttribute('data-name').toLowerCase();
-      const cardJob = card.getAttribute('data-job');
 
-      const nameMatch = !nameValue || cardName.includes(nameValue);
-      const jobMatch = jobValue === 'حدد عنصر' || cardJob === jobValue;
+  const cards = document.querySelectorAll('.adminstrative-card'); 
 
-      if (nameMatch && jobMatch) {
-        card.parentElement.style.display = 'block';
-      } else {
-        card.parentElement.style.display = 'none';
-      }
-    });
+  cards.forEach(card => {
+    const cardName = card.getAttribute('data-name').toLowerCase();
+    const cardJob = card.getAttribute('data-job').toLowerCase();
 
-    // Reset to the first page after filtering
-    currentPage = 1;
-    generatePagination();
-    showPage(currentPage);
-    setActivePage(currentPage);
+    const nameMatch = !nameValue || cardName.includes(nameValue); 
+    const jobMatch = jobValue === 'حدد عنصر' || cardJob.includes(jobValue); 
+
+  
+    if (nameMatch && jobMatch) {
+      card.parentElement.style.display = 'block';
+    } else {
+      card.parentElement.style.display = 'none'; 
+    }
   });
+
+  // Reset to the first page after filtering
+  currentPage = 1;
+  generatePagination(); // Call your pagination function
+  showPage(currentPage); // Show the current page
+  setActivePage(currentPage); // Set the active page
+});
+
 
   // Show all items when inputs are empty
   document.getElementById('name').addEventListener('input', function () {
@@ -568,3 +573,121 @@ newsInfoContainers.forEach((container) => {
                 whatsappIcon.style.display = 'none';
             }
         });
+// .....................
+
+         document.addEventListener("DOMContentLoaded", function() {
+             let searchBar = document.getElementById("search-bar");
+             let closeSearch = document.getElementById("close-search");
+             let searchButton = document.getElementById("search-button");
+             let searchInput = document.getElementById("search-input");
+             let searchResults = document.getElementById("search-results");
+         
+             const pages = ["index-ar.html", "about-ar.html", "adminstrative-ar.html", "admission-ar.html", "career-ar.html", "collage-councils-ar.html", "contactUs-ar.html", "dean-ar.html", "events_news_ar.html", "mission-vision-ar.html", "our-program-ar.html", "vice-deans-ar.html", "student-tour-ar.html"];
+             document.querySelectorAll(".search-icon").forEach(function(icon) {
+                 icon.addEventListener("click", function() {
+                     searchBar.classList.toggle("d-none");
+                     searchResults.classList.add("d-none");
+                 });
+             });
+         
+             closeSearch.addEventListener("click", function() {
+                 searchBar.classList.add("d-none");
+                 searchResults.classList.add("d-none");
+             });
+         
+             searchInput.addEventListener("input", function() {
+                 let query = searchInput.value.toLowerCase();
+                 if (query.length === 0) {
+                     searchResults.classList.add("d-none");
+                 }
+             });
+         
+             searchInput.addEventListener("keypress", function(event) {
+                 if (event.key === "Enter") {
+                     event.preventDefault();
+                     let query = searchInput.value.toLowerCase();
+                     if (query.length > 0) {
+                         searchInAllPages(query);
+                     } else {
+                         searchResults.classList.add("d-none");
+                     }
+                 }
+             });
+         
+             searchButton.addEventListener("click", function(event) {
+                 event.preventDefault();
+                 let query = searchInput.value.toLowerCase();
+                 if (query.length > 0) {
+                     searchInAllPages(query);
+                 } else {
+                     searchResults.classList.add("d-none");
+                 }
+             });
+         
+             async function searchInAllPages(query) {
+                 let results = [];
+                 for (let page of pages) {
+                     let content = await fetchPageContent(page);
+                     results = results.concat(searchInContent(query, content, page));
+                 }
+                 displayResults(results);
+             }
+         
+             function searchInContent(query, { content, title }, pageUrl) {
+                 let results = [];
+                 let lowerCaseContent = content.toLowerCase();
+                 let index = lowerCaseContent.indexOf(query);
+                 while (index !== -1) {
+                     let context = content.substring(index - 200, index + 50 + query.length);
+                     results.push({ context, url: pageUrl, title });
+                     index = lowerCaseContent.indexOf(query, index + 1);
+                 }
+                 return results;
+             }
+         
+             async function fetchPageContent(url) {
+                 try {
+                     let response = await fetch(url);
+                     if (response.ok) {
+                         const html = await response.text();
+                         const tempElement = document.createElement('div');
+                         tempElement.innerHTML = html;
+         
+                         // Remove footer
+                         const footer = tempElement.querySelector('footer');
+                         if (footer) {
+                             footer.remove();
+                         }
+         
+                         // Remove copyright section
+                         const copyrightSection = tempElement.querySelector('.copyright');
+                         if (copyrightSection) {
+                             copyrightSection.remove();
+                         }
+         
+                         const title = tempElement.querySelector('.banner-title')?.innerHTML;
+                         return { content: tempElement.textContent, title };
+                     } else {
+                         console.error("Failed to fetch content from", url);
+                         return { content: "", title: "Error" };
+                     }
+                 } catch (error) {
+                     console.error("Error fetching content from", url, error);
+                     return { content: "", title: "Error" };
+                 }
+             }
+         
+             function displayResults(results) {
+                 searchResults.innerHTML = "";
+                 if (results.length === 0) {
+                     let noDataItem = document.createElement("div");
+                     noDataItem.className = "result-item";
+                     noDataItem.innerHTML = "<p>No data found</p>";
+                     searchResults.appendChild(noDataItem);
+                 } else {
+                     sessionStorage.setItem('searchResults', JSON.stringify(results));
+                     window.location.href = '/search.html';
+                 }
+                 searchResults.classList.remove("d-none");
+             }
+         });

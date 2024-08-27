@@ -1433,6 +1433,14 @@ footer .touch ul li:last-of-type {
     font-size: 1.4rem;
 }
 
+:dir(rtl) {
+    .location-info .label {
+        text-align: right !important;
+    }
+}
+
+
+
 .location-info li:first-child {
     list-style-image: url(../images/contact-us/location.png);
     vertical-align: middle;
@@ -2158,6 +2166,13 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     background-color: #f5f5f5;
 }
 
+@media (min-width:1200px) {
+    .contact-info {
+        margin-bottom: 22rem;
+    }
+
+}
+
 .contact-info .card {
     border-radius: 1rem;
     border: 0;
@@ -2695,4 +2710,18 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         justify-content: flex-start !important;
     }
 
+}
+
+@font-face {
+    font-family: 'Big Caslon';
+    src: url('../fonts/fonnts.com-BigCity_Grotesque_Pro_Medium_Italic.otf') format('truetype');
+    font-style: normal;
+}
+
+:dir(ltr) {
+
+
+    body {
+        font-family: 'Big Caslon', serif !important;
+    }
 }
