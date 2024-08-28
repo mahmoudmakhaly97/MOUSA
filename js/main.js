@@ -485,36 +485,30 @@ newsInfoContainers.forEach((container) => {
   showPage(currentPage);
   setActivePage(currentPage);
 
-// Filter logic
-document.getElementById('filterButton').addEventListener('click', function (e) {
-  e.preventDefault();
-  const nameValue = document.getElementById('name').value.toLowerCase().trim(); 
-  const jobValue = document.getElementById('job').value.toLowerCase().trim(); 
+ // Filter logic
+document.getElementById('name').addEventListener('input', function () {
+  const nameValue = document.getElementById('name').value.trim().toLowerCase();
 
-
-  const cards = document.querySelectorAll('.adminstrative-card'); 
+  const cards = document.querySelectorAll('.adminstrative-card');
 
   cards.forEach(card => {
     const cardName = card.getAttribute('data-name').toLowerCase();
-    const cardJob = card.getAttribute('data-job').toLowerCase();
+    const nameMatch = !nameValue || cardName.includes(nameValue);
 
-    const nameMatch = !nameValue || cardName.includes(nameValue); 
-    const jobMatch = jobValue === 'حدد عنصر' || cardJob.includes(jobValue); 
-
-  
-    if (nameMatch && jobMatch) {
+    if (nameMatch) {
       card.parentElement.style.display = 'block';
     } else {
-      card.parentElement.style.display = 'none'; 
+      card.parentElement.style.display = 'none';
     }
   });
 
   // Reset to the first page after filtering
   currentPage = 1;
-  generatePagination(); // Call your pagination function
-  showPage(currentPage); // Show the current page
-  setActivePage(currentPage); // Set the active page
+  generatePagination(); 
+  showPage(currentPage); 
+  setActivePage(currentPage); 
 });
+
 
 
   // Show all items when inputs are empty
