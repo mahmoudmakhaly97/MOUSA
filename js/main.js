@@ -488,21 +488,20 @@ newsInfoContainers.forEach((container) => {
  // Filter logic
 document.getElementById('name').addEventListener('input', function () {
   const nameValue = document.getElementById('name').value.trim().toLowerCase();
-
   const cards = document.querySelectorAll('.adminstrative-card');
 
   cards.forEach(card => {
     const cardName = card.getAttribute('data-name').toLowerCase();
-    const nameMatch = !nameValue || cardName.includes(nameValue);
+    const isNameMatch = nameValue === "" || cardName.includes(nameValue);
 
-    if (nameMatch) {
+    if (isNameMatch) {
       card.parentElement.style.display = 'block';
     } else {
       card.parentElement.style.display = 'none';
     }
   });
 
-  // Reset to the first page after filtering
+  // Optional: Reset to the first page after filtering if using pagination
   currentPage = 1;
   generatePagination(); 
   showPage(currentPage); 
@@ -685,3 +684,15 @@ document.getElementById('name').addEventListener('input', function () {
                  searchResults.classList.remove("d-none");
              }
          });
+// Function to handle scroll animations
+function handleScroll() {
+    const scrollPosition = window.scrollY; 
+
+    const backgroundLeft = document.querySelector('.background-left');
+    const backgroundRight = document.querySelector('.background-right');
+
+    backgroundLeft.style.transform = `translateY(${scrollPosition * 0.5}px)`; 
+    backgroundRight.style.transform = `translateY(-${scrollPosition * 0.5}px)`;
+}
+
+window.addEventListener('scroll', handleScroll);

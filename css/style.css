@@ -776,6 +776,11 @@ button:empty {
     background-color: transparent !important;
 }
 
+.our-program .download-btn {
+    background-color: var(--main-color);
+    font-size: 20px;
+}
+
 /* End Our Program */
 /* Start Admission */
 .admission-title {
@@ -1973,7 +1978,6 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .our-news-img img {
     width: 100%;
-    max-height: 430px;
 }
 
 .news-img-desc {
