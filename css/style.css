@@ -2729,3 +2729,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         font-family: 'Big Caslon', serif !important;
     }
 }
+
+/* Start  home Banner */
+.bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-ps-sub-title,
+.bdt-prime-slider-skin-crelly .bdt-slide-btn,
+.bdt-prime-slider-skin-crelly .bdt-ps-counternav li a {
+    color: var(--main-color);
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before,
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:before,
+.bdt-prime-slider-skin-crelly .bdt-prime-slider-next,
+.bdt-prime-slider-skin-crelly .bdt-prime-slider-previous {
+    background-color: var(--main-color);
+}
+
+
+/* End home  Banner */
