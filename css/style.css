@@ -2731,10 +2731,17 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 }
 
 /* Start  home Banner */
-.bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-ps-sub-title,
-.bdt-prime-slider-skin-crelly .bdt-slide-btn,
-.bdt-prime-slider-skin-crelly .bdt-ps-counternav li a {
+.bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-ps-sub-title {
+    color: #fff;
+    font-size: clamp(14px, 3vw, 32px);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-title-tag {
+    font-size: 80px;
     color: var(--main-color);
+    line-height: 1.3;
 }
 
 .bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before,
@@ -2744,5 +2751,63 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     background-color: var(--main-color);
 }
 
+.bdt-prime-slider-skin-crelly .bdt-slide-btn {
+    font-size: 26px;
+    color: var(--main-color);
+}
+
+:dir(rtl) {
+
+    .bdt-prime-slider-skin-crelly .bdt-slide-btn svg {
+
+        color: var(--main-color) !important;
+        font-size: 14px;
+    }
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:hover .bdt-prime-slider-skin-crelly .bdt-slide-btn svg {
+    color: #fff !important;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before {
+    top: -40px;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slider-excerpt-content .bdt-slider-excerpt {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-ps-counternav li a {
+    color: var(--main-color)
+}
+
+.bdt-prime-slider-skin-crelly .bdt-ps-counternav span {
+    color: #5e92426e
+}
+
+.bdt-overlay-default {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+@media (max-width:991px) {
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-ps-sub-title {
+        font-size: 20px;
+    }
+
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-title-tag {
+        font-size: 30px;
+    }
+
+    .bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before {
+        top: -10px;
+    }
+}
 
 /* End home  Banner */
