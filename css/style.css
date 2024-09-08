@@ -87,6 +87,12 @@ a {
     }
 }
 
+@media (max-width:991px) {
+    .topbar {
+        background-color: #46552e;
+    }
+}
+
 /* end topbar */
 /* start navbar */
 .navbar {
