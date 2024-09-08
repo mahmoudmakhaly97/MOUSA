@@ -2814,6 +2814,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     .bdt-text-left {
         text-align: left !important;
     }
+
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-next svg,
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-previous svg {
+        transform: rotate(180deg);
+    }
 }
 
 /* End home  Banner */
