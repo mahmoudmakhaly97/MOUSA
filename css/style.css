@@ -318,6 +318,11 @@ button:focus:not(:focus-visible) {
     cursor: pointer !important;
 }
 
+@media (max-width:991px) {
+    .bg-nav {
+        background-color: rgb(79, 79, 79, 1) !important;
+    }
+}
 
 /* end navbar */
 /* start home page .........................*/
@@ -2879,7 +2884,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
             margin-left: 20px !important;
         }
 
-       
+
     }
 }
 
