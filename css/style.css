@@ -2810,4 +2810,10 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 }
 
+:dir(ltr) {
+    .bdt-text-left {
+        text-align: left !important;
+    }
+}
+
 /* End home  Banner */
