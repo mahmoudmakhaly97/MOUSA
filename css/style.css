@@ -2888,6 +2888,22 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 }
 
+@media (max-width:991px) {
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-title-tag {
+        font-size: 25px;
+    }
 
+    .bdt-prime-slider-skin-crelly .bdt-prime-slider-desc .bdt-ps-sub-title {
+        font-size: 13px;
+    }
+
+    .bdt-prime-slider-skin-crelly .bdt-slider-excerpt-content .bdt-slider-excerpt {
+        font-size: 15px;
+    }
+
+    .bdt-flex-middle {
+        font-size: 15px;
+    }
+}
 
 /* End home  Banner */
