@@ -684,15 +684,5 @@ document.getElementById('name').addEventListener('input', function () {
                  searchResults.classList.remove("d-none");
              }
          });
-               // Function to handle scroll animations
-function handleScroll() {
-    const scrollPosition = window.scrollY; 
-
-    const backgroundLeft = document.querySelector('.background-left');
-    const backgroundRight = document.querySelector('.background-right');
-
-    backgroundLeft.style.transform = `translateY(${scrollPosition * 0.5}px)`; 
-    backgroundRight.style.transform = `translateY(-${scrollPosition * 0.5}px)`;
-}
-
-window.addEventListener('scroll', handleScroll);
+// parallax logic 
+    var rellax = new Rellax('.rellax');

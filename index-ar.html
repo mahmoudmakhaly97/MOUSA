@@ -156,9 +156,9 @@
          </div>
       </div>
       <!-- end banner -->
-      <div class="shared-background  position-relative bg-white">
-         <img src="images/about/about-right.png" class="position-absolute end-0  d-none d-md-block background-left" alt="right">
-         <img src="images/about/about-left.png" class="position-absolute start-0 d-none d-md-block  background-right" alt="left">
+      <div class="parallax-container position-relative bg-white">
+         <img src="images/about/about-right.png" class="position-absolute end-0 d-none d-md-block background-right rellax" data-rellax-speed="-5" alt="right">
+    <img src="images/about/about-left.png" class="position-absolute start-0 d-none d-md-block background-left rellax" data-rellax-speed="5" alt="left">
          <!-- start about college -->
          <div class="about-college ">
             <div class="container  "  style="background-image: url(./images/home/background.png)!important;background-repeat: no-repeat;">
@@ -669,6 +669,8 @@
       <script src="js/libraries/bootstrap.bundle.min.js"></script>
       <script src="js/libraries/owl.carousel.min.js"></script>
       <script src="js/libraries/all.min.js"></script>
+      <script src="js/libraries/rellax.min.js"></script>
+
       <script src="js/libraries/jquery.waypoints.min.js"></script>
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>
@@ -791,19 +793,6 @@
              }
          });
       </script>
-    <script>
-      // Function to handle scroll animations
-function handleScroll() {
-    const scrollPosition = window.scrollY; 
-
-    const backgroundLeft = document.querySelector('.background-left');
-    const backgroundRight = document.querySelector('.background-right');
-
-    backgroundLeft.style.transform = `translateY(${scrollPosition * 0.5}px)`; 
-    backgroundRight.style.transform = `translateY(-${scrollPosition * 0.5}px)`;
-}
-
-window.addEventListener('scroll', handleScroll);
-  </script>
+ 
    </body>
 </html>
