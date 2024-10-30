@@ -498,10 +498,9 @@
   <!-- end perfect education --> 
  <!-- start college tour -->
   <div class="college-tour bg-white position-relative">
-<div  class="position-absolute college-tour-layer start-0" >
-    <img src="images/new-web/about-left.png" alt="">
-
-</div>
+  <div class="position-absolute college-tour-layer start-0 rellax" data-rellax-speed="5">
+    <img src="images/new-web/Asset 6.png" alt="">
+  </div>
    <div class="row align-items-center">
          <div class="col-lg-6">
                 <div class="college-tour-content mb-4 mb-lg-0 py-3 pt-lg-4 ">
@@ -663,7 +662,10 @@
  </div>
 <!-- end news and events  -->
  <!-- start achievements -->
-  <div class="achievements bg-white">
+  <div class="achievements bg-white position-relative">
+   <div class="position-absolute achievements-layer end-0 rellax" data-rellax-speed="-5">
+    <img src="images/new-web/Asset 7.png" alt="">
+  </div>
    <div class="achievements-wrapper">
     <div class="row g-4">
       <div class="col-md-6 col-xl-3">
@@ -849,9 +851,15 @@
             <script src="js/libraries/bdt-uikit.min.js" id="bdt-uikit-js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+ <script src="js/libraries/rellax.min.js"></script>
 
        <script src="js/main-one.js"></script>
  
+<script>
+  window.onload = function() {
+    var rellax = new Rellax('.rellax');
+  };
+</script>
 
    </body>
 </html>

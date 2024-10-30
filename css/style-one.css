@@ -694,16 +694,18 @@ a {
 }
 
 .college-tour-layer {
-    bottom: 0;
-    width: 40%;
+    top: 25rem;
+    width: 61%;
 
-    @media (max-width:1200px) {
+
+    @media (max-width:1400px) {
         display: none;
     }
 }
 
 .college-tour-layer img {
     width: 100%;
+    opacity: .6;
 }
 
 .college-tour .environment-content {
@@ -1134,6 +1136,7 @@ a {
 
 /* start acheivements wrapper  */
 
+
 .achievements-wrapper {
     padding: 100px 0;
     width: 65%;
@@ -1147,6 +1150,22 @@ a {
         width: 95%;
         padding: 30px 0;
     }
+}
+
+.achievements-layer {
+
+    top: -87rem;
+    width: 61%;
+
+
+    @media (max-width:1400px) {
+        display: none;
+    }
+}
+
+.achievements-layer img {
+    width: 100%;
+    opacity: .6;
 }
 
 .achievements .achievements-card {
