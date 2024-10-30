@@ -1374,8 +1374,8 @@ footer .touch ul li:last-of-type {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 1.25rem;
-    right: 0.5rem;
+    bottom: 2.25rem;
+    right: 1.5rem;
     border-radius: 50%;
     font-size: 30px;
     z-index: 999999999;
