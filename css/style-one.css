@@ -287,6 +287,12 @@ a {
     font-weight: 500;
 }
 
+.new-web-navbar .e-btn:hover {
+    color: #fff;
+    background-color: var(--main-color);
+
+}
+
 @media (max-width:1600px) {
     .new-web-navbar .nav-list {
         gap: 2rem !important
@@ -409,9 +415,44 @@ a {
     }
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
 .new-web-navbar .nav-list ul li a,
 .offcanvas.show .nav-list ul li a {
     font-weight: 500;
+}
+
+.offcanvas .dropdown-menu.show {
+    position: relative !important;
+    transform: translate3d(-0.109375px, 8px, 0px) !important;
+}
+
+.offcanvas .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas {
+    background-color: rgb(79, 79, 79, 1) !important;
+}
+
+.offcanvas .fa-rectangle-xmark {
+    color: #fff;
+    font-size: 20px;
+}
+
+.offcanvas .e-btn {
+    border-radius: 30px;
+    background-color: var(--secondary);
+    font-weight: 500;
+}
+
+.offcanvas .e-btn:hover {
+    color: #fff;
+    background-color: var(--main-color);
+
 }
 
 .new-web-navbar .dropdown-toggle,
@@ -495,6 +536,12 @@ a {
     }
 }
 
+.environment-content {
+    @media (max-width:991px) {
+        margin-bottom: 1rem;
+    }
+}
+
 .educational-environment .environment-content h2 {
     color: var(--main-color);
     font-weight: 900;
@@ -507,7 +554,10 @@ a {
 
 .educational-environment .environment-content h2:last-of-type {
     position: relative;
-    margin-bottom: 2rem;
+
+    @media (max-width:575px) {
+        margin-bottom: 1rem
+    }
 }
 
 .educational-environment .environment-content h2:last-of-type::before {
@@ -519,12 +569,17 @@ a {
     background: var(--secondary);
     top: 60px;
 
+    @media (max-width:557px) {
+        display: none;
+    }
+
 }
 
 .educational-environment .environment-content p {
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 2em;
+    color: #555;
 
     @media (max-width:1500px) {
         line-height: 20px;
@@ -677,7 +732,8 @@ a {
 
 .college-tour .college-tour-content h2:last-of-type {
     position: relative;
-    margin-bottom: 2rem;
+
+
 }
 
 .college-tour .college-tour-content h2:last-of-type::before {
@@ -688,6 +744,10 @@ a {
     width: 60px;
     background: var(--secondary);
     top: 60px;
+
+    @media (max-width:575px) {
+        display: none;
+    }
 
 }
 
@@ -749,6 +809,15 @@ a {
     border-radius: 30px;
 }
 
+.our-new-programs-content h4 {
+    font-size: 28px;
+}
+
+.our-new-programs-content p {
+    font-size: 1.3rem;
+    color: #555;
+}
+
 .our-new-programs-content .btn {
     background-color: var(--secondary);
     padding-left: 1rem;
@@ -797,6 +866,14 @@ a {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.college-join-content h4 {
+    font-size: 28px;
+}
+
+.college-join-content p {
+    color: #555;
+}
+
 .college-join img {
     width: 100px;
     height: 100px;
@@ -808,6 +885,7 @@ a {
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 30px;
+    color: #555;
 
 }
 
@@ -840,6 +918,10 @@ a {
     -webkit-box-shadow: 118px 1px 134px 63px rgba(255, 255, 255, 0.84) inset;
     -moz-box-shadow: 118px 1px 134px 63px rgba(255, 255, 255, 0.84) inset;
     pointer-events: none;
+
+    @media (max-width:575px) {
+        box-shadow: none;
+    }
 }
 
 .perfect-education-carousel::after {
@@ -855,12 +937,37 @@ a {
     -moz-box-shadow: -118px 4px 122px 0px rgba(255, 255, 255, 0.88) inset;
 
     pointer-events: none;
+
+    @media (max-width:575px) {
+        box-shadow: none;
+    }
 }
 
 /* start news events styles */
 .news-events {
     background-color: #efefef;
 
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+    @media (min-width:557px) {
+        display: none;
+    }
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 20px;
+    height: 20px;
+    background-color: var(--main-color);
+}
+
+.home-banner .owl-next svg,
+.home-banner .owl-prev svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 3em;
 }
 
 .news-events .news-events-wrapper {
@@ -880,7 +987,6 @@ a {
 }
 
 .news-events-wrapper h2 {
-    margin-bottom: 4rem;
     color: var(--main-color);
     font-weight: bold;
     font-size: 2.5rem;
@@ -891,13 +997,35 @@ a {
 }
 
 .news-events-carousel .owl-item .item {
-    opacity: 0.5;
+    opacity: 1;
     /* Slight transparency for non-centered items */
     transition: opacity 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
-    transform: scale(0.9);
+    transform: scale(0.8);
     border-radius: 15px;
     /* Initial border-radius for non-centered items */
     z-index: 1;
+
+    @media (max-width:575px) {
+        transform: scale(1);
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+
+.news-events-carousel .owl-item .item .item-content {
+    display: none;
+}
+
+.news-events-carousel.owl-carousel .owl-stage-outer {
+    padding-top: 98px;
+    height: 600px;
+
+    @media (max-width:575px) {
+
+        height: 400px;
+        padding: 0;
+    }
 }
 
 .news-events-carousel .center-item .item {
@@ -907,9 +1035,54 @@ a {
     border-radius: 0;
     /* Remove border-radius when centered and scaled */
     z-index: 10;
+
+    @media (max-width:575px) {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
-.news-events-carousel .item img {
+
+.news-events-carousel .center-item .item .item-content {
+    display: block;
+    position: absolute;
+    bottom: 2rem;
+    width: 80%;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-events-carousel .center-item .item .item-content h4 {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.news-events-carousel .center-item .item .item-content .btn {
+
+    background-color: var(--secondary);
+    margin-top: 1rem;
+    padding: 0;
+    font-size: 15px;
+    padding: 0px 20px;
+    border-radius: 30px;
+    color: #555;
+}
+
+.news-events-carousel .center-item .item .item-content .btn svg {
+    transform: rotate(-45deg);
+}
+
+.news-events-carousel .center-item .item .item-content .btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
+
+}
+
+.btn .news-events-carousel .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -918,11 +1091,11 @@ a {
 }
 
 .news-events-carousel .owl-nav button.owl-next {
-    top: 35% !important;
+    top: 50% !important;
     position: absolute;
     right: 12rem;
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 54px;
     background-color: var(--secondary);
     border-radius: 10px;
 
@@ -932,11 +1105,11 @@ a {
 }
 
 .news-events-carousel .owl-nav button.owl-prev {
-    top: 35% !important;
+    top: 50% !important;
     position: absolute;
     left: 12rem;
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 54px;
     background-color: var(--secondary);
     border-radius: 10px;
 
@@ -947,9 +1120,10 @@ a {
 
 }
 
+
 .news-events-carousel .owl-nav button.owl-next svg,
 .news-events-carousel .owl-nav button.owl-prev svg {
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -989,6 +1163,10 @@ a {
     color: var(--secondary);
     font-size: 3rem;
     font-weight: 900;
+}
+
+.achievements .achievements-card h3 {
+    color: #555
 }
 
 /*start college staff */
@@ -1051,6 +1229,7 @@ a {
 
 .college-staff-carousel .item h3 {
     font-size: 1.4rem;
+    color: #555;
 }
 
 .college-staff-carousel .owl-nav button.owl-next {

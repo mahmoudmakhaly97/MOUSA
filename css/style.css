@@ -3299,7 +3299,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .college-tour .college-tour-content h2:last-of-type {
     position: relative;
-    margin-bottom: 2rem;
+     
+
+ 
 }
 
 .college-tour .college-tour-content h2:last-of-type::before {

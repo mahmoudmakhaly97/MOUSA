@@ -33,7 +33,7 @@ $(".college-staff-carousel").owlCarousel({
                 var owl = $(selector);
                 owl.owlCarousel({
                     loop: true,
-                    margin: 0,
+                    margin: -50,
                     nav: false,
                   rtl: true,
                         navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
@@ -58,12 +58,13 @@ $(".college-staff-carousel").owlCarousel({
                 });
             }
 
-            function highlightCenterItem(carousel) {
-                var $carousel = $(carousel);
-                var centerIndex = Math.floor($carousel.find('.owl-item.active').length / 3);
-                $carousel.find('.owl-item').removeClass('center-item');
-                $carousel.find('.owl-item.active').eq(centerIndex).addClass('center-item');
-            }
+           function highlightCenterItem(carousel) {
+        var $carousel = $(carousel);
+        var activeItems = $carousel.find('.owl-item.active');
+        var centerIndex = Math.floor(activeItems.length / 3); // Center index for active items
+        $carousel.find('.owl-item').removeClass('center-item').css('z-index', 1); // Reset z-index
+        activeItems.eq(centerIndex).addClass('center-item').css('z-index', 10); // Set high z-index for center item
+    }
 
             // Initialize each carousel
             initializeCarousel('.news-events-carousel').eq(0);
