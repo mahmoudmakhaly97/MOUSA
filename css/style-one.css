@@ -276,8 +276,15 @@ a {
 .new-web-navbar .logos img:last-child {
     width: 12rem;
 
-    @media (max-width:1600px) {
+    @media (max-width:1200px) {
         display: none;
+        width: 10rem;
+    }
+}
+
+.logo-list-wrapper {
+    @media (max-width:1300px) {
+        gap: 0 !important;
     }
 }
 
@@ -300,7 +307,8 @@ a {
 
 }
 
-@media (max-width:1400px) {
+
+@media (max-width:1300px) {
 
     .new-web-navbar .nav-list,
     .new-web-navbar .social {
@@ -310,7 +318,18 @@ a {
 
 }
 
-@media (min-width:1400px) {
+@media (min-width:1200px) and (max-width:1600px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1386px;
+    }
+}
+
+@media (min-width:1300px) {
     .new-web-navbar .bars-icon {
         display: none;
     }
@@ -369,6 +388,11 @@ a {
     padding: 10px 20px;
 
     border-radius: 5px;
+
+    @media (max-width:1600px) {
+        font-size: 14px;
+        padding: 10px 8px;
+    }
 }
 
 .nav-list li a:hover {
@@ -377,6 +401,13 @@ a {
 
 .new-web-navbar .dropdown-toggle {
     padding: 10px 13px;
+
+    @media (max-width:1600px) {
+
+        padding: 10px 8px;
+        font-size: 14px;
+
+    }
 }
 
 .new-web-navbar .dropdown-toggle:hover {
@@ -569,7 +600,7 @@ a {
     background: var(--secondary);
     top: 60px;
 
-    @media (max-width:557px) {
+    @media (max-width:991px) {
         display: none;
     }
 
@@ -747,7 +778,7 @@ a {
     background: var(--secondary);
     top: 60px;
 
-    @media (max-width:575px) {
+    @media (max-width:991px) {
         display: none;
     }
 
@@ -1025,7 +1056,7 @@ a {
 
     @media (max-width:575px) {
 
-        height: 400px;
+        height: 360px;
         padding: 0;
     }
 }
@@ -1263,6 +1294,10 @@ a {
     @media (max-width:1200px) {
         display: none;
     }
+}
+
+.college-staff .owl-carousel .owl-item img {
+    width: auto;
 }
 
 .college-staff-carousel .owl-nav button.owl-prev {
