@@ -128,12 +128,13 @@
             <div class="item   position-relative" style="background: url('./images/home/banner.png') no-repeat center center; background-size: cover;">
                <div class="homer-banner-overlay position-absolute w-100 h-100 start-0 top-0 bottom-0 end-0"></div>
                <div class="container">
-                  <div class="banner-info d-inline-block position-absolute text-white">
-                     <h1 class="fw-bold title banner-title d-none">الصفحة الرئيسية</h1>
-                     <h1 class="fw-bold title"> تم فتح باب التسجيل في تخصصي التمريض, الادارة الصحية والمعلوماتية للبنين لاول مرة</h1>
+                  <div class="banner-info d-flex flex-column align-items-center d-inline-block position-absolute text-white">
+                      <h1 class="fw-bold title text-white"> نردتديه بفخر
+
+                      </h1>
                      <div>
                         <h1 class="fw-bold title"><span> </span>  </h1>
-                        <button  id="subscribe-btn" class="subscribe-btn fs-4 px-4 py-2">btn</button>
+                        <button  id="subscribe-btn" class="subscribe-btn fs-4 px-4 py-2 w-auto">btn</button>
                      </div>
                   </div>
                </div>
@@ -193,26 +194,7 @@
             </div>
          </div>
          <!-- end about college -->
-         <!-- start explore now -->
-         <div class="explore-now  bg-white py-0 py-md-5">
-            <div class="container">
-               <div class="explore-wrapper position-relative  p-5">
-                  <div class="row align-items-center gap-3  gap-lg-0  align-items-center text-center text-lg-end">
-                     <div class="col-lg-6">
-                        <div class="explore-info">
-                           <h2 class="explore-title">360°<span class="virtual-tours"> Virtual Tours  </span>          </h2>
-                           <h3 class="explore-desc my-3">Explore Our Campuses With <br>  These Virtual College Tours</h3>
-                           <button class="btn fs-4 px-5 py-2 rounded">Explore Now! </button>
-                        </div>
-                     </div>
-                     <div class="col-lg-6">
-                        <img src="images/home/univeristy.png" class="w-100" alt="univeristy">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- end explore now --> 
+   
       </div>
       <!-- start welcome  -->
       <div class="welcome bg-white py-5 pb-5">
@@ -669,8 +651,12 @@
       <script src="js/libraries/bootstrap.bundle.min.js"></script>
       <script src="js/libraries/owl.carousel.min.js"></script>
       <script src="js/libraries/all.min.js"></script>
-      <script src="js/libraries/rellax.min.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rellax = new Rellax('.rellax');
+  });
+</script>
       <script src="js/libraries/jquery.waypoints.min.js"></script>
       <script src="js/libraries/jquery.counterup.min.js"></script>
       <script src="js/main.js"></script>

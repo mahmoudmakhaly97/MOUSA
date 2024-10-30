@@ -108,6 +108,9 @@ $(".admission-carousel").owlCarousel({
 });
 
 
+
+ 
+
 $(".recent-carousel").owlCarousel({
   loop: true,
   margin: 30,
@@ -186,14 +189,19 @@ $(".stories-carousel").owlCarousel({
     },
   },
 });
+
+
+
+
 // counter js logic in home page 
 $(document).ready(function () {
   $(".counter").counterUp({
     delay: 10,
     time: 1000,
+    
   });
 });
-
+ 
 // career pag logic
 window.addEventListener("scroll", function () {
   var navbar = document.querySelector(".navbar");
@@ -684,5 +692,51 @@ document.getElementById('name').addEventListener('input', function () {
                  searchResults.classList.remove("d-none");
              }
          });
-// parallax logic 
-    var rellax = new Rellax('.rellax');
+//new web logic 
+	// scrolled navbar 
+var scrollWindow = function () {
+  
+    $(window).scroll(function () {
+    var navbar = document.querySelector(".new-web-navbar");
+			var $w = $(this),
+					st = $w.scrollTop(),
+					navbar = $('.ftco_navbar'),
+					sd = $('.js-scroll-wrap');
+
+			if (st > 80) {
+				if ( !navbar.hasClass('scrolled') ) {
+                    navbar.addClass('scrolled');	
+                  
+              //  document.getElementById("logo").src = "../images/home/navbar/colored-logo.svg";
+
+				}
+                
+			} 
+			if (st < 80) {
+				if ( navbar.hasClass('scrolled') ) {
+                    navbar.removeClass('scrolled sleep');
+                                  //  document.getElementById("logo").src = "../images/home/navbar/logo.svg";
+
+				}
+			} 
+			if ( st > 150 ) {
+				if ( !navbar.hasClass('awake') ) {
+					navbar.addClass('awake');	
+				}
+				
+				if(sd.length > 0) {
+					sd.addClass('sleep');
+				}
+			}
+			if ( st < 150 ) {
+				if ( navbar.hasClass('awake') ) {
+					navbar.removeClass('awake');
+					navbar.addClass('sleep');
+				}
+				if(sd.length > 0) {
+					sd.removeClass('sleep');
+				}
+			}
+		});
+	};
+	scrollWindow();
