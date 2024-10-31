@@ -2,7 +2,9 @@
 $(".college-staff-carousel").owlCarousel({
   loop: true,
   margin: 100,
-  rtl:true , 
+  rtl: true, 
+      animateOut: 'fadeOut', // Use fadeOut animation
+    animateIn: 'fadeIn',   // Use fadeIn animation
     responsiveClass:true,  
   navText: [
     "<i class='fas fa-chevron-left'></i>",
@@ -32,7 +34,8 @@ $(".college-staff-carousel").owlCarousel({
             function initializeCarousel(selector) {
                 var owl = $(selector);
                 owl.owlCarousel({
-                    loop: true,
+                  loop: true,
+    
                     margin: -50,
                     nav: false,
                   rtl: true,
