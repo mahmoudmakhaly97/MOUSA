@@ -275,17 +275,33 @@ a {
     }
 }
 
-.new-web-navbar .logos img:first-child {
-    width: 133px;
-    height: 62px;
-}
+
 
 .new-web-navbar .logos img:last-child {
     width: 12rem;
 
-    @media (max-width:1200px) {
+
+    @media (max-width:1300px) {
         display: none;
         width: 10rem;
+    }
+}
+
+.line {
+    position: relative;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 38px;
+    background-color: #fff;
+    right: -5px;
+    top: 33%;
+
+    @media (max-width:1300px) {
+        display: none;
     }
 }
 
@@ -696,7 +712,7 @@ a {
 }
 
 .educational-environment.v2 .environment-content {
-    padding-inline-start: 0rem;
+    padding-inline-start: 2rem;
     padding-inline-end: 6rem;
 
 
