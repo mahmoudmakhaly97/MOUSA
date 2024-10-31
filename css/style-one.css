@@ -396,7 +396,7 @@ a {
     top: 0;
     z-index: 999999;
     margin-top: -150px;
-    background: rgb(79, 79, 79) !important;
+    background: #19181b !important;
 
     transition: .3s all ease-out;
 
@@ -516,7 +516,7 @@ a {
 }
 
 .offcanvas {
-    background-color: rgb(79, 79, 79, 1) !important;
+    background-color: #19181b !important;
 }
 
 .offcanvas .fa-rectangle-xmark {
@@ -889,6 +889,7 @@ a {
 
 }
 
+
 @media (max-width:1500px) {
     .college-tour .environment-content {
         padding-inline-start: 2rem;
@@ -968,7 +969,8 @@ a {
 
 }
 
-.college-tour-content .btn {
+.college-tour-content .btn,
+.college-tour-image .btn {
     background-color: var(--secondary);
     padding-left: 1rem;
     padding-right: 1em;
@@ -976,7 +978,8 @@ a {
     font-size: 18px;
 }
 
-.college-tour-content .btn:hover {
+.college-tour-content .btn:hover,
+.college-tour-image .btn:hover {
     background-color: var(--main-color);
     color: #fff;
 }
