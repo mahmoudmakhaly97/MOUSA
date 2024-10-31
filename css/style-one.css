@@ -287,11 +287,11 @@ a {
     }
 }
 
-.line {
+.logo-line {
     position: relative;
 }
 
-.line::before {
+.logo-line::before {
     content: "";
     position: absolute;
     width: 1px;
