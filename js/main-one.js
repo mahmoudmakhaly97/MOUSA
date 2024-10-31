@@ -13,20 +13,11 @@ $(".college-staff-carousel").owlCarousel({
 
   nav: true,
  
-  responsive: {
-    0: {
-      items: 1,
-   
- 
-    },
-    768: {
-      items: 2,
-    },
-    991: {
-      items: 3,
-    },
-   
-  },
+   responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        991: { items: 3 }
+    }
 });
 // news-events logic
   
@@ -43,7 +34,8 @@ $(".college-staff-carousel").owlCarousel({
 
                     responsive: {
                       0:{
-            items:1
+                        items: 1, 
+                        margin:0
         },
         600:{
             items:1

@@ -14,12 +14,7 @@ body {
 
 }
 
-@media (max-width:575px) {
-    body {
-        overflow-x: hidden;
-    }
 
-}
 
 .pointer {
     cursor: pointer;
@@ -1264,7 +1259,7 @@ a {
 @media (max-width:575px) {
     .news-events-carousel .owl-item .item {
         transform: scale(1);
-        visibility: hidden;
+
         /* opacity: 0;  */
 
     }
@@ -1283,13 +1278,7 @@ a {
 
 }
 
-@media (max-width:575px) {
-    .news-events-carousel.owl-carousel .owl-stage-outer {
-        height: 430px;
-        padding: 0;
-    }
 
-}
 
 .news-events-carousel .center-item .item {
     opacity: 1;
@@ -1299,6 +1288,15 @@ a {
     /* Remove border-radius when centered and scaled */
     z-index: 10;
 
+
+}
+
+@media (max-width:575px) {
+
+    .news-events-carousel.owl-carousel .owl-stage-outer {
+        height: 430px;
+        padding: 0;
+    }
 
 }
 
