@@ -1,7 +1,7 @@
 // college-staff-carousel logic 
 $(".college-staff-carousel").owlCarousel({
   loop: true,
-  margin: 100,
+  margin: 10,
   rtl: true, 
       animateOut: 'fadeOut', // Use fadeOut animation
     animateIn: 'fadeIn',   // Use fadeIn animation
@@ -27,7 +27,7 @@ $(".college-staff-carousel").owlCarousel({
                 owl.owlCarousel({
                   loop: true,
     
-                    margin: -50,
+                    margin: -5,
                     nav: false,
                   rtl: true,
                         navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
