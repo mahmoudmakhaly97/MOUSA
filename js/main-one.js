@@ -20,6 +20,28 @@ $(".college-staff-carousel").owlCarousel({
     }
 });
 // news-events logic
+// our-new-programs-carousel  logic 
+$(".our-new-programs-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  rtl: true, 
+      animateOut: 'fadeOut', // Use fadeOut animation
+    animateIn: 'fadeIn',   // Use fadeIn animation
+    responsiveClass:true,  
+  navText: [
+    "<i class='fas fa-chevron-left'></i>",
+    "<i class='fas fa-chevron-right'></i>",
+  ],
+
+  nav: true,
+ 
+   responsive: {
+        0: { items: 1 },
+ 
+        991: { items: 2 }
+    }
+});
+// news-events logic
   
   $(document).ready(function(){
             function initializeCarousel(selector) {
