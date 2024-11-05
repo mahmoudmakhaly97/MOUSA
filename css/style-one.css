@@ -83,13 +83,7 @@ a {
     line-height: 1.3;
 }
 
-.bdt-prime-slider-skin-crelly .bdt-slide-btn:hover:before {
-    background-color: transparent !important;
-}
 
-.bdt-prime-slider-skin-crelly .bdt-slide-btn:hover {
-    background-color: transparent !important;
-}
 
 .bdt-prime-slider-skin-crelly .bdt-prime-slider-next,
 .bdt-prime-slider-skin-crelly .bdt-prime-slider-previous {
@@ -102,7 +96,7 @@ a {
 @media (max-width:575px) {
 
     .bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before,
-    .bdt-prime-slider-skin-crelly .bdt-slide-btn:before,
+
     .bdt-prime-slider-skin-crelly .bdt-prime-slider-next,
     .bdt-prime-slider-skin-crelly .bdt-prime-slider-previous {
         width: 45px;
@@ -110,9 +104,6 @@ a {
     }
 }
 
-.bdt-prime-slider-skin-crelly .bdt-slide-btn:before {
-    background-color: transparent !important;
-}
 
 .bdt-prime-slider-skin-crelly .bdt-slide-btn {
     font-size: 26px;
@@ -156,7 +147,7 @@ a {
 }
 
 .bdt-prime-slider-skin-crelly .bdt-ps-counternav span {
-    color: #fff
+    color: #5e9242
 }
 
 .bdt-overlay-default {
@@ -271,6 +262,30 @@ a {
     .bdt-flex-middle {
         font-size: 15px;
     }
+}
+
+
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:before {
+    visibility: hidden;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:before {
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:hover::before {
+    visibility: visible;
+    background-color: rgba(94, 146, 66, .5) !important;
+    border-radius: 5px;
+}
+
+.banner-icon {
+    transition: .3s all ease;
+}
+
+.bdt-prime-slider-skin-crelly .bdt-slide-btn:hover .banner-icon {
+    color: #fff !important
 }
 
 /* End home  Banner */
@@ -444,12 +459,12 @@ a {
 
 .new-web-navbar.awake {
     margin-top: 0px;
-    transition: .7s all ease-out;
+    transition: 1s all ease-out;
     z-index: 99999999
 }
 
 .new-web-navbar.sleep {
-    transition: .8s all ease-out;
+    transition: 1s all ease-out;
     padding-top: .7rem !important;
     padding-bottom: .7rem !important;
 

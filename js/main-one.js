@@ -105,7 +105,8 @@ $(".perfect-education-carousel").owlCarousel({
     items: 1.45,          // Display 1 full item and half of the next
     margin: 12,          // Space between items
     loop: true,
-   
+       stagePadding: 0  ,     // Set to 0 for no padding around
+
 
 });
 // float icon logic
