@@ -429,7 +429,7 @@ a {
     margin-top: -150px;
     background: #19181b !important;
 
-    transition: .3s all ease-out;
+    transition: .5s all ease-out;
 
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 
@@ -443,12 +443,15 @@ a {
 
 .new-web-navbar.awake {
     margin-top: 0px;
-    transition: .3s all ease-out;
+    transition: .7s all ease-out;
     z-index: 99999999
 }
 
 .new-web-navbar.sleep {
-    transition: .3s all ease-out;
+    transition: .8s all ease-out;
+    padding-top: .7rem !important;
+    padding-bottom: .7rem !important;
+
 
 }
 
@@ -635,7 +638,7 @@ a {
 
 
 .educational-environment .environment-content {
-    padding-inline-start: 8rem;
+    padding-inline-start: 7.25rem;
 
 
 

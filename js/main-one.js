@@ -125,10 +125,13 @@ var scrollWindow = function () {
     $(window).scroll(function () {
     var navbar = document.querySelector(".new-web-navbar");
 			var $w = $(this),
-					st = $w.scrollTop(),
+        st = $w.scrollTop(),
+          
+
+        
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
-
+        console.log("st" ,st);
 			if (st > 80) {
 				if ( !navbar.hasClass('scrolled') ) {
                     navbar.addClass('scrolled');	
@@ -145,7 +148,7 @@ var scrollWindow = function () {
 
 				}
 			} 
-			if ( st > 150 ) {
+			if ( st > 90 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');	
 				}
@@ -154,7 +157,7 @@ var scrollWindow = function () {
 					sd.addClass('sleep');
 				}
 			}
-			if ( st < 150 ) {
+			if ( st < 110 ) {
 				if ( navbar.hasClass('awake') ) {
 					navbar.removeClass('awake');
 					navbar.addClass('sleep');
