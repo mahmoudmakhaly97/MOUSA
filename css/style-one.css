@@ -300,6 +300,10 @@ a {
 
 }
 
+.ftco_navbar {
+    padding: 1.8rem 0 !important;
+}
+
 .new-web-navbar .dropdown-toggle::after {
     display: none !important;
 }
@@ -1514,6 +1518,7 @@ a {
     border-radius: 0;
     /* Remove border-radius when centered and scaled */
     z-index: 10;
+    transition: transform 0.3s ease;
 
 
 }
