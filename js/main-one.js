@@ -93,17 +93,17 @@ $(".our-new-programs-carousel").owlCarousel({
 //  enviroment carousel 
 $(".environment-carousel").owlCarousel({
     rtl: true,
-    items: 1.5,           // Display 1 full item and half of the next
+    items:1.45,           // Display 1 full item and half of the next
   loop: true,
  
-    margin: 10,
+    margin: 12,
     stagePadding: 0  ,     // Set to 0 for no padding around
 });
 //  perfect-education-carousel
 $(".perfect-education-carousel").owlCarousel({
       
-    items: 1.5,          // Display 1 full item and half of the next
-    margin: 10,          // Space between items
+    items: 1.45,          // Display 1 full item and half of the next
+    margin: 12,          // Space between items
     loop: true,
    
 

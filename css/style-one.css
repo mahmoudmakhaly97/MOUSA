@@ -156,7 +156,7 @@ a {
 }
 
 .bdt-prime-slider-skin-crelly .bdt-ps-counternav span {
-    color: #5e92426e
+    color: #fff
 }
 
 .bdt-overlay-default {
@@ -819,7 +819,7 @@ a {
 
 .educational-environment.v1 .owl-theme .owl-nav {
     position: absolute;
-    left: 16rem !important;
+    left: 14rem !important;
     transform: rotate(90deg);
     z-index: 999999;
     bottom: 3rem
@@ -834,14 +834,14 @@ a {
 
 @media (max-width:1750px) {
     .educational-environment.v1 .owl-theme .owl-nav {
-        left: 20% !important
+        left: 15% !important
     }
 
 }
 
 @media (max-width:1400px) {
     .educational-environment.v1 .owl-theme .owl-nav {
-        left: 18% !important
+        left: 13% !important
     }
 
 }
@@ -849,7 +849,15 @@ a {
 @media (max-width:1200px) {
     .educational-environment.v1 .owl-theme .owl-nav {
 
-        left: 4rem !important;
+        left: 3rem !important;
+        bottom: 2rem;
+    }
+}
+
+@media (max-width:991px) {
+    .educational-environment.v1 .owl-theme .owl-nav {
+
+        left: 10rem !important;
         bottom: 2rem;
     }
 }
@@ -894,7 +902,7 @@ a {
 
 .educational-environment.v2 .owl-theme .owl-nav {
     position: absolute;
-    right: 16rem !important;
+    right: 14rem !important;
     transform: rotate(90deg);
     z-index: 999999;
     bottom: 3rem
@@ -909,14 +917,14 @@ a {
 
 @media (max-width:1750px) {
     .educational-environment.v2 .owl-theme .owl-nav {
-        right: 20% !important
+        right: 15% !important
     }
 
 }
 
 @media (max-width:1400px) {
     .educational-environment.v2 .owl-theme .owl-nav {
-        right: 18% !important
+        right: 13% !important
     }
 
 }
@@ -924,7 +932,15 @@ a {
 @media (max-width:1200px) {
     .educational-environment.v2 .owl-theme .owl-nav {
 
-        right: 4rem !important;
+        right: 3rem !important;
+        bottom: 2rem;
+    }
+}
+
+@media (max-width:991px) {
+    .educational-environment.v2 .owl-theme .owl-nav {
+
+        right: 10rem !important;
         bottom: 2rem;
     }
 }
@@ -1197,7 +1213,7 @@ a {
 }
 
 .our-new-programs-carousel .owl-nav button.owl-prev {
-    top:45% !important;
+    top: 45% !important;
     position: absolute;
     left: -106px;
     width: 54px;
@@ -1431,7 +1447,7 @@ a {
 .news-events-carousel .owl-item .item {
     opacity: 1;
     /* Slight transparency for non-centered items */
-    transition: opacity 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+    transition: opacity 0.3s ease, transform .6s ease, border-radius 0.3s ease;
     transform: scale(1);
     border-radius: 15px;
     /* Initial border-radius for non-centered items */
