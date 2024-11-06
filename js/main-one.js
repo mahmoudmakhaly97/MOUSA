@@ -42,54 +42,51 @@ $(".our-new-programs-carousel").owlCarousel({
     }
 });
 // news-events logic
-  
-  $(document).ready(function(){
-            function initializeCarousel(selector) {
-                var owl = $(selector);
-                owl.owlCarousel({
-                  loop: true,
-    
-                    margin: -5,
-                    nav: false,
-                  rtl: true,
-                        navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"], // Replace navigation text with Font Awesome icons
-
-                    responsive: {
-                      0:{
-                        items: 1, 
-                        margin:0
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:3
-        }
-                    },
-                    onInitialized: function(event) {
-                        highlightCenterItem(event.target);
-                    },
-                    onTranslated: function(event) {
-                        highlightCenterItem(event.target);
-                    }
-                });
+ $(document).ready(function(){
+    function initializeCarousel(selector) {
+        var owl = $(selector);
+        owl.owlCarousel({
+            loop: true,
+            margin: -5,
+            nav: false,
+            rtl: true,
+            navText: ["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+            responsive: {
+                0: { items: 1, margin:0 },
+                600: { items: 1 },
+                1000: { items: 3 }
+            },
+            onInitialized: function(event) {
+                highlightCenterItem(event.target);
+            },
+            onTranslated: function(event) {
+                highlightCenterItem(event.target);
             }
-
-           function highlightCenterItem(carousel) {
-        var $carousel = $(carousel);
-        var activeItems = $carousel.find('.owl-item.active');
-        var centerIndex = Math.floor(activeItems.length / 3); // Center index for active items
-        $carousel.find('.owl-item').removeClass('center-item').css('z-index', 1); // Reset z-index
-        activeItems.eq(centerIndex).addClass('center-item').css('z-index', 10); // Set high z-index for center item
+        });
     }
 
-            // Initialize each carousel
-            initializeCarousel('.news-events-carousel').eq(0);
-            initializeCarousel('.news-events-carousel').eq(1);
-                        initializeCarousel('.news-events-carousel').eq(2);
+    function highlightCenterItem(carousel) {
+        var $carousel = $(carousel);
+        var activeItems = $carousel.find('.owl-item.active');
+        var centerIndex = Math.floor(activeItems.length / 3);
+        
+        $carousel.find('.owl-item').removeClass('center-item').css('z-index', 1)
+         .removeAttr('data-aos'); // Remove AOS from all
 
+        var $centerItem = activeItems.eq(centerIndex);
+        $centerItem.addClass('center-item').css('z-index', 10)
+           .attr({
+                'data-aos': 'fade-up',
+                'data-aos-delay': '300'
+            }); // Add AOS to centered item only
 
-        });
+        AOS.refresh(); // Refresh AOS for new centered item
+    }
+
+    // Initialize the carousel
+    initializeCarousel('.news-events-carousel');
+});
+
 //  enviroment carousel 
 $(".environment-carousel").owlCarousel({
     rtl: true,
