@@ -888,7 +888,7 @@ a {
 @media (max-width:575px) {
     .educational-environment.v1 .owl-theme .owl-nav {
 
-        left: 1.8rem !important;
+        left: 1.3rem !important;
         bottom: 2rem;
     }
 }
@@ -971,7 +971,7 @@ a {
 @media (max-width:575px) {
     .educational-environment.v2 .owl-theme .owl-nav {
 
-        right: 1.8rem !important;
+        right: 1.3rem !important;
         bottom: 2rem;
     }
 }
