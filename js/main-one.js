@@ -19,7 +19,7 @@ $(".college-staff-carousel").owlCarousel({
         991: { items: 3 }
     }
 });
-// news-events logic
+ 
 // our-new-programs-carousel  logic 
 $(".our-new-programs-carousel").owlCarousel({
   loop: true,
@@ -75,10 +75,10 @@ $(".our-new-programs-carousel").owlCarousel({
 
         var $centerItem = activeItems.eq(centerIndex);
         $centerItem.addClass('center-item').css('z-index', 10)
-           .attr({
-                'data-aos': 'fade-up',
-                'data-aos-delay': '300'
-            }); // Add AOS to centered item only
+          //  .attr({
+          //       'data-aos': 'fade-up',
+          //       'data-aos-delay': '300'
+          //   }); // Add AOS to centered item only
 
         AOS.refresh(); // Refresh AOS for new centered item
     }
