@@ -939,61 +939,6 @@ a {
 }
 
 
-/* .educational-environment.v2 .owl-theme .owl-nav {
-    position: absolute;
-    right: 14rem !important;
-    transform: rotate(90deg);
-    z-index: 999999;
-    bottom: 3rem
-}
-
-@media (max-width:1900px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-        right: 14rem !important;
-    }
-
-}
-
-@media (max-width:1750px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-        right: 15% !important
-    }
-
-}
-
-@media (max-width:1400px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-        right: 13% !important
-    }
-
-}
-
-@media (max-width:1200px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-
-        right: 3rem !important;
-        bottom: 2rem;
-    }
-}
-
-@media (max-width:991px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-
-        right: 10rem !important;
-        bottom: 2rem;
-    }
-}
-
-@media (max-width:575px) {
-    .educational-environment.v2 .owl-theme .owl-nav {
-
-        right: 1.3rem !important;
-        bottom: 2rem;
-    }
-}
- */
-
-
 
 
 .environment-carousel .owl-nav button.owl-prev,
@@ -1025,40 +970,47 @@ a {
     }
 }
 
-/* @media (max-width:450px) {
-    .environment-carousel .owl-nav button.owl-next {
+.owl-carousel.arrow-v2 .owl-nav button.owl-prev,
+.owl-carousel.arrow-v2 .owl-nav button.owl-next {
 
-        top: -23rem;
-        right: 15px;
-        width: 50px;
-        height: 50px;
+    background-color: transparent !important;
+    transform: rotate(0);
+    width: 55px;
+    height: 0;
+}
 
-    }
+.arrow-v2.owl-theme .owl-nav {
+    bottom: 0 !important;
+    width: 45% !important;
+    display: block !important;
+    bottom: -15px !important;
+    left: 0;
 
-    .environment-carousel .owl-nav button.owl-prev {
+}
 
-
-        right: 1em;
-        top: -56px;
-        width: 50px;
-        height: 50px;
-
+@media (max-width:575px) {
+    .arrow-v2.owl-theme .owl-nav {
+        width: 53% !important;
     }
 }
-@media (max-width:376px) {
-    .environment-carousel .owl-nav button.owl-next {
 
-        top: -20rem;
-    
+.perfect-education-carousel.arrow-v2.owl-theme .owl-nav {
+    left: 30%;
+    width: 100% !important;
+}
 
-    }
+.arrow-v2.owl-theme .owl-nav button svg {
+    color: gray;
+    bottom: 0;
+    transform: scaleX(2) !important;
+    color: red;
+}
 
- 
-} */
+.arrow-v2.owl-theme .owl-nav button svg:hover {
+    color: var(--main-color);
+}
 
-/* start college tour styles */
-
-
+/* start college tour  */
 .college-tour {
     padding: 80px 8rem;
 

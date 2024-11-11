@@ -108,24 +108,46 @@ $(".our-new-programs-carousel").owlCarousel({
 });
 
 //  enviroment carousel 
-$(".environment-carousel").owlCarousel({
-    rtl: true,
-    items:1.45,           // Display 1 full item and half of the next
-  loop: true,
+$(".environment-carousel").each(function() {
  
-    margin: 12,
-    stagePadding: 0  ,     // Set to 0 for no padding around
-});
-//  perfect-education-carousel
-$(".perfect-education-carousel").owlCarousel({
-      
-    items: 1.45,          // Display 1 full item and half of the next
-    margin: 12,          // Space between items
+  const isArrowV2 = $(this).hasClass("arrow-v2");
+
+  $(this).owlCarousel({
+    rtl: true,
+    items: 1.45,  // Display 1 full item and half of the next
     loop: true,
-       stagePadding: 0  ,     // Set to 0 for no padding around
+    nav: true,
+    navText: isArrowV2 
+      ? ["<img src='images/new-web/arrow-right.svg'>" ,"     <img src='images/new-web/arrow-right.svg' style='transform: rotate(180deg)'>" ]
+   
+      : ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"], // Default
 
-
+    margin: 12,
+    stagePadding: 0,  // No padding around items
+  });
 });
+
+//  perfect-education-carousel
+$(".perfect-education-carousel").each(function() {
+ 
+  const isArrowV2 = $(this).hasClass("arrow-v2");
+
+  $(this).owlCarousel({
+    items: 1.45,  // Display 1 full item and half of the next
+    loop: true,
+    nav: true,
+    navText: isArrowV2 
+      ? ["<img src='images/new-web/arrow-right.svg' style='transform: rotate(180deg)'>","     <img src='images/new-web/arrow-right.svg' style='transform: rotate(0deg)'>" ]
+   
+      : ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"], // Default
+
+    margin: 12,
+    stagePadding: 0,  // No padding around items
+  });
+});
+ 
+
+ 
 // float icon logic
 
        
