@@ -139,7 +139,7 @@ $(".perfect-education-carousel").each(function() {
     navText: isArrowV2 
       ? ["<img src='images/new-web/arrow-right.svg' style='transform: rotate(180deg)'>","     <img src='images/new-web/arrow-right.svg' style='transform: rotate(0deg)'>" ]
    
-      : ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"], // Default
+      : ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"], // Default
 
     margin: 12,
     stagePadding: 0,  // No padding around items
