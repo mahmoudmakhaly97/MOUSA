@@ -20,6 +20,26 @@ $(".college-staff-carousel").owlCarousel({
     }
 });
  
+// acheivements-carousel logic 
+$(".acheivments-carousel").owlCarousel({
+  loop: true,
+  margin: 20,
+  rtl: true, 
+ 
+    responsiveClass:true,  
+ 
+
+  nav: true,
+ 
+   responsive: {
+        0: { items: 1 },
+     768: { items: 2 },
+        991:{items: 2} ,
+        1200: { items: 4 }
+    }
+});
+ 
+
 // our-new-programs-carousel  logic 
 $(".our-new-programs-carousel").owlCarousel({
   loop: true,
