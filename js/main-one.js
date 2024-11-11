@@ -118,9 +118,9 @@ $(".environment-carousel").each(function() {
     loop: true,
     nav: true,
     navText: isArrowV2 
-      ? ["<img src='images/new-web/arrow-right.svg'>" ,"     <img src='images/new-web/arrow-right.svg' style='transform: rotate(180deg)'>" ]
+      ? ["<svg  class='arrow-right-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'><path style='fill:#232326' d='M14 1v1h8.293L1 23.293l.707.707L23 2.707V11h1V1H14z' data-name='Kanan Atas'/></svg>" ,    "<svg  class='arrow-left-icon'  xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'><path style='fill:#232326' d='M14 1v1h8.293L1 23.293l.707.707L23 2.707V11h1V1H14z' data-name='Kanan Atas'/></svg>" ]
    
-      : ["<i class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"], // Default
+      : ["<i  class='fas fa-chevron-right'></i>", "<i class='fas fa-chevron-left'></i>"], // Default
 
     margin: 12,
     stagePadding: 0,  // No padding around items
@@ -137,7 +137,7 @@ $(".perfect-education-carousel").each(function() {
     loop: true,
     nav: true,
     navText: isArrowV2 
-      ? ["<img src='images/new-web/arrow-right.svg' style='transform: rotate(180deg)'>","     <img src='images/new-web/arrow-right.svg' style='transform: rotate(0deg)'>" ]
+      ? ["<svg  class='arrow-right-icon perfect' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'><path style='fill:#232326' d='M14 1v1h8.293L1 23.293l.707.707L23 2.707V11h1V1H14z' data-name='Kanan Atas'/></svg>" ,    "<svg  class='arrow-left-icon perfect'  xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 25'><path style='fill:#232326' d='M14 1v1h8.293L1 23.293l.707.707L23 2.707V11h1V1H14z' data-name='Kanan Atas'/></svg>" ]
    
       : ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"], // Default
 

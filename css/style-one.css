@@ -999,15 +999,37 @@ a {
     width: 100% !important;
 }
 
-.arrow-v2.owl-theme .owl-nav button svg {
-    color: gray;
-    bottom: 0;
-    transform: scaleX(2) !important;
-    color: red;
+.arrow-right-icon {
+    transform: rotate(45deg);
+    margin: 0 10px;
 }
 
-.arrow-v2.owl-theme .owl-nav button svg:hover {
-    color: var(--main-color);
+.arrow-right-icon.perfect {
+    transform: rotate(-135deg);
+    margin: 0 10px;
+}
+
+.arrow-right-icon:hover path {
+    fill: var(--main-color) !important;
+}
+
+.arrow-left-icon:hover path {
+    fill: var(--main-color) !important;
+}
+
+.arrow-left-icon {
+    transform: rotate(-135deg);
+    margin: 0 10px;
+}
+
+.arrow-left-icon.perfect {
+    transform: rotate(45deg);
+    margin: 0 10px;
+}
+
+.arrow-right-icon path {
+    fill: gray;
+
 }
 
 /* start college tour  */
