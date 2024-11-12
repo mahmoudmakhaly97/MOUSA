@@ -54,8 +54,7 @@ $(".our-new-programs-carousel").owlCarousel({
   loop: true,
   margin: 30,
   rtl: true, 
-      animateOut: 'fadeOut', // Use fadeOut animation
-    animateIn: 'fadeIn',   // Use fadeIn animation
+
     responsiveClass:true,  
   navText: [
     "<i class='fas fa-chevron-left'></i>",
@@ -180,8 +179,7 @@ var scrollWindow = function () {
         
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
-        console.log("st" ,st);
-			if (st > 80) {
+ 			if (st > 80) {
 				if ( !navbar.hasClass('scrolled') ) {
                     navbar.addClass('scrolled');	
                   
