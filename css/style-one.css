@@ -1907,6 +1907,13 @@ a {
     color: #fff;
 }
 
+@media (max-width:575px) {
+
+    .acheivments-carousel .owl-dots {
+        display: none !important
+    }
+}
+
 /* Adjustments for a centered appearance */
 .acheivments-carousel .owl-item {
     margin-left: 10px;
