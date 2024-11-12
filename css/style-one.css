@@ -1218,7 +1218,27 @@ a {
 
 .our-new-programs-content {
     border-radius: 30px;
-    padding: 4em 1em 2.5em
+    padding: 4.3em 2.5em 2.5em;
+    min-height: 565px;
+}
+
+@media (min-width:2000px) {
+    .our-new-programs-content {
+        padding: 5em 2.5em 2.5em;
+        min-height: 560px;
+
+        line-height: 2rem;
+        gap: 2rem;
+
+    }
+
+    .our-new-programs-content h4 {
+        margin: 20px 0;
+    }
+
+    .our-new-programs-content p {
+        margin-bottom: 1.5em;
+    }
 }
 
 .our-new-programs-content h4 {
@@ -1229,7 +1249,7 @@ a {
     font-size: 1.3rem;
     color: #555;
     text-align: justify;
-    line-height: 1.7em;
+    line-height: 1.9em;
 }
 
 .our-new-programs-content .btn {
@@ -1333,6 +1353,22 @@ a {
 
 }
 
+@media (max-width:575px) {
+    .our-new-programs {
+        padding-bottom: 1em !important;
+    }
+
+    .our-new-programs-content {
+        padding: 2em 1.5em 2.5em;
+        margin: 0 .5em;
+    }
+
+    .our-new-programs-content img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 /* start college join styles */
 
 .college-join-wrapper {
@@ -1351,7 +1387,7 @@ a {
 
 @media (max-width:575px) {
     .college-join-wrapper {
-        width: 95%;
+        width: 90%;
     }
 
 }
@@ -1372,6 +1408,7 @@ a {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3.5em 24px 2em;
 }
+
 
 .college-join-content h4 {
     font-size: 28px;
@@ -1411,6 +1448,22 @@ a {
         margin-bottom: 0 !important;
     }
 
+}
+
+@media (min-width:2000px) {
+    .college-join-content {
+        padding: 4em 24px 2em;
+
+
+    }
+
+    .college-join-content h4 {
+        margin: 20px 0 !important;
+    }
+
+    .college-join-content p {
+        margin-bottom: 1em;
+    }
 }
 
 /* Target only the last item in the carousel */
@@ -1779,6 +1832,12 @@ a {
     background-color: #fff;
 }
 
+@media (max-width:575px) {
+    .achievements .achievements-card {
+        margin: 0 55px;
+    }
+}
+
 .achievements .achievements-card img {
     width: 100px;
     height: 110px;
@@ -1805,13 +1864,47 @@ a {
 
 }
 
-.acheivments-carousel .owl-nav {
-    display: none !important;
+@media (min-width:575px) {
+    .acheivments-carousel .owl-nav {
+        display: none !important;
+
+    }
 
 }
 
 .acheivments-carousel .owl-item {
     box-sizing: border-box;
+}
+
+.acheivments-carousel {
+    position: relative;
+}
+
+.acheivments-carousel .owl-prev {
+    position: absolute;
+    right: 1px;
+    top: 45%;
+    background-color: var(--main-color) !important;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 10px !important;
+}
+
+.acheivments-carousel .owl-next {
+    position: absolute;
+    left: -6px;
+    top: 45%;
+    background-color: var(--main-color) !important;
+    border-radius: 10px !important;
+
+    width: 50px;
+    height: 50px;
+}
+
+.acheivments-carousel .owl-next svg,
+.acheivments-carousel .owl-prev svg {
+    color: #fff;
 }
 
 /* Adjustments for a centered appearance */
@@ -1904,10 +1997,10 @@ a {
 .college-staff-carousel .owl-nav button.owl-next {
     top: 35% !important;
     position: absolute;
-    right: -106px;
+    right: 3px;
     width: 54px;
     height: 54px;
-    background-color: rgba(94, 146, 66, .7) !important;
+    background-color: var(--main-color);
     transition: .3s all ease;
     border-radius: 10px;
 
@@ -1921,11 +2014,6 @@ a {
     }
 }
 
-@media (max-width:1200px) {
-    .college-staff-carousel .owl-nav button.owl-next {
-        display: none;
-    }
-}
 
 .college-staff .owl-carousel .owl-item img {
     width: auto;
@@ -1934,10 +2022,10 @@ a {
 .college-staff-carousel .owl-nav button.owl-prev {
     top: 35% !important;
     position: absolute;
-    left: -106px;
+    left: 3px;
     width: 54px;
     height: 54px;
-    background-color: rgba(94, 146, 66, .7) !important;
+    background-color: var(--main-color);
     transition: .3s all ease;
 
     border-radius: 10px;
@@ -1954,11 +2042,7 @@ a {
     }
 }
 
-@media (max-width:1200px) {
-    .college-staff-carousel .owl-nav button.owl-prev {
-        display: none;
-    }
-}
+
 
 .college-staff-carousel .owl-nav button.owl-next svg,
 .college-staff-carousel .owl-nav button.owl-prev svg {
@@ -1971,6 +2055,27 @@ a {
     background-color: rgba(239, 207, 4, .7) !important;
 
 }
+
+/* Show dots starting at 768px */
+@media (min-width: 768px) {
+
+    .college-staff-carousel .owl-dots {
+        display: block !important;
+        margin-top: 1rem;
+    }
+
+    .college-staff-carousel .owl-nav {
+        display: none !important;
+    }
+}
+
+/* Hide dots below 768px */
+@media (max-width: 767px) {
+    .college-staff-carousel .owl-dots {
+        display: none !important;
+    }
+}
+
 
 /* Start Footer */
 footer {

@@ -1,25 +1,31 @@
-// college-staff-carousel logic 
 $(".college-staff-carousel").owlCarousel({
   loop: true,
   margin: 10,
-  rtl: true, 
-      animateOut: 'fadeOut', // Use fadeOut animation
-    animateIn: 'fadeIn',   // Use fadeIn animation
-    responsiveClass:true,  
+  rtl: true,
+  animateOut: 'fadeOut',
+  animateIn: 'fadeIn',
   navText: [
     "<i class='fas fa-chevron-left'></i>",
     "<i class='fas fa-chevron-right'></i>",
   ],
-
   nav: true,
- 
-   responsive: {
-        0: { items: 1 },
-        768: { items: 2 },
-        991: { items: 3 }
+  responsiveClass: true,
+  responsive: {
+    0: { 
+      items: 1,
+      dots: false  
+    },
+    768: { 
+      items: 2,
+      dots: true   
+    },
+    991: { 
+      items: 3, 
     }
+  }
 });
- 
+
+
 // acheivements-carousel logic 
 $(".acheivments-carousel").owlCarousel({
   loop: true,
@@ -31,12 +37,15 @@ $(".acheivments-carousel").owlCarousel({
 
   nav: true,
  
+ 
    responsive: {
-        0: { items: 1 },
+        0: { items: 1 , dots:false },
      768: { items: 2 },
         991:{items: 2} ,
         1200: { items: 4 }
-    }
+  }, 
+               navText: ["<i class='fas fa-chevron-right'></i>" ,"<i class='fas fa-chevron-left'></i>"]
+
 });
  
 
