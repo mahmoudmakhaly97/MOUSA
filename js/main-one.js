@@ -17,7 +17,7 @@ $(".college-staff-carousel").owlCarousel({
     },
     768: { 
       items: 2,
-      dots: true   
+      dots: false   
     },
     991: { 
       items: 3, 
@@ -63,7 +63,7 @@ $(".our-new-programs-carousel").owlCarousel({
   ],
 
   nav: true,
- 
+ dots:false , 
    responsive: {
         0: { items: 1 },
  

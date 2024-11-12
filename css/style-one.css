@@ -1218,14 +1218,14 @@ a {
 
 .our-new-programs-content {
     border-radius: 30px;
-    padding: 4.3em 2.5em 2.5em;
-    min-height: 565px;
+    padding: 4.3em 1.5em 0em;
+    min-height: 557px;
 }
 
 @media (min-width:2000px) {
     .our-new-programs-content {
-        padding: 5em 2.5em 2.5em;
-        min-height: 560px;
+        padding: 4.3em 1.7em 0em;
+        min-height: 600px;
 
         line-height: 2rem;
         gap: 2rem;
@@ -1237,7 +1237,7 @@ a {
     }
 
     .our-new-programs-content p {
-        margin-bottom: 1.5em;
+        margin-bottom: 1.3em;
     }
 }
 
@@ -1302,11 +1302,12 @@ a {
     }
 }
 
+/* 
 @media (max-width:1200px) {
     .our-new-programs-carousel .owl-nav button.owl-next {
         display: none;
     }
-}
+} */
 
 .our-new-programs .owl-carousel .owl-item img {
     width: auto;
@@ -1333,13 +1334,15 @@ a {
         width: 45px;
         height: 45px;
     }
+
 }
 
+/* 
 @media (max-width:1200px) {
     .our-new-programs-carousel .owl-nav button.owl-prev {
         display: none;
     }
-}
+} */
 
 .our-new-programs-carousel .owl-nav button.owl-next svg,
 .our-new-programs-carousel .owl-nav button.owl-prev svg {
@@ -1360,13 +1363,31 @@ a {
 
     .our-new-programs-content {
         padding: 2em 1.5em 2.5em;
-        margin: 0 .5em;
+        margin: 0 47px;
     }
 
     .our-new-programs-content img {
         width: 100px;
         height: 100px;
     }
+}
+
+@media (max-width:575px) {
+    /* .our-new-programs-carousel .item {
+        margin: 0 38px !important;
+    } */
+
+    .our-new-programs-carousel .owl-nav button.owl-prev {
+        left: -10px;
+    }
+
+    .our-new-programs-carousel .owl-nav button.owl-next {
+        right: -10px;
+    }
+}
+
+.our-new-programs-carousel .owl-theme .owl-dots {
+    display: none !important
 }
 
 /* start college join styles */
@@ -1723,15 +1744,17 @@ a {
     .news-events-carousel .owl-nav button.owl-next {
         width: 45px;
         height: 45px;
+        right: 2em;
+        top: 11em !important
     }
 }
 
-@media (max-width:1200px) {
+/* @media (max-width:1200px) {
     .news-events-carousel .owl-nav button.owl-next {
         display: none;
 
     }
-}
+} */
 
 .news-events-carousel .owl-nav button.owl-prev {
     top: 50% !important;
@@ -1753,14 +1776,21 @@ a {
     .news-events-carousel .owl-nav button.owl-prev {
         width: 45px;
         height: 45px;
+        left: 2em;
+        top: 11em !important
     }
 }
 
+/* 
 @media (max-width:1200px) {
     .news-events-carousel .owl-nav button.owl-prev {
 
         display: none;
     }
+} */
+
+.news-events-carousel .owl-dots {
+    display: none !important
 }
 
 .news-events-carousel .owl-nav button.owl-next svg,
@@ -2042,6 +2072,16 @@ a {
 
 }
 
+@media (min-width:768px) {
+    .college-staff-carousel .owl-nav button.owl-prev {
+        left: -7rem;
+    }
+
+    .college-staff-carousel .owl-nav button.owl-next {
+        right: -7rem;
+    }
+}
+
 @media (max-width:575px) {
     .college-staff-carousel .owl-nav button.owl-prev {
         width: 45px;
@@ -2063,25 +2103,17 @@ a {
 
 }
 
-/* Show dots starting at 768px */
-@media (min-width: 768px) {
 
-    .college-staff-carousel .owl-dots {
-        display: block !important;
-        margin-top: 1rem;
-    }
 
-    .college-staff-carousel .owl-nav {
-        display: none !important;
-    }
+
+.college-staff-carousel .owl-dots {
+    display: none !important;
 }
 
-/* Hide dots below 768px */
-@media (max-width: 767px) {
-    .college-staff-carousel .owl-dots {
-        display: none !important;
-    }
-}
+
+
+
+
 
 
 /* Start Footer */
