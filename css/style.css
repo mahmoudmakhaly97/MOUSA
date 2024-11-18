@@ -438,6 +438,27 @@ button:empty {
 }
 
 
+.banner_btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner_btns p {
+    font-size: 21px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.banner_btns .icon {
+    color: #212529 !important;
+    transition: .3s all ease;
+}
+
+.subscribe-btn:hover .icon {
+
+    color: #fff !important;
+}
 
 /* End Banner */
 
@@ -3299,9 +3320,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 .college-tour .college-tour-content h2:last-of-type {
     position: relative;
-     
 
- 
+
+
 }
 
 .college-tour .college-tour-content h2:last-of-type::before {
