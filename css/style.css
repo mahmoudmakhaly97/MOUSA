@@ -444,6 +444,12 @@ button:empty {
     gap: 15px;
 }
 
+@media (max-width:400px) {
+    .banner_btns {
+        flex-wrap: wrap;
+    }
+}
+
 .banner_btns p {
     font-size: 21px;
     font-weight: 600;
