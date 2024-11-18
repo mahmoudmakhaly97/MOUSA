@@ -377,6 +377,13 @@ button:focus:not(:focus-visible) {
     margin-right: 0.5rem;
 }
 
+:dir(ltr) {
+
+    .banner-info .subscribe-btn {
+        line-height: 20px;
+    }
+}
+
 button:empty {
     display: none;
     visibility: hidden;
@@ -444,7 +451,7 @@ button:empty {
     gap: 15px;
 }
 
-@media (max-width:400px) {
+@media (max-width:575px) {
     .banner_btns {
         flex-wrap: wrap;
     }
