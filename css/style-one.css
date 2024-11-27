@@ -527,14 +527,14 @@ a {
 .new-web-navbar .dropdown-menu.show {
     background-color: rgb(101, 131, 71);
     border-radius: 20px;
-    transform: translate(35px, 46px) !important
+    transform: translate(35px, 60px) !important
 }
 
 .new-web-navbar .dropdown-menu.show li a,
 .offcanvas.show .dropdown-menu.show li a {
     /* background-color: var(--main-color); */
     margin-bottom: 5px;
-    padding: 8px 70px !important;
+    padding: 8px 85px !important;
     border-radius: 0;
     /* border-inline-end: 4px solid var(--secondary); */
     font-size: 13px;
