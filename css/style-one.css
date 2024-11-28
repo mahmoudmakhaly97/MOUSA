@@ -547,12 +547,12 @@ a {
     border-bottom: none;
 }
 
-/* 
+
 .new-web-navbar .dropdown-menu.show li a:hover,
 .offcanvas.show .dropdown-menu.show li a:hover {
-    background-color: var(--main-color) !important;
-    color: #fff !important
-} */
+
+    color: var(--secondary) !important
+}
 
 
 
@@ -1831,6 +1831,16 @@ a {
     margin: auto;
     overflow-x: hidden;
 
+}
+
+.achievements-wrapper h2 {
+    font-size: 3.5rem;
+}
+
+@media (max-width:575px) {
+    .achievements-wrapper h2 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width:1400px) {
