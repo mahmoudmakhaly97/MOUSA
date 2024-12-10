@@ -157,16 +157,25 @@ $(".perfect-education-carousel").each(function() {
 
  
 // float icon logic
+    
 
-       
-       window.addEventListener('scroll', function() {
-            var whatsappIcon = document.querySelector('.whatsapp-icon');
-            if (window.scrollY > window.innerHeight / 3 ) {
-                whatsappIcon.style.display = 'block';
-            } else {
-                whatsappIcon.style.display = 'none';
-            }
-       });
+
+window.addEventListener('scroll', function () {
+    var whatsappIcon = document.querySelector('.whatsapp-icon');
+    
+
+    var dynamicThreshold = window.innerHeight * 6.1;
+
+    if (window.scrollY > dynamicThreshold) {
+        whatsappIcon.style.display = 'none';
+    } else if (window.scrollY > window.innerHeight / 3) {
+        whatsappIcon.style.display = 'block';
+    } else {
+        whatsappIcon.style.display = 'none';
+    }
+  
+});
+
         	// scrolled navbar 
 var scrollWindow = function () {
   
