@@ -2234,6 +2234,11 @@ a {
 
 .footer-item ul li a {
     color: #fff;
+    transition: .3s all ease;
+}
+
+.footer-item ul li a:hover {
+    color: var(--secondary);
 }
 
 .copyright .overlay-img {
@@ -2244,6 +2249,11 @@ a {
 .copyright ul li a {
     color: var(--secondary);
     font-size: 1.4rem;
+    transition: .3s all ease;
+}
+
+.copyright ul li a:hover {
+    color: #fff;
 }
 
 .copyright .logo-img {
