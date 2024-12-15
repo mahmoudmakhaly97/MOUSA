@@ -1240,6 +1240,13 @@ a {
     min-height: 557px;
 }
 
+@media (max-width:1400px) {
+    .our-new-programs .tem h4 {
+        margin-bottom: 24px;
+    }
+
+}
+
 @media (min-width:2000px) {
     .our-new-programs-content {
         padding: 4.3em 1.7em 0em;
