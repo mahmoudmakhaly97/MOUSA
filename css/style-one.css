@@ -2326,6 +2326,7 @@ a {
 :dir(ltr) .bdt-prime-slider-skin-crelly .bdt-slider-excerpt-content .bdt-slider-excerpt {
     display: flex;
     justify-content: flex-end;
+    text-align: left;
 }
 
 :dir(ltr) .educational-environment .environment-content {
