@@ -2305,3 +2305,84 @@ a {
 
 
 /* End Copyright */
+
+/* start direction (ltr) styles  */
+:dir(ltr) .new-web-navbar .dropdown-menu.show {
+    transform: translate(0px, 60px) !important;
+}
+
+:dir(ltr) .bdt-container {
+    text-align: left;
+}
+
+:dir(ltr) .bdt-prime-slider-skin-crelly .bdt-slider-excerpt:before {
+    left: 0;
+}
+
+:dir(ltr) .bdt-prime-slider-skin-crelly .bdt-slide-btn svg {
+    transform: rotate(0);
+}
+
+:dir(ltr) .bdt-prime-slider-skin-crelly .bdt-slider-excerpt-content .bdt-slider-excerpt {
+    display: flex;
+    justify-content: flex-end;
+}
+
+:dir(ltr) .educational-environment .environment-content {
+    text-align: left;
+}
+
+:dir(ltr) .educational-environment .environment-content h2:last-of-type::before {
+    left: 0;
+}
+
+@media (max-width:991px) {
+    :dir(ltr) .environment-content .title {
+        justify-content: flex-end !important;
+
+    }
+}
+
+:dir(ltr) .college-tour-content {
+    text-align: left;
+}
+
+:dir(ltr) .college-tour .college-tour-content h2:last-of-type::before {
+    left: 0;
+}
+
+:dir(ltr) .college-tour-content .btn {
+    margin-right: auto;
+}
+
+@media (max-width:991px) {
+    :dir(ltr) .college-tour-content .title {
+        justify-content: flex-end !important;
+    }
+}
+
+@media (max-width: 575px) {
+    :dir(ltr) .college-tour {
+        padding-top: .5rem !important;
+    }
+}
+
+:dir(ltr) .our-new-programs-content p {
+    text-align: left;
+}
+
+:dir(ltr) .our-new-programs-content .btn-container {
+    justify-content: flex-start !important;
+}
+
+:dir(ltr) .college-join-wrapper {
+    text-align: left;
+}
+
+:dir(ltr) .college-join-wrapper .btn-container {
+    justify-content: flex-start !important;
+}
+
+:dir(ltr) .news-events-carousel .center-item .item .item-content h4 {
+    text-align: left;
+}
